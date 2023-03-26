@@ -1,0 +1,41 @@
+/*Nav Section*/
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #ffffff;
+  }
+  
+  .navbar-left {
+    display: flex;
+    align-items: center;
+  }
+  
+  
+  .logo {}
+  
+  .navbar-right {
+    margin-right: 150px;
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .navbar-right a {
+    text-decoration: none;
+  }
+  
+  svg {
+    height: 30px;
+    width: 30px;
+    font-size: 24px;
+    color: #333;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  
+  svg:hover {
+    fill: #ff8e01;
+    cursor: pointer;
+  }

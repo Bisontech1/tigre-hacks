@@ -1,0 +1,7 @@
+{
+  "dependencies": {
+    "create-next-app": "^13.2.4",
+    "react-leaflet": "^4.2.1",
+    "remix": "^1.14.3"
+  }
+}
