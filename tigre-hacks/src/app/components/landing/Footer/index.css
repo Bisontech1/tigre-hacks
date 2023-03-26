@@ -1,0 +1,49 @@
+/*Footer*/
+footer {
+    background-color: #f4e6e6;
+    color: #fff;
+    padding: 20px;
+}
+
+.footer-columns {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.footer-columns .column {
+    list-style: none;
+    margin: 0;
+    padding: 10px;
+    width: 30%;
+}
+
+.footer-columns .column li {
+    margin-bottom: 10px;
+}
+
+.footer-columns .column p {
+    margin-bottom: 25px;
+    text-align: left;
+}
+
+.footer-columns .row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+.footer-columns a {
+    color: #333;
+    padding: 0px;
+}
+
+.footer-columns p {
+    color: #333;
+    font-size: 14px;
+}
+
+.footer-column .column img {
+    margin-bottom: 50px;
+}

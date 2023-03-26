@@ -1,0 +1,72 @@
+/* Why Section*/
+.why .row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 100px;
+  }
+  
+  .why .column {
+    width: 48%;
+  }
+  
+  .why .left {
+    margin-right: 2%;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+  }
+  
+  .why .right {
+    margin-left: 2%;
+  }
+  
+  .why h3 {
+    font-size: 40px;
+  }
+  
+  .why p {
+    margin-top: 30px;
+    text-align: justify;
+  }
+  
+  .why .image-container {
+    position: relative;
+  }
+  
+  .why .main-image {
+    display: block;
+    width: 550px;
+    border: 2px solid black;
+    border-radius: 20px;
+  }
+  
+  .why .little-image {
+    position: absolute;
+    top: -50px;
+    right: -50px;
+    width: 150px;
+  }
+  
+  .why .psycotiger {
+    position: absolute;
+    top: 300px;
+    right: -50px;
+    width: 150px;
+  }
+  
+  .why .cat {
+    position: absolute;
+    top: 300px;
+    right: -50px;
+    width: 150px;
+  }
+  
+  .why .bodega {
+    position: absolute;
+    top: 200px;
+    right: 350px;
+    width: 300px;
+  }

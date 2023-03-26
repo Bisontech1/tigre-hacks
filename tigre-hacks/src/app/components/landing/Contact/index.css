@@ -1,0 +1,89 @@
+/* contact us*/
+#contact {
+    background-color: #f2f2f2;
+    padding: 50px 0;
+    display: flex;
+}
+
+.contact .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: row;
+    align-items: flex-start;
+    height: 1000px;
+
+}
+
+.contact .column-left,
+.contact .column-right {
+    flex-basis: calc(50% - 20px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 50%;
+}
+
+.column-right {
+    margin-left: 30px;
+}
+
+.contact h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.contact h3 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.contact h4 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.contact p {
+    margin-bottom: 18px;
+    text-align: left;
+}
+
+.contact form {
+    display: flex;
+    align-items: center;
+}
+
+.contact label {
+    font-size: 16px;
+    margin-right: 10px;
+}
+
+.contact input[type="email"] {
+    flex-grow: 1;
+    padding: 10px;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-right: 10px;
+}
+
+.contact button[type="submit"] {
+    background-color: #0563BB;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.contact button[type="submit"]:hover {
+    background-color: #054785;
+}
+
+.instagram-post {
+    max-width: 1000px;
+}

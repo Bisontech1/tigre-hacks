@@ -1,0 +1,39 @@
+.what {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 800px;
+  }
+  
+  .text-desc {
+    max-width: 600px;
+    margin-right: 200px;
+  }
+  
+  
+  .description {
+    font-size: 24px;
+    font-weight: 300;
+    text-align: justify;
+  }
+  
+  .what-img {
+    width: 350px;
+    border: 2px solid #000000;
+    border-radius: 500px;
+  }
+  
+  .big-star {
+    width: 75px;
+    position: absolute;
+  }
+  
+  .right {
+    position: relative;
+  }
+  
+  .little-star {
+    width: 50px;
+    transform: rotate(-37deg);
+    position: absolute;
+  }
