@@ -6,7 +6,7 @@ const Nav = () => {
                 <input type="checkbox" id="nav-check" />
                 <div class="nav-header">
                     <div class="nav-title">
-                        <img src="logo.png" />
+                        <img src="logo.png" alt="Little logo of Tigre Hacks in a Nav Bar in the top left corner of the page"/>
                     </div>
                 </div>
                 <div class="nav-btn">

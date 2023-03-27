@@ -50,8 +50,8 @@ const Faq = () => {
                         <div className="faq__content">
                             <p>
                                 You can already get to the hack with a team of 4 persons, but it is
-                                highly recommended that you team up with people you don't know.
-                                We’ll be hosting a team-building session for those that are looking
+                                highly recommended that you team up with people you don&apos;t know.
+                                We&apos;ll be hosting a team-building session for those that are looking
                                 for teammates as well.
                             </p>
                         </div>
@@ -61,10 +61,10 @@ const Faq = () => {
             <div className="row">
                 <div className="col">
                     <details>
-                        <summary>Can I Assist If I Don’t Know How To Code?</summary>
+                        <summary>Can I Assist If I Don&apos;t Know How To Code?</summary>
                         <div className="faq__content">
                             <p>
-                                Of course! It doesn't matter if you are studying medicine,
+                                Of course! It doesn&apos;t matter if you are studying medicine,
                                 architecture, accounting, engineering, etc., all students are
                                 welcome.
                             </p>
