@@ -26,7 +26,7 @@ export default function Home() {
     <>
       <style jsx global>{`
         html {
-          font-family: ${inter.style.fontFamily};
+          font-family: ${inter.style.fontFamily}, Arial, ;
         }
       `}</style>
       <Nav />
