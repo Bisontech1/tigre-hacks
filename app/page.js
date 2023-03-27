@@ -10,7 +10,7 @@ import Sponsors from './components/landing/Sponsors';
 import Faq from './components/landing/Faq';
 import Contact from './components/landing/Contact';
 import Footer from './components/landing/Footer';
-
+import { Inter } from 'next/font/google'
 import 'leaflet/dist/leaflet.css';
 
 import dynamic from 'next/dynamic';
@@ -19,9 +19,16 @@ const MapWithNoSSR = dynamic(() => import('./components/landing/Map'), {
   ssr: false,
 });
 
+const inter = Inter({ subsets: ['latin'] })
+
 export default function Home() {
   return (
     <>
+      <style jsx global>{`
+        html {
+          font-family: ${inter.style.fontFamily};
+        }
+      `}</style>
       <Nav />
       <Hero />
       <MapWithNoSSR />
@@ -31,8 +38,8 @@ export default function Home() {
       <Everybody />
       <Sponsors />
       <Faq />
-      <Contact/>
-      <Footer/>
+      <Contact />
+      <Footer />
     </>
   )
 }
