@@ -8,6 +8,7 @@ const Everybody = () => {
                     src="cute cat.png"
                     style={{ width: 100 }}
                     alt="a cute cat with his tongue out"
+                    loading='lazy'
                 />
             </div>
             <div className="row" style={{maxWidth:'1000px'}}>
@@ -20,9 +21,9 @@ const Everybody = () => {
                 <div className="item">Architects</div>
                 <div className="item">Recent Graduates</div>
             </div>
-            <div className="row" style={{ maxWidth: 1200 }}>
+            <div className="row" id="first-time-cat" style={{ maxWidth: 1200 }}>
                 <div className="left-column">
-                    <img src="greetings.png" alt="Your Image" />
+                    <img src="greetings.png" alt="Your Image" loading='lazy'/>
                 </div>
                 <div className="right-column" id="first-time">
                     <p>

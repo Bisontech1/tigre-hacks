@@ -9,6 +9,7 @@ const Why = () => {
                     src="circle.png"
                     style={{ width: 100 }}
                     alt="a blue circle with pikes"
+                    loading='lazy'
                 />
             </div>
             <div className="row">
@@ -21,11 +22,12 @@ const Why = () => {
                 </div>
                 <div className="right">
                     <div className="image-container">
-                        <img src="hackathons/1.png" alt="Main Image" className="main-image" />
+                        <img src="hackathons/1.png" alt="Main Image" className="main-image" loading='lazy' />
                         <img
                             src="russian cat.png"
                             alt="Little Image"
                             className="little-image"
+                            loading='lazy'
                         />
                     </div>
                 </div>
@@ -33,8 +35,8 @@ const Why = () => {
             <div className="row">
                 <div className="right">
                     <div className="image-container" style={{ marginRight: 60 }}>
-                        <img src="hackathons/2.png" alt="Main Image" className="main-image" />
-                        <img src="psycotiger.png" alt="Little Image" className="psycotiger" />
+                        <img src="hackathons/2.png" alt="Main Image" className="main-image" loading='lazy' />
+                        <img src="psycotiger.png" alt="Little Image" className="psycotiger" loading='lazy' />
                     </div>
                 </div>
                 <div className="left">
@@ -58,8 +60,8 @@ const Why = () => {
                 </div>
                 <div className="right">
                     <div className="image-container">
-                        <img src="hackathons/3.png" alt="Main Image" className="main-image" />
-                        <img src="cat.png" alt="Little Image" className="cat" />
+                        <img src="hackathons/3.png" alt="Main Image" className="main-image" loading='lazy'/>
+                        <img src="cat.png" alt="Little Image" className="cat" loading='lazy'/>
                     </div>
                 </div>
             </div>
@@ -70,8 +72,8 @@ const Why = () => {
                         style={{ marginRight: 60 }}
                         id="more-than-image"
                     >
-                        <img src="hackathons/4.png" alt="Main Image" className="main-image" />
-                        <img src="stamp.png" alt="Little Image" className="bodega" />
+                        <img src="hackathons/4.png" alt="Main Image" className="main-image" loading='lazy' />
+                        <img src="stamp.png" alt="Little Image" className="bodega " loading='lazy' />
                     </div>
                 </div>
                 <div className="left">

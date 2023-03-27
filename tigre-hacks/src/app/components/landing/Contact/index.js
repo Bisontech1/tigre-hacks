@@ -8,13 +8,13 @@ const Contact = () => {
                 <div className="column-left">
                     <div className="instagram-post">
                         <div style={{ display: 'flex', justifyContent: 'center' }}>
-                            <InstagramEmbed url="https://www.instagram.com/p/CkEAEN8Olve/?utm_source=ig_web_copy_link" width={500} />
+                            <InstagramEmbed url="https://www.instagram.com/p/CkEAEN8Olve/?utm_source=ig_web_copy_link" id="embed"/>
                         </div>
                     </div>
                 </div>
                 <div
                     className="column-right"
-                    style={{ alignItems: "flex-start", height: "100%" }}
+                    style={{ alignItems: "flex-start", height: "100%", textAlign:'center' }}
                 >
                     <h2>Contact Us</h2>
                     <p>Send us an e-mail with any questions to aylin_bisontech@gmail.com</p>

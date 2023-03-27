@@ -10,21 +10,34 @@ const Sponsors = () => {
                 </a>
             </p>
             <h4>Tigre Hacks is powered by</h4>
-            <img src="sponsors/chubb.png" className="chubb" alt="Chubb seguros logo" />
+            <img src="sponsors/chubb.png" className="chubb" alt="Chubb seguros logo" loading='lazy'/>
             <div className="container">
                 <div className="image-grid">
                     <div className="image-container">
-                        <img src="sponsors/azure.png" alt="Microsoft Azure logo" />
+                        <img src="sponsors/msft.png" alt="Microsoft Azure logo" loading='lazy'/>
                     </div>
                     <div className="image-container">
-                        <img src="sponsors/github.png" alt="GitHub logo" />
+                        <img src="sponsors/github.png" alt="GitHub logo" loading='lazy'/>
                     </div>
                     <div className="image-container">
-                        <img src="sponsors/timhortons.png" alt="Tim Hortons logo" />
+                        <img src="sponsors/timhortons.png" alt="Tim Hortons logo" loading='lazy'/>
                     </div>
                     <div className="image-container">
-                        <img src="sponsors/mlh-logo-color.png" alt="MLH logo" />
+                        <img src="sponsors/mlh-logo-color.png" alt="MLH logo" loading='lazy'/>
                     </div>
+                    <div className="image-container">
+                        <img src="sponsors/cf.png" alt="Codigo Facilito logo" loading='lazy'/>
+                    </div>
+                    <div className="image-container">
+                        <img src="sponsors/platzi.png" alt="Platzi logo" loading='lazy' />
+                    </div>
+                    <div className="image-container">
+                        <img src="sponsors/don-chambitas.jpg" alt="Don Chambitas logo" loading='lazy' />
+                    </div>
+                    <div className="image-container">
+                        <img src="sponsors/aws.png" alt="AWS logo" loading='lazy' />
+                    </div>
+
                 </div>
             </div>
         </section>

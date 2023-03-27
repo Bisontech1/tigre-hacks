@@ -1,72 +1,178 @@
 /* Why Section*/
 .why .row {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 100px;
+}
+
+.why .column {
+  width: 48%;
+}
+
+.why .left {
+  margin-right: 2%;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.why .right {
+  margin-left: 2%;
+}
+
+.why h3 {
+  font-size: 40px;
+}
+
+.why p {
+  margin-top: 30px;
+  text-align: justify;
+}
+
+.why .image-container {
+  position: relative;
+}
+
+.why .main-image {
+  display: block;
+  width: 550px;
+  border: 2px solid black;
+  border-radius: 20px;
+}
+
+.why .little-image {
+  position: absolute;
+  top: -50px;
+  right: -50px;
+  width: 150px;
+}
+
+.why .psycotiger {
+  position: absolute;
+  top: 300px;
+  right: -50px;
+  width: 150px;
+}
+
+.why .cat {
+  position: absolute;
+  top: 300px;
+  right: -50px;
+  width: 150px;
+}
+
+.why .bodega {
+  position: absolute;
+  top: 200px;
+  right: 350px;
+  width: 300px;
+}
+
+@media only screen and (max-width: 1024px) {
+  .left {
+    max-width: 85%;
+    margin-right: 55px !important;
+    margin-left: 55px !important;
   }
-  
-  .why .column {
-    width: 48%;
+
+  .left h3 {
+    font-size: 32px;
   }
-  
-  .why .left {
-    margin-right: 2%;
-    max-width: 500px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
+
+  .left p {
+    font-size: 20px;
   }
-  
-  .why .right {
-    margin-left: 2%;
+
+  .image-container .main-image {
+    width: 450px;
   }
-  
-  .why h3 {
-    font-size: 40px;
+
+
+  .cat {
+    top: -55px !important;
   }
-  
-  .why p {
-    margin-top: 30px;
-    text-align: justify;
+
+  .psycotiger {
+    top: 200px !important;
   }
-  
-  .why .image-container {
+
+  .bodega {
+    top: 170px !important;
+    right: 300px !important;
+    width: 220px !important;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .why {
     position: relative;
   }
-  
-  .why .main-image {
-    display: block;
-    width: 550px;
-    border: 2px solid black;
-    border-radius: 20px;
+
+  .why .row {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: space-evenly;
+    height: 600px;
   }
-  
-  .why .little-image {
+
+  #why-title {
+    height: 100px;
+
+  }
+
+  .psycotiger {
+    width: 130px !important;
+  }
+
+  #why-title img {
     position: absolute;
-    top: -50px;
-    right: -50px;
-    width: 150px;
+    top: -12px;
+    right: 0px;
+    display: none;
   }
-  
-  .why .psycotiger {
-    position: absolute;
-    top: 300px;
-    right: -50px;
-    width: 150px;
+
+  .why .row .left {
+    align-items: center;
+    text-align: center;
   }
-  
-  .why .cat {
-    position: absolute;
-    top: 300px;
-    right: -50px;
-    width: 150px;
+
+  #more-than-image {
+    margin-bottom: 40px !important;
   }
-  
-  .why .bodega {
-    position: absolute;
-    top: 200px;
-    right: 350px;
-    width: 300px;
+
+  .image-container {
+    margin: 0px !important;
   }
+}
+
+@media only screen and (max-width: 425px) {
+  .main-image{
+    width: 350px !important;
+  }
+  .psycotiger {
+    width: 100px !important;
+    top: 160px !important; 
+    right:-25px !important;
+  }
+  .cat{
+    width: 100px !important;
+    top:-35px !important; 
+    right: -25px !important;
+  }
+
+  .bodega{
+    width: 200px!important;
+    top: 110px !important;
+    left: -65px !important;
+  }
+
+  .little-image{
+    width: 100px !important;
+    top:-25px !important;
+    right:-15px !important;
+  }
+}

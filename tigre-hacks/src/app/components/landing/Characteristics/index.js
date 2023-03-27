@@ -5,7 +5,7 @@ const Characteristics = () => {
             <div className="container">
                 <div className="back">
                     <div className="back2">
-                        <img src="bear.png" style={{ width: 110 }} alt="A cute bear drawing" />
+                        <img src="bear.png" style={{ width: 110 }} alt="A cute bear drawing" loading='lazy' />
                     </div>
                 </div>
                 <div className="info-container">
@@ -24,6 +24,7 @@ const Characteristics = () => {
                             src="hands.png"
                             style={{ width: 75 }}
                             alt="A drawing of 2 hands touching each other"
+                            loading='lazy'
                         />
                     </div>
                 </div>
@@ -42,6 +43,7 @@ const Characteristics = () => {
                             src="tigers.png"
                             style={{ width: 100 }}
                             alt="a drawing of a tiger"
+                            loading='lazy'
                         />
                     </div>
                 </div>

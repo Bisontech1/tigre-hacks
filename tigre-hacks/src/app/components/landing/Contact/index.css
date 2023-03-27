@@ -5,6 +5,10 @@
     display: flex;
 }
 
+#embed {
+    width: 500px;
+}
+
 .contact .container {
     max-width: 1200px;
     margin: 0 auto;
@@ -86,4 +90,46 @@
 
 .instagram-post {
     max-width: 1000px;
+}
+
+@media only screen and (max-width: 1024px) {
+    .contact h2 {
+        font-size: 28px;
+    }
+
+    .contact p {
+        font-size: 20px;
+    }
+}
+
+@media only screen and (max-width: 425px) {
+    .contact .container {
+        flex-direction: column;
+        align-items: center;
+        flex-wrap: nowrap;
+    }
+
+    .contact .container .column-left,
+    .contact .container .column-right {
+        width: 95% !important;
+        text-align: center;
+        align-items: center !important;
+    }
+
+    .contact .container .column-right {
+        margin:25px 0px 0px 0px;
+        padding: 0px 0px 200px 0px;
+    }
+
+    .contact .container .column-right p,
+    .contact .container .column-right h2,
+    .contact .container .column-right h3 {
+        
+        text-align: center;
+        margin: 10px 0px 10px 0px;
+    }
+
+    #embed {
+        width: 98%;
+    }
 }

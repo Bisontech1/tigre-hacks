@@ -1,41 +1,127 @@
 /*Nav Section*/
-.navbar {
+* {
+  box-sizing: border-box;
+}
+
+.nav {
+  height: 50px;
+  width: 100%;
+  background-color: #fff;
+  position: relative;
+}
+
+.nav > .nav-header {
+  display: inline;
+}
+
+.nav > .nav-header > .nav-title {
+  display: inline-block;
+  font-size: 22px;
+  color: #000;
+  padding: 10px 10px 10px 100px;
+}
+
+.nav > .nav-btn {
+  display: none;
+}
+
+.nav > .nav-links {
+  display: inline;
+  float: right;
+  font-size: 18px;
+  padding: 0px 100px 0px 0px;
+}
+
+.nav > .nav-links > a {
+  display: inline-block;
+  padding: 13px 10px 13px 10px;
+  text-decoration: none;
+  color: #efefef;
+}
+
+.nav > .nav-links > a:hover {
+  background-color: #fff;
+}
+
+.nav > #nav-check {
+  display: none;
+}
+
+svg {
+  height: 30px;
+  width: 30px;
+  font-size: 24px;
+  color: #333;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+svg:hover {
+  fill: #ff8e01;
+  cursor: pointer;
+}
+
+
+
+@media (max-width:600px) {
+  .nav > .nav-btn {
+    display: inline-block;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+  }
+  .nav > .nav-btn > label {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     align-items: center;
-    padding: 10px 20px;
-    background-color: #ffffff;
+    justify-content: center;
+    width: 75px;
+    height: 75px;
+    padding: 13px;
   }
-  
-  .navbar-left {
+  .nav > .nav-btn > label:hover,.nav  #nav-check:checked ~ .nav-btn > label {
+    background-color: #ff8e01;
     display: flex;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
   }
-  
-  
-  .logo {}
-  
-  .navbar-right {
-    margin-right: 150px;
+  .nav > .nav-btn > label > span {
     display: flex;
-    flex-direction: row;
-  }
-  
-  .navbar-right a {
-    text-decoration: none;
-  }
-  
-  svg {
-    height: 30px;
+    flex-direction: column;
+    justify-content: center;
     width: 30px;
-    font-size: 24px;
-    color: #333;
+    height: 10px;
+    border-top: 3px solid #eee;
+  }
+  .nav > .nav-links {
+    position: absolute;
+    display: block;
+    width: 100%;
+    background-color: #FAFAFA;
+    height: 0px;
+    transition: all 0.3s ease-in;
+    overflow-y: hidden;
+    top: 75px;
+    left: 0px;
+  }
+  .nav > .nav-links > a {
+    display: block;
+    width: 100%;
     display: flex;
-    flex-direction: row;
+    justify-content: center;
+  }
+  .nav > #nav-check:not(:checked) ~ .nav-links {
+    height: 0px;
+  }
+  .nav > #nav-check:checked ~ .nav-links {
+    height: calc(100vh - 50px);
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
     align-items: center;
   }
-  
-  svg:hover {
-    fill: #ff8e01;
-    cursor: pointer;
-  }
+}
+ 

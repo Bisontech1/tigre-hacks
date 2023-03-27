@@ -18,30 +18,35 @@ const What = () => {
                     className="what-img"
                     src="what.png"
                     alt="participants in a hackathon with computers"
+                    loading='lazy'
                 />
                 <img
                     className="big-star"
                     src="Star.png"
                     style={{ top: 0, right: 0 }}
                     alt="A star in the top right corner of the image"
+                    loading='lazy'
                 />
                 <img
                     className="little-star"
                     src="Star.png"
                     style={{ top: 0, right: 60 }}
                     alt="A star in the bottom left corner of the image"
+                    loading='lazy'
                 />
                 <img
                     className="big-star"
                     src="Star.png"
                     style={{ bottom: 0, left: 0 }}
                     alt="A star in the bottom left corner of the image"
+                    loading='lazy'
                 />
                 <img
                     className="little-star"
                     src="Star.png"
                     style={{ bottom: 0, left: 60 }}
                     alt="A star in the bottom right corner of the image"
+                    loading='lazy'
                 />
             </div>
         </section>

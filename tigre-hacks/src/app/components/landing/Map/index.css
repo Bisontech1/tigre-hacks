@@ -3,7 +3,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    
+
 }
 
 .map-container h3 {
@@ -16,7 +16,13 @@ p {
     text-align: center;
     font-weight: 200;
     font-size: 20px;
-    margin:50px 0px 50px 0px;
+    margin: 50px 0px 50px 0px;
 }
 
+@media only screen and (max-width: 768px) {
 
+    .map-container {
+        margin-top: 50px;
+    }
+
+}

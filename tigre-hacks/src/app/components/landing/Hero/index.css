@@ -5,13 +5,14 @@
     justify-content: center;
     align-items: center;
     height: 800px;
+    width: 100%;
 }
 
 .column-left {
     margin-right: 0px;
 }
 
-.column-left img {
+.Image {
     width: 350px;
     margin-right: 250px;
 }
@@ -44,6 +45,7 @@ p {
     font-weight: 200;
     color: #282828;
     text-align: center;
+    margin:0px !important;
 }
 
 h6 {
@@ -112,4 +114,24 @@ a {
         flex-direction: column;
         justify-content: space-around;
     }
+    .column-left img{
+        width: 200px !important;
+        padding: 50px !important;
+    }
+
+    .column-right{
+        margin-left: 0px !important;
+    }
+
+    .extra-light{
+        font-size: 18px !important;
+        max-width: 400px !important;
+    }
+
 }
+
+@media only screen and (max-width: 425px) {
+    .column-left img{
+        width:300px !important;
+    }
+  }

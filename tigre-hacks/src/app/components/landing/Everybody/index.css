@@ -1,54 +1,93 @@
 /*Everybody section*/
 .everybody {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.everybody .row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0px 0px 50px 0px;
+}
+
+.everybody .row h3 {
+  text-align: center;
+}
+
+
+.everybody .item {
+  max-width: 300px;
+  /* adjust as needed to fit in row */
+  padding: 10px;
+  border: 2px solid black;
+  border-radius: 10px;
+  background-color: #E8B500;
+  margin: 1%;
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.everybody .left-column {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.everybody .left-column img {
+  width: 155px;
+}
+
+.everybody .right-column {
+  flex: 1;
+  display: flex;
+  text-align: center;
+  align-items: center;
+}
+
+
+
+.everybody .right-column p {
+  text-align: justify;
+  max-width: 700px;
+}
+
+
+@media only screen and (max-width: 1024px) {
+  #first-time p {
+    font-size: 20px;
   }
-  
-  .everybody .row {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin: 0px 0px 50px 0px;
+
+  li {
+    font-size: 20px !important;
   }
-  
+
+}
+
+@media only screen and (max-width: 768px) {
+  #first-time p {
+    font-size: 18px;
+  }
+
   .everybody .item {
-    max-width: 300px;
-    /* adjust as needed to fit in row */
-    padding: 10px;
-    border: 2px solid black;
-    border-radius: 10px;
-    background-color: #E8B500;
-    margin: 1%;
-    font-size: 24px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
+    font-size: 18px;
   }
-  
-  .everybody .left-column {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+}
+
+
+@media only screen and (max-width: 425px) {
+  .everybody .row h3{
+    margin: 0px !important;
   }
-  
-  .everybody .left-column img {
-    width: 155px;
+  #first-time-cat{
+    flex-direction: column;
   }
-  
-  .everybody .right-column {
-    flex: 1;
-    display: flex;
-    text-align: center;
-    align-items: center;
+
+  #first-time p{
+    max-width: 300px !important;
   }
-  
-  
-  
-  .everybody .right-column p {
-    text-align: justify;
-    max-width: 700px;
-  }
-  
-  
+}

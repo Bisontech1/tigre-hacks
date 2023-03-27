@@ -1,62 +1,97 @@
 /*Sponsors Section*/
 .sponsors {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.sponsors a {
+  color: #333;
+  font-weight: 300;
+  font-size: 24px;
+  text-decoration: underline;
+  transition: 0.3s;
+}
+
+.sponsors a:hover {
+  color: #FF8E01;
+  ;
+}
+
+h4 {
+  font-size: 24px;
+  text-align: center;
+  margin: 20px 0px 20px;
+}
+
+.chubb {
+  margin: 0px;
+  width: 600px;
+}
+
+.sponsors .container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  margin: 60px 0px 150px 0px;
+}
+
+.sponsors .image-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 10px;
+}
+
+.sponsors .image-grid img {
+  width: 150px;
+  object-fit: contain;
+
+}
+
+.sponsors .image-container {
+  width: 200px;
+  height: 200px;
+  padding: 10px;
+  border: 2px solid black;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+
+@media only screen and (max-width: 1024px) {
+  .image-grid .image-container {
+    width: 175px;
+    height: 175px;
   }
-  
-  .sponsors a {
-    color: #333;
-    font-weight: 300;
-    font-size: 24px;
-    text-decoration: underline;
-    transition: 0.3s;
-  }
-  
-  .sponsors a:hover {
-    color: #FF8E01;
-    ;
-  }
-  
-  h4{
-    font-size: 24px;
+}
+
+@media only screen and (max-width: 768px) {
+  .sponsors p {
     text-align: center;
-    margin: 20px 0px 20px;
   }
-  
-  .chubb{
-    margin:0px;
-    width: 600px;
-  }
-  
-  .sponsors .container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-    margin: 60px 0px 150px 0px;
-  }
-  
+
   .sponsors .image-grid {
-    display: grid;
     grid-template-columns: repeat(4, 1fr);
-    grid-gap: 10px;
   }
-  
-  .sponsors .image-grid img {
-    width: 150px;
-    object-fit: contain;
-  
+
+  .image-grid .image-container {
+    width: 120px;
+    height: 120px;
   }
-  
-  .sponsors .image-container {
-    width: 200px;
-    height: 200px;
-    padding: 10px;
-    border: 2px solid black;
-    border-radius: 10px;
-    display: flex;
-    justify-content: center;
+
+  .image-grid .image-container img {
+    width: 100%;
   }
-  
+}
+
+@media only screen and (max-width: 425px) {
+  .sponsors .image-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .chubb{
+    width: 300px;
+  }
+}
