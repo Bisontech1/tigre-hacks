@@ -17,7 +17,7 @@ const Contact = () => {
                     style={{ alignItems: "flex-start", height: "100%", textAlign:'center' }}
                 >
                     <h2>Contact Us</h2>
-                    <p>Send us an e-mail with any questions to aylin_bisontech@gmail.com</p>
+                    <p>Send us an e-mail with any questions to bisontech0@gmail.com</p>
                     <h3>Subscribe To Our Newsletter</h3>
                     <p>Subscribe to know more about Tigre Hacks.</p>
                     <form action="#">

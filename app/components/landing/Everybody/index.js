@@ -13,7 +13,7 @@ const Everybody = () => {
             </div>
             <div className="row" style={{maxWidth:'1000px'}}>
                 <div className="item">Medics</div>
-                <div className="item">Biologist</div>
+                <div className="item">Biologists</div>
                 <div className="item">Engineers</div>
                 <div className="item">Acountants</div>
                 <div className="item">Scientists</div>

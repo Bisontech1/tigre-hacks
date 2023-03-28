@@ -10,40 +10,64 @@
   position: relative;
 }
 
-.nav > .nav-header {
+#mlh-trust-badge {
+  display: block;
+  position: fixed;
+  right: 50px;
+  top: -10px;
+  width: 150px;
+  z-index: 10000;
+}
+
+.text-link {
+  color: #333 !important;
+  font-weight: 300;
+}
+
+.text-link:hover,
+.icon:hover {
+  color: #FF8E01 !important;
+}
+
+.icon {
+  padding-top: 50px;
+}
+
+.nav>.nav-header {
   display: inline;
 }
 
-.nav > .nav-header > .nav-title {
+.nav>.nav-header>.nav-title {
   display: inline-block;
   font-size: 22px;
   color: #000;
   padding: 10px 10px 10px 100px;
 }
 
-.nav > .nav-btn {
+.nav>.nav-btn {
   display: none;
 }
 
-.nav > .nav-links {
-  display: inline;
+.nav>.nav-links {
+  display: inline-flex;
+  align-items: center;
   float: right;
   font-size: 18px;
-  padding: 0px 100px 0px 0px;
+  padding: 10px 200px 0px 0px;
 }
 
-.nav > .nav-links > a {
+.nav>.nav-links>a {
   display: inline-block;
   padding: 13px 10px 13px 10px;
   text-decoration: none;
   color: #efefef;
 }
 
-.nav > .nav-links > a:hover {
+.nav>.nav-links>a:hover {
   background-color: #fff;
 }
 
-.nav > #nav-check {
+.nav>#nav-check {
   display: none;
 }
 
@@ -65,13 +89,14 @@ svg:hover {
 
 
 @media (max-width:600px) {
-  .nav > .nav-btn {
+  .nav>.nav-btn {
     display: inline-block;
     position: absolute;
     right: 0px;
     top: 0px;
   }
-  .nav > .nav-btn > label {
+
+  .nav>.nav-btn>label {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -80,14 +105,17 @@ svg:hover {
     height: 75px;
     padding: 13px;
   }
-  .nav > .nav-btn > label:hover,.nav  #nav-check:checked ~ .nav-btn > label {
+
+  .nav>.nav-btn>label:hover,
+  .nav #nav-check:checked~.nav-btn>label {
     background-color: #ff8e01;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
   }
-  .nav > .nav-btn > label > span {
+
+  .nav>.nav-btn>label>span {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -95,7 +123,8 @@ svg:hover {
     height: 10px;
     border-top: 3px solid #eee;
   }
-  .nav > .nav-links {
+
+  .nav>.nav-links {
     position: absolute;
     display: block;
     width: 100%;
@@ -106,16 +135,19 @@ svg:hover {
     top: 75px;
     left: 0px;
   }
-  .nav > .nav-links > a {
+
+  .nav>.nav-links>a {
     display: block;
     width: 100%;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
   }
-  .nav > #nav-check:not(:checked) ~ .nav-links {
+
+  .nav>#nav-check:not(:checked)~.nav-links {
     height: 0px;
   }
-  .nav > #nav-check:checked ~ .nav-links {
+
+  .nav>#nav-check:checked~.nav-links {
     height: calc(100vh - 50px);
     overflow-y: auto;
     display: flex;
@@ -123,5 +155,9 @@ svg:hover {
     justify-content: flex-start;
     align-items: center;
   }
+
+  #mlh-trust-badge {
+    width: 100px;
+    left: 0px;
+  }
 }
- 

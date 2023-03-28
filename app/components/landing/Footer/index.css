@@ -1,49 +1,128 @@
-/*Footer*/
-footer {
-    background-color: #f4e6e6;
-    color: #fff;
-    padding: 20px;
+/* FOOTER */
+.footer {
+	width: 100%;
+	background: #00121b;
+	display: block;
+ }
+
+ .inner-footer {
+	 width: 95%;
+	 margin: auto;
+	 padding: 30px 10px;
+	 display: flex;
+	 flex-wrap: wrap;
+	 box-sizing: border-box;
+	 justify-content: center;
+ }
+
+.footer-items {
+	width: 25%;
+	padding: 10px 20px;
+	box-sizing: border-box;
+	color: #fff;
 }
 
-.footer-columns {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+.footer-items ul {
+	padding: 0;
+    list-style-type: none;
 }
 
-.footer-columns .column {
-    list-style: none;
-    margin: 0;
-    padding: 10px;
-    width: 30%;
+
+.footer-items p {
+	font-size: 16px;
+	text-align: justify;
+	line-height: 25px;
+	color: #fff;
 }
 
-.footer-columns .column li {
-    margin-bottom: 10px;
+.footer-items h1 {
+	color: #fff;
 }
 
-.footer-columns .column p {
-    margin-bottom: 25px;
-    text-align: left;
+.border1 {
+	height: 3px;
+	width: 40px;
+	background: #ff9800;
+	color: #ff9800;
+	background-color: #ff9800;
+	border: 0px;
 }
 
-.footer-columns .row {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 50px;
+ul {
+	list-style: none;
+	color: #fff;
+	font-size: 15px;
+	letter-spacing: 0.5px;	
+ }
+
+ul a {
+	text-decoration: none;
+	outline: none;
+	color: #fff;
+	transition: 0.3s;
 }
 
-.footer-columns a {
-    color: #333;
-    padding: 0px;
+ul a:hover {
+	color: #ff9800;
 }
 
-.footer-columns p {
-    color: #333;
-    font-size: 14px;
+ul li {
+	margin: 10px 0;
+	height: 25px;
 }
 
-.footer-column .column img {
-    margin-bottom: 50px;
+li i {
+	margin-right: 20px;
 }
+
+.social-media {
+	width: 100%;
+	color: #fff;
+	text-align: center;
+	font-size: 20px;
+}
+
+.social-media a {
+	text-decoration: none;
+}
+
+.social-media i {
+	height: 25px;
+	width: 25px;
+	margin: 20px 10px;
+	padding: 4px;
+	color: #fff;
+	transition: 0.5s;
+}
+
+.social-media i:hover {
+	transform: scale(1.5);
+}
+
+.footer-bottom {
+	padding: 10px;
+	background: #00121b;
+	color: #fff;
+	font-size: 12px;
+	text-align: center;
+}
+
+/* for tablet mode view */
+
+@media screen and (max-width: 1275px) {
+	.footer-items {
+		width: 50%;
+	}
+}
+
+/* for mobile screen view */
+
+@media screen and (max-width: 660px) {
+	.footer-items {
+		width: 100%;
+	}
+}
+
+/* you can toggle the media screen view accordingly by changing the (max-width: px) to your convenience */
+
+/* Thanks to Computer Conversations */

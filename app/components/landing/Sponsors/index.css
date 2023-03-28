@@ -6,6 +6,10 @@
   flex-direction: column;
 }
 
+.sponsors h3{
+  font-size: 40px;
+}
+
 .sponsors a {
   color: #333;
   font-weight: 300;
@@ -93,5 +97,9 @@ h4 {
   }
   .chubb{
     width: 300px;
+  }
+
+  .sponsors p{
+    font-size: 20px;
   }
 }

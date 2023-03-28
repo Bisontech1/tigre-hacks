@@ -10,6 +10,10 @@
   margin-right: 200px;
 }
 
+.text-desc h3 {
+  font-size: 40px;
+}
+
 
 .description {
   font-size: 24px;
@@ -69,5 +73,19 @@
 @media only screen and (max-width: 425px) {
   .what-img{
     width: 300px;
+  }
+
+  .text-desc h3 {
+    font-size: 32px;
+  }
+
+  .description{
+    max-width: 300px;
+  }
+
+  .text-desc{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 }
