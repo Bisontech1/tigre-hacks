@@ -1,5 +1,10 @@
+import React from 'react';
+import { TranslationContext } from '../../../page';
 import './index.css'
 const Nav = () => {
+
+    const language = React.useContext(TranslationContext)
+
     return (
         <>
             <div className="nav">
