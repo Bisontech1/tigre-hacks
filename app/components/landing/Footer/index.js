@@ -11,7 +11,12 @@ const Footer = () => {
         <div className="inner-footer">
           {/*  for company name and description */}
           <div className="footer-items">
-            <img src="logo.png" className="footer-logo" loading="lazy" />
+            <img
+              src="logo.png"
+              className="footer-logo"
+              loading="lazy"
+              alt="Tigre Hacks Logo"
+            />
             <p>{language?.getString("footer.label")}</p>
           </div>
           {/*  for quick links  */}
@@ -19,20 +24,26 @@ const Footer = () => {
             <h3>{language?.getString("footer.quickLinks.title")}</h3>
             <div className="border1" /> {/*for the underline */}
             <ul>
-              <a href="#">
-                <li>{language?.getString("footer.quickLinks.whatIs")}</li>
-              </a>
-              <a href="#">
-                <li>
+              <li>
+                <a href="#">
+                  {language?.getString("footer.quickLinks.whatIs")}
+                </a>
+              </li>
+              <li>
+                <a href="#">
                   {language?.getString("footer.quickLinks.whyParticipate")}
-                </li>
-              </a>
-              <a href="#">
-                <li>{language?.getString("footer.quickLinks.sponsors")}</li>
-              </a>
-              <a href="#">
-                <li>{language?.getString("footer.quickLinks.contact")}</li>
-              </a>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  {language?.getString("footer.quickLinks.sponsors")}
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  {language?.getString("footer.quickLinks.contact")}
+                </a>
+              </li>
             </ul>
           </div>
           {/*  for some other links */}
