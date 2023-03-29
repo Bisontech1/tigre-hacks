@@ -1,135 +1,135 @@
 /* contact us*/
 #contact {
-    background-color: #f2f2f2;
-    padding: 50px 0;
-    display: flex;
+  background-color: #f2f2f2;
+  padding: 50px 0;
+  display: flex;
 }
 
 #embed {
-    width: 500px;
+  width: 500px;
 }
 
 .contact .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    flex-direction: row;
-    align-items: flex-start;
-    height: 1000px;
-
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  flex-direction: row;
+  align-items: flex-start;
+  height: 1000px;
 }
 
 .contact .column-left,
 .contact .column-right {
-    flex-basis: calc(50% - 20px);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    width: 50%;
+  flex-basis: calc(50% - 20px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 50%;
 }
 
 .column-right {
-    margin-left: 30px;
+  margin-left: 30px;
 }
 
 .contact h2 {
-    font-size: 36px;
-    margin-bottom: 20px;
-    text-align: center;
+  font-size: 36px;
+  margin-bottom: 20px;
+  text-align: center;
 }
 
 .contact h3 {
-    font-size: 28px;
-    margin-bottom: 20px;
-    text-align: center;
+  font-size: 28px;
+  margin-bottom: 20px;
+  text-align: center;
 }
 
 .contact h4 {
-    font-size: 20px;
-    margin-bottom: 10px;
+  font-size: 20px;
+  margin-bottom: 10px;
 }
 
 .contact p {
-    margin-bottom: 18px;
-    text-align: left;
+  margin-bottom: 18px;
+  text-align: left;
 }
 
 .contact form {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .contact label {
-    font-size: 16px;
-    margin-right: 10px;
+  font-size: 16px;
+  margin-right: 10px;
 }
 
 .contact input[type="email"] {
-    flex-grow: 1;
-    padding: 10px;
-    border: 2px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-    margin-right: 10px;
+  flex-grow: 1;
+  padding: 10px;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-right: 10px;
 }
 
 .contact button[type="submit"] {
-    background-color: #0563BB;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
+  background-color: #0563bb;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
 }
 
 .contact button[type="submit"]:hover {
-    background-color: #054785;
+  background-color: #054785;
 }
 
 .instagram-post {
-    max-width: 1000px;
+  max-width: 1000px;
 }
 
 @media only screen and (max-width: 1024px) {
-    .contact h2 {
-        font-size: 28px;
-    }
+  .contact h2 {
+    font-size: 28px;
+  }
 
-    .contact p {
-        font-size: 20px;
-    }
+  .contact p {
+    font-size: 20px;
+  }
 }
 
-@media only screen and (max-width: 425px) {
-    .contact .container {
-        flex-direction: column;
-        align-items: center;
-        flex-wrap: nowrap;
-    }
+@media only screen and (max-width: 600px) {
 
-    .contact .container .column-left,
-    .contact .container .column-right {
-        width: 95% !important;
-        text-align: center;
-        align-items: center !important;
-    }
 
-    .contact .container .column-right {
-        margin:25px 0px 0px 0px;
-        padding: 0px 0px 200px 0px;
-    }
+  .contact .container {
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: nowrap;
+  }
 
-    .contact .container .column-right p,
-    .contact .container .column-right h2,
-    .contact .container .column-right h3 {
-        
-        text-align: center;
-        margin: 10px 0px 10px 0px;
-    }
+  .contact .container .column-left,
+  .contact .container .column-right {
+    width: 95% !important;
+    text-align: center;
+    align-items: center !important;
+  }
 
-    #embed {
-        width: 98%;
-    }
+  .contact .container .column-right {
+    margin: 25px 0px 0px 0px;
+    padding: 0px 0px 200px 0px;
+  }
+
+  .contact .container .column-right p,
+  .contact .container .column-right h2,
+  .contact .container .column-right h3 {
+    text-align: center;
+    margin: 10px 0px 10px 0px;
+  }
+
+  #embed {
+    width: 98%;
+  }
 }

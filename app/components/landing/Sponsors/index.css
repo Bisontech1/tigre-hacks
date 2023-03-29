@@ -78,7 +78,11 @@ h4 {
   }
 
   .sponsors .image-grid {
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .chubb{
+    width: 90%;
   }
 
   .image-grid .image-container {
@@ -94,9 +98,6 @@ h4 {
 @media only screen and (max-width: 425px) {
   .sponsors .image-grid {
     grid-template-columns: repeat(2, 1fr);
-  }
-  .chubb{
-    width: 300px;
   }
 
   .sponsors p{

@@ -1,137 +1,151 @@
 /*Hero Section*/
 
 .hero {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 800px;
-    width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 800px;
+  width: 100%;
 }
 
 .column-left {
-    margin-right: 0px;
+  margin-right: 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .column-left img {
-    width: 350px;
-    margin-right: 250px;
+  width: 350px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .column-right {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .column-right img {
-    width: 50%;
-    margin-bottom: 20px;
+  width: 50%;
+  margin-bottom: 20px;
 }
 
 .hero .column-right h1 {
-    font-size: 96px;
-    font-weight: bold;
-    margin: 0px;
-    text-align: center;
+  font-size: 96px;
+  font-weight: bold;
+  margin: 0px;
+  text-align: center;
 }
 
 p {
-    font-size: 24px;
-    font-weight: 300;
+  font-size: 24px;
+  font-weight: 300;
 }
 
 .extra-light {
-    font-weight: 200;
-    color: #282828;
-    text-align: center;
-    margin:0px !important;
+  font-weight: 200;
+  color: #282828;
+  text-align: center;
+  margin: 0px !important;
 }
 
 h6 {
-    font-size: 16px;
-    font-weight: bold;
-    margin-bottom: 30px;
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 30px;
 }
 
 .bold {
-    font-weight: 600;
+  font-weight: 600;
 }
 
 .button-row {
-    display: flex;
+  display: flex;
 }
 
 a {
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    font-size: 18px;
-    font-weight: bold;
-    color: #fff;
-    cursor: pointer;
-    transition: background-color 0.2s ease;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
 }
 
 .white-background {
-    background-color: #fff;
-    color: #333;
-    margin-right: 10px;
-    border: solid black 2px;
-    border-radius: 5px;
+  background-color: #fff;
+  color: #333;
+  margin-right: 10px;
+  border: solid black 2px;
+  border-radius: 5px;
 }
 
 .white-background:hover {
-    background-color: #FF8E01;
-
+  background-color: #ff8e01;
 }
 
 .orange-background {
-    background-color: #FF8E01;
-    border: solid black 2px;
-    border-radius: 5px;
+  background-color: #ff8e01;
+  border: solid black 2px;
+  border-radius: 5px;
 }
 
 .orange-background:hover {
-    background-color: #ffffff;
-    color: #333;
+  background-color: #ffffff;
+  color: #333;
 }
 
 @media only screen and (max-width: 1024px) {
+  .hero {
+    justify-content: start;
+  }
 
-    .hero .column-left img {
-        margin: 0px 100px 0px 100px !important;
-        width: 300px;
-    }
+  .hero .column-left img {
+    width: 60%;
+  }
 
-    h3 {
-        font-size: 32px;
-    }
+  .column-left {
+    margin-bottom: 30px;
+    margin-top: 20px;
+    width: 100%;
+  }
+
+  h3 {
+    font-size: 32px;
+  }
 }
 
 @media only screen and (max-width: 768px) {
-    .hero {
-        flex-direction: column;
-        justify-content: space-around;
-    }
-    .column-left img{
-        width: 200px !important;
-        padding: 50px !important;
-    }
+  .hero {
+    flex-direction: column;
+  }
+  .column-left img {
+    width: 200px !important;
+  }
 
-    .column-right{
-        margin-left: 0px !important;
-    }
+  .column-right {
+    margin-left: 0px !important;
+  }
 
-    .extra-light{
-        font-size: 18px !important;
-        max-width: 400px !important;
-    }
-
+  .extra-light {
+    font-size: 18px !important;
+    max-width: 400px !important;
+  }
 }
 
-@media only screen and (max-width: 425px) {
-    .column-left img{
-        width:300px !important;
-    }
+@media only screen and (max-width: 600px) {
+  .hero {
+    flex-direction: column;
+    justify-content: center;
+}
+
+  .column-left img {
+    width: 200px !important;
   }
+}

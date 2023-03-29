@@ -9,12 +9,13 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "create-next-app": "^13.2.4",
     "eslint": "8.36.0",
     "eslint-config-next": "13.2.4",
+    "leaflet": "^1.9.3",
     "next": "13.2.4",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "create-next-app": "^13.2.4",
     "react-leaflet": "^4.2.1",
     "react-social-media-embed": "^2.3.4"
   }
