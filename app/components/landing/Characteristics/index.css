@@ -59,7 +59,9 @@
   }
 
   .characteristics .container {
-    width: 600px;
+    width: 100%;
+    margin: 0px;
+    height: auto;
   }
 
 
