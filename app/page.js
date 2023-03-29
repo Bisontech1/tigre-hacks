@@ -50,7 +50,9 @@ export default function Home() {
           font-family: ${inter.style.fontFamily};
         }
       `}</style>
-      <Nav />
+      <Nav changeLanguage={(language)=>{
+        changeLanguage(language)
+      }}/>
       <Hero />
       <MapWithNoSSR />
       <What />

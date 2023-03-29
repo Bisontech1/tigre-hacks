@@ -2,10 +2,11 @@ import { MissingKey } from "./exceptions";
 
 export class Language {
   static array = [];
-  static ES = new Language("es");
-  static EN = new Language("en");
+  static ES = new Language("es", "Español");
+  static EN = new Language("en", "English");
 
   filename = "";
+  name;
   id;
   content;
 
@@ -33,9 +34,12 @@ export class Language {
     this.content = strings;
   }
 
-  constructor(id = "") {
+  constructor(id = null, name = null) {
     this.filename = id + ".json";
     this.id = id;
-    Language.array.push(this);
+    this.name = name;
+
+    if (!Language.array.find((e) => e.id == id) && id != null)
+      Language.array.push(this);
   }
 }

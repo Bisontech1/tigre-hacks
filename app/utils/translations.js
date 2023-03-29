@@ -19,7 +19,6 @@ class TranslationService {
   async readLanguageFile(language) {
     const response = await fetch(`/languages/${language.filename}`);
     const json = await response.json();
-    console.log(json);
     language.load(json);
     return language;
   }
