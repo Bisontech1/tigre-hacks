@@ -111,7 +111,7 @@ const LanguageDropdown = (props) => {
 
   return (
     <div className="dropdown">
-      <img src={`flags/${props.language?.id}.svg`} alt={props.language?.name} />
+      <img src={`flags/${props.language?.id ?? 'es'}.svg`} alt={props.language?.name} />
       <div className="dropdown-content">{languages}</div>
     </div>
   );
