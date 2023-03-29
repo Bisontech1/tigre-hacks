@@ -22,7 +22,7 @@
         "title": "¿Qué es Tigre Hacks?",
         "description1": "Tigre Hacks es el primer",
         "description2": "Hackathon de 48 horas de la UANL creado por estudiantes para estudiantes",
-        "description3": "Juntamos estudiantes de diferentes carreras para crear \"hacks\" en 24 horas para solucionar problemas que enfrentamos en la vida real como comunidad. Nuestra misión es ofrecer a las próximas generaciones las herramientas y oportunidades para explorar, colaborar e impulsar sus carreras.",
+        "description3": "Juntamos estudiantes de diferentes carreras para crear \"hacks\" en 48 horas para solucionar problemas que enfrentamos en la vida real como comunidad. Nuestra misión es ofrecer a las próximas generaciones las herramientas y oportunidades para explorar, colaborar e impulsar sus carreras.",
         "hackerFriendly": {
             "title": "Hacker Friendly",
             "description": "¿Eres nuevo en los hackathones y no sabes donde empezar? ¡No te preocupes! Tenemos todos los recursos para que empieces en la industria tecnológica y más allá."
@@ -33,7 +33,7 @@
         },
         "networkWithOther": {
             "title": "Conecta con Otros",
-            "description": "¡Los hackathones son una de las mejores maneras de formar nuevas amistades! ¡Convive con estudiantes con los mismo objetivo que tú!"
+            "description": "¡Los hackathones son una de las mejores maneras de formar nuevas amistades! ¡Convive con estudiantes con los mismos objetivos que tú!"
         }
     },
     "whyParticipate": {
@@ -44,7 +44,7 @@
         },
         "haveFunCompeting": {
             "title": "¡Diviértete compitiendo!",
-            "description": "¡Un fin de semana lleno de sana diversión! Juntate con tus amigos y experimenta tu primer hackathon lleno de comida gratis, mini juegos, actividades, carreras, premios, swag, beneficios y muchas cosas más!"
+            "description": "¡Un fin de semana lleno de diversión hacker! Juntate con tus amigos y experimenta tu primer hackathon lleno de comida gratis, mini juegos, actividades, carreras, premios, swag, beneficios y muchas cosas más!"
         },
         "hackRealProblem": {
             "title": "¡Hackea un problema de la vida real!",

@@ -96,7 +96,7 @@ const Nav = (props) => {
 };
 
 const LanguageDropdown = (props) => {
-  const languages = props.language?.array?.map((e) => (
+  const languages = Language.array?.map((e) => (
     <li
       onClick={() => {
         props.selectLanguage(e);
