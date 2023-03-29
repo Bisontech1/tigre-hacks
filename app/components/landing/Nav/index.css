@@ -26,29 +26,29 @@
 
 .text-link:hover,
 .icon:hover {
-  color: #FF8E01 !important;
+  color: #ff8e01 !important;
 }
 
 .icon {
   padding-top: 50px;
 }
 
-.nav>.nav-header {
+.nav > .nav-header {
   display: inline;
 }
 
-.nav>.nav-header>.nav-title {
+.nav > .nav-header > .nav-title {
   display: inline-block;
   font-size: 22px;
   color: #000;
   padding: 10px 10px 10px 100px;
 }
 
-.nav>.nav-btn {
+.nav > .nav-btn {
   display: none;
 }
 
-.nav>.nav-links {
+.nav > .nav-links {
   display: inline-flex;
   align-items: center;
   float: right;
@@ -56,18 +56,18 @@
   padding: 10px 200px 0px 0px;
 }
 
-.nav>.nav-links>a {
+.nav > .nav-links > a {
   display: inline-block;
   padding: 13px 10px 13px 10px;
   text-decoration: none;
   color: #efefef;
 }
 
-.nav>.nav-links>a:hover {
+.nav > .nav-links > a:hover {
   background-color: #fff;
 }
 
-.nav>#nav-check {
+.nav > #nav-check {
   display: none;
 }
 
@@ -86,17 +86,79 @@ svg:hover {
   cursor: pointer;
 }
 
+.dropdown {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  height: 56px;
+  width: 50px;
+  z-index: 10001;
 
+}
 
-@media (max-width:600px) {
-  .nav>.nav-btn {
+.dropdown img {
+  width: 25px;
+  height: 25px;
+  object-fit: cover;
+  border-radius: 100%;
+}
+
+.dropdown-content {
+  visibility: hidden;
+  position: absolute;
+  margin-top: 100px;
+  box-shadow: 0px 3px 16px 0px rgba(0, 0, 0, 0.2);
+  padding: 5px 0px;
+  background-color: white;
+  border-radius: 10px;
+  z-index: 999;
+  opacity: 0;
+  transition: opacity 100ms ease;
+}
+
+.dropdown:hover .dropdown-content {
+  visibility: visible;
+  opacity: 1;
+
+}
+
+.lang-item {
+  cursor: pointer;
+  display: flex;
+  list-style: none;
+  justify-items: center;
+  align-items: center;
+  width: 100%;
+  padding: 5px 10px;
+  color: rgb(83, 83, 83);
+  font-size: 15px;
+  transition: background-color 100ms ease;
+}
+
+.lang-item:hover{
+  background-color: rgb(211, 211, 211);
+}
+
+.lang-item img {
+  width: 23px;
+  height: 23px;
+  object-fit: cover;
+  border-radius: 100%;
+  margin-right: 15px;
+}
+
+@media (max-width: 600px) {
+  .nav > .nav-btn {
     display: inline-block;
     position: absolute;
     right: 0px;
     top: 0px;
   }
 
-  .nav>.nav-btn>label {
+  .nav > .nav-btn > label {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -106,8 +168,8 @@ svg:hover {
     padding: 13px;
   }
 
-  .nav>.nav-btn>label:hover,
-  .nav #nav-check:checked~.nav-btn>label {
+  .nav > .nav-btn > label:hover,
+  .nav #nav-check:checked ~ .nav-btn > label {
     background-color: #ff8e01;
     display: flex;
     flex-direction: column;
@@ -115,7 +177,7 @@ svg:hover {
     align-items: center;
   }
 
-  .nav>.nav-btn>label>span {
+  .nav > .nav-btn > label > span {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -124,11 +186,11 @@ svg:hover {
     border-top: 3px solid #eee;
   }
 
-  .nav>.nav-links {
+  .nav > .nav-links {
     position: absolute;
     display: block;
     width: 100%;
-    background-color: #FAFAFA;
+    background-color: #fafafa;
     height: 0px;
     transition: all 0.3s ease-in;
     overflow-y: hidden;
@@ -136,18 +198,18 @@ svg:hover {
     left: 0px;
   }
 
-  .nav>.nav-links>a {
+  .nav > .nav-links > a {
     display: block;
     width: 100%;
     display: flex;
     justify-content: flex-start;
   }
 
-  .nav>#nav-check:not(:checked)~.nav-links {
+  .nav > #nav-check:not(:checked) ~ .nav-links {
     height: 0px;
   }
 
-  .nav>#nav-check:checked~.nav-links {
+  .nav > #nav-check:checked ~ .nav-links {
     height: calc(100vh - 50px);
     overflow-y: auto;
     display: flex;
@@ -159,5 +221,20 @@ svg:hover {
   #mlh-trust-badge {
     width: 100px;
     left: 0px;
+  }
+
+  .dropdown{
+    align-items: start;
+    width: 100%;
+    padding-left: 15px;
+  }
+
+  .lang-item{
+    font-size: 15px !important;
+  }
+
+  .lang-item img{
+    width: 20px;
+    height: 20px;
   }
 }
