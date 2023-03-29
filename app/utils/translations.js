@@ -3,7 +3,7 @@ import { Language } from "./language";
 class TranslationService {
   LANGUAGE_KEY = "selectedLanguage";
 
-  language = Language.ES;
+  language = new Language();
 
   async loadLanguage() {
     const languageJson = localStorage.getItem(this.LANGUAGE_KEY);
