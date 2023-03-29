@@ -11,6 +11,7 @@ export class Language {
   content;
 
   getString(key1, ...args) {
+    if(this.content == null) return "..."
     let value;
 
     const keys = key1.split(".");

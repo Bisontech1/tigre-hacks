@@ -41,8 +41,6 @@ export default function Home() {
     loadLanguage();
   }, []);
 
-  if (language == null) return <div></div>;
-
   return (
     <TranslationContext.Provider value={language}>
       <style jsx global>{`
@@ -50,9 +48,12 @@ export default function Home() {
           font-family: ${inter.style.fontFamily};
         }
       `}</style>
-      <Nav changeLanguage={(language)=>{
-        changeLanguage(language)
-      }}/>
+
+      <Nav
+        changeLanguage={(language) => {
+          changeLanguage(language);
+        }}
+      />
       <Hero />
       <MapWithNoSSR />
       <What />
