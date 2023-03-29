@@ -7,11 +7,11 @@ const What = () => {
   return (
     <section className="what">
       <div className="text-desc">
-        <h3>{language.getString("mainInfo.title")}</h3>
+        <h3>{language?.getString("mainInfo.title")}</h3>
         <p className="description">
-          {language.getString("mainInfo.description1")}{" "}
-          <b>{language.getString("mainInfo.description2")}</b>{" "}
-          {language.getString("mainInfo.description3")}
+          {language?.getString("mainInfo.description1")}{" "}
+          <b>{language?.getString("mainInfo.description2")}</b>{" "}
+          {language?.getString("mainInfo.description3")}
         </p>
       </div>
       <div className="right">

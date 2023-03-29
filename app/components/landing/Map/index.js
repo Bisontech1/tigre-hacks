@@ -16,7 +16,7 @@ export default function Map() {
 
   return (
     <section className="map-container">
-      <h3>{language.getString("map.title")}</h3>
+      <h3>{language?.getString("map.title")}</h3>
       <div className="map">
         <MapContainer
           center={{ lat: 25.72678, lng: -100.31368 }}
@@ -34,7 +34,7 @@ export default function Map() {
           </Marker>
         </MapContainer>
       </div>
-      <p>{language.getString("map.place")}</p>
+      <p>{language?.getString("map.place")}</p>
     </section>
   );
 }

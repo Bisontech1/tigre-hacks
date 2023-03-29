@@ -12,55 +12,55 @@ const Footer = () => {
           {/*  for company name and description */}
           <div className="footer-items">
             <img src="logo.png" className="footer-logo" loading="lazy" />
-            <p>{language.getString("footer.label")}</p>
+            <p>{language?.getString("footer.label")}</p>
           </div>
           {/*  for quick links  */}
           <div className="footer-items">
-            <h3>{language.getString("footer.quickLinks.title")}</h3>
+            <h3>{language?.getString("footer.quickLinks.title")}</h3>
             <div className="border1" /> {/*for the underline */}
             <ul>
               <a href="#">
-                <li>{language.getString("footer.quickLinks.whatIs")}</li>
+                <li>{language?.getString("footer.quickLinks.whatIs")}</li>
               </a>
               <a href="#">
                 <li>
-                  {language.getString("footer.quickLinks.whyParticipate")}
+                  {language?.getString("footer.quickLinks.whyParticipate")}
                 </li>
               </a>
               <a href="#">
-                <li>{language.getString("footer.quickLinks.sponsors")}</li>
+                <li>{language?.getString("footer.quickLinks.sponsors")}</li>
               </a>
               <a href="#">
-                <li>{language.getString("footer.quickLinks.contact")}</li>
+                <li>{language?.getString("footer.quickLinks.contact")}</li>
               </a>
             </ul>
           </div>
           {/*  for some other links */}
           <div className="footer-items">
-            <h3>{language.getString("footer.codeOfConduct.title")}</h3>
+            <h3>{language?.getString("footer.codeOfConduct.title")}</h3>
             <div className="border1" /> {/*for the underline */}
             <ul>
               <a href="#">
-                <li>{language.getString("footer.codeOfConduct.link")}</li>
+                <li>{language?.getString("footer.codeOfConduct.link")}</li>
               </a>
             </ul>
           </div>
           {/*  for contact us info */}
           <div className="footer-items">
-            <h3>{language.getString("footer.contactUs.title")}</h3>
+            <h3>{language?.getString("footer.contactUs.title")}</h3>
             <div className="border1" />
             <ul>
               <li>
                 <i className="fa fa-map-marker" aria-hidden="true" />
-                {language.getString("footer.contactUs.place")}
+                {language?.getString("footer.contactUs.place")}
               </li>
               <li>
                 <i className="fa fa-phone" aria-hidden="true" />
-                {language.getString("footer.contactUs.phoneNumber")}
+                {language?.getString("footer.contactUs.phoneNumber")}
               </li>
               <li>
                 <i className="fa fa-envelope" aria-hidden="true" />
-                {language.getString("footer.contactUs.email")}
+                {language?.getString("footer.contactUs.email")}
               </li>
             </ul>
             {/*   for social links */}
@@ -79,7 +79,7 @@ const Footer = () => {
         </div>
         {/*   Footer Bottom start  */}
         <div className="footer-bottom">
-          {language.getString("footer.copyright")}
+          {language?.getString("footer.copyright")}
         </div>
       </div>
       {/*   Footer Bottom end */}

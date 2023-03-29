@@ -7,7 +7,7 @@ const Why = () => {
   return (
     <section className="why">
       <div className="row" style={{ alignItems: "center" }} id="why-title">
-        <h3>{language.getString("whyParticipate.title")}</h3>
+        <h3>{language?.getString("whyParticipate.title")}</h3>
         <img
           src="circle.png"
           style={{ width: 100 }}
@@ -17,9 +17,9 @@ const Why = () => {
       </div>
       <div className="row">
         <div className="left">
-          <h3>{language.getString("whyParticipate.winAwesomePrizes.title")}</h3>
+          <h3>{language?.getString("whyParticipate.winAwesomePrizes.title")}</h3>
           <p>
-            {language.getString("whyParticipate.winAwesomePrizes.description")}
+            {language?.getString("whyParticipate.winAwesomePrizes.description")}
           </p>
         </div>
         <div className="right">
@@ -57,17 +57,17 @@ const Why = () => {
           </div>
         </div>
         <div className="left">
-          <h3>{language.getString("whyParticipate.haveFunCompeting.title")}</h3>
+          <h3>{language?.getString("whyParticipate.haveFunCompeting.title")}</h3>
           <p>
-            {language.getString("whyParticipate.haveFunCompeting.description")}
+            {language?.getString("whyParticipate.haveFunCompeting.description")}
           </p>
         </div>
       </div>
       <div className="row">
         <div className="left">
-          <h3>{language.getString("whyParticipate.hackRealProblem.title")}</h3>
+          <h3>{language?.getString("whyParticipate.hackRealProblem.title")}</h3>
           <p>
-            {language.getString("whyParticipate.hackRealProblem.description")}
+            {language?.getString("whyParticipate.hackRealProblem.description")}
           </p>
         </div>
         <div className="right">
@@ -110,10 +110,10 @@ const Why = () => {
         </div>
         <div className="left">
           <h3>
-            {language.getString("whyParticipate.moreThanAHackathon.title")}
+            {language?.getString("whyParticipate.moreThanAHackathon.title")}
           </h3>
           <p>
-            {language.getString(
+            {language?.getString(
               "whyParticipate.moreThanAHackathon.description"
             )}
           </p>

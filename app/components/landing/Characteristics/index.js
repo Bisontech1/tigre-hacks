@@ -19,8 +19,8 @@ const Characteristics = () => {
         </div>
         <div className="info-container">
           <p className="info">
-            <b>{language.getString("mainInfo.hackerFriendly.title")}</b> <br />
-            {language.getString("mainInfo.hackerFriendly.description")}
+            <b>{language?.getString("mainInfo.hackerFriendly.title")}</b> <br />
+            {language?.getString("mainInfo.hackerFriendly.description")}
           </p>
         </div>
       </div>
@@ -37,8 +37,8 @@ const Characteristics = () => {
         </div>
         <div className="info-container">
           <p className="info">
-            <b>{language.getString("mainInfo.safeSpace.title")}</b> <br />
-            {language.getString("mainInfo.safeSpace.description")}
+            <b>{language?.getString("mainInfo.safeSpace.title")}</b> <br />
+            {language?.getString("mainInfo.safeSpace.description")}
           </p>
         </div>
       </div>
@@ -55,8 +55,9 @@ const Characteristics = () => {
         </div>
         <div className="info-container">
           <p className="info">
-            <b>{language.getString("mainInfo.networkWithOther.title")}</b> <br />
-            {language.getString("mainInfo.networkWithOther.description")}
+            <b>{language?.getString("mainInfo.networkWithOther.title")}</b>{" "}
+            <br />
+            {language?.getString("mainInfo.networkWithOther.description")}
           </p>
         </div>
       </div>

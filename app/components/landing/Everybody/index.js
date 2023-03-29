@@ -8,7 +8,7 @@ const Everybody = () => {
     <section className="everybody">
       <div className="row" style={{ alignItems: "center" }}>
         <h3 style={{ margin: "0px 50px 0px 0px" }}>
-          {language.getString("everyoneCanParticipate.title")}
+          {language?.getString("everyoneCanParticipate.title")}
         </h3>
         <img
           src="cute cat.png"
@@ -19,28 +19,28 @@ const Everybody = () => {
       </div>
       <div className="row" style={{ maxWidth: "1000px" }}>
         <div className="item">
-          {language.getString("everyoneCanParticipate.medics")}
+          {language?.getString("everyoneCanParticipate.medics")}
         </div>
         <div className="item">
-          {language.getString("everyoneCanParticipate.biologists")}
+          {language?.getString("everyoneCanParticipate.biologists")}
         </div>
         <div className="item">
-          {language.getString("everyoneCanParticipate.engineers")}
+          {language?.getString("everyoneCanParticipate.engineers")}
         </div>
         <div className="item">
-          {language.getString("everyoneCanParticipate.acountants")}
+          {language?.getString("everyoneCanParticipate.acountants")}
         </div>
         <div className="item">
-          {language.getString("everyoneCanParticipate.scientists")}
+          {language?.getString("everyoneCanParticipate.scientists")}
         </div>
         <div className="item">
-          {language.getString("everyoneCanParticipate.entrepeneurs")}
+          {language?.getString("everyoneCanParticipate.entrepeneurs")}
         </div>
         <div className="item">
-          {language.getString("everyoneCanParticipate.architects")}
+          {language?.getString("everyoneCanParticipate.architects")}
         </div>
         <div className="item">
-          {language.getString("everyoneCanParticipate.recentGraduates")}
+          {language?.getString("everyoneCanParticipate.recentGraduates")}
         </div>
       </div>
       <div className="row" id="first-time-cat" style={{ maxWidth: 1200 }}>
@@ -48,7 +48,7 @@ const Everybody = () => {
           <img src="greetings.png" alt="Your Image" loading="lazy" />
         </div>
         <div className="right-column" id="first-time">
-          <p>{language.getString("everyoneCanParticipate.firstTime")}</p>
+          <p>{language?.getString("everyoneCanParticipate.firstTime")}</p>
         </div>
       </div>
     </section>

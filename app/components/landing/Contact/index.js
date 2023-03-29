@@ -27,22 +27,22 @@ const Contact = () => {
             textAlign: "center",
           }}
         >
-          <h2>{language.getString("contact.title")}</h2>
-          <p>{language.getString("contact.description")}</p>
-          <h3>{language.getString("contact.newsLetter")}</h3>
-          <p>{language.getString("contact.newsLetterLabel")}</p>
+          <h2>{language?.getString("contact.title")}</h2>
+          <p>{language?.getString("contact.description")}</p>
+          <h3>{language?.getString("contact.newsLetter")}</h3>
+          <p>{language?.getString("contact.newsLetterLabel")}</p>
           <form action="#">
             <label htmlFor="email">
-              {language.getString("contact.emailForm.label")}
+              {language?.getString("contact.emailForm.label")}
             </label>
             <input
               type="email"
               id="email"
               name="email"
-              placeholder={language.getString("contact.emailForm.placeholder")}
+              placeholder={language?.getString("contact.emailForm.placeholder")}
             />
             <button type="submit">
-              {language.getString("contact.emailForm.submit")}
+              {language?.getString("contact.emailForm.submit")}
             </button>
           </form>
         </div>

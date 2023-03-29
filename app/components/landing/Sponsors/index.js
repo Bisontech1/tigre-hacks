@@ -5,14 +5,14 @@ const Sponsors = () => {
   const language = React.useContext(TranslationContext);
   return (
     <section className="sponsors">
-      <h3>{language.getString("sponsors.title")}</h3>
+      <h3>{language?.getString("sponsors.title")}</h3>
       <p>
-        {language.getString("sponsors.label")}{" "}
+        {language?.getString("sponsors.label")}{" "}
         <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank">
-          {language.getString("sponsors.howToBecomeSponsor")}
+          {language?.getString("sponsors.howToBecomeSponsor")}
         </a>
       </p>
-      <h4>{language.getString("sponsors.poweredBy")}</h4>
+      <h4>{language?.getString("sponsors.poweredBy")}</h4>
       <img
         src="sponsors/chubb.png"
         className="chubb"
