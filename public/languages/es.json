@@ -40,7 +40,7 @@
         "title": "¿Por qué debería de participar?",
         "winAwesomePrizes": {
             "title": "¡Gana premios increíbles!",
-            "description": "¡Cada hacker merece un premio por un increíble hack! Este año estaremos dando más de 5,5000 dólares en premios."
+            "description": "¡Cada hacker merece un premio por un increíble hack! Este año estaremos dando más de 8,000 dólares en premios."
         },
         "haveFunCompeting": {
             "title": "¡Diviértete compitiendo!",
@@ -71,25 +71,25 @@
         "title": "Sponsors",
         "label": "¡Nos encantaría tenerte en nuestro Hack!",
         "howToBecomeSponsor": "¿Cómo convertirse en sponsor?",
-        "poweredBy": "Tigre Hacks está desarrollado por"
+        "poweredBy": "Tigre Hacks es impulsado por"
     },
     "faq": {
         "title": "Preguntas Frecuentes",
         "whatIsAHackathon": {
             "question": "¿Qué es un Hackathon?",
-            "answer": "Es un maratón de programación en donde los participantes desarrollan un proyecto en 24 hasta 36 horas continuas, adquiriendo conocimiento y probando sus habilidades, mientras colaboran en un ambiente multidisciplinario. "
+            "answer": "Es un maratón de programación en donde los participantes desarrollan un proyecto en más de 24 horas continuas, adquiriendo conocimiento y probando sus habilidades, mientras colaboran en un ambiente multidisciplinario. "
         },
         "neverParticipated": {
             "question": "¿Qué pasa si nunca he participado en un Hackathon?",
-            "answer": "¡No hay problema! Esa es la mejor razón para unirte y probar algo nuevo, ya que Hackville recluta personas de todos los niveles de experiencia. Tenemos workshops, mentores y otros recursos para apoyarte durante el evento."
+            "answer": "¡No hay problema! Esa es la mejor razón para unirte y probar algo nuevo, ya que Tigre Hacks recluta personas de todos los niveles de experiencia. Tenemos workshops, mentores y otros recursos para apoyarte durante el evento."
         },
         "whenAndWhere": {
             "question": "¿Cuándo y dónde?",
-            "answer": "Tigre Hacks empieza el viernes 28 de abril a las 5:00 PM CT y termina el domingo 30 de abril a las 5:00 PM CT. Este hackathon se llevará a cabo en Polideportivo Tigres” in C. Francisco Villa S/N, Ex Hacienda el Cañada, 66050 Cd Gral Escobedo, N.L."
+            "answer": "Tigre Hacks empieza el viernes 26 de mayo a las 5:00 PM CT y termina el domingo 28 de mayo a las 5:00 PM CT. Este hackathon se llevará a cabo en Polideportivo FIME en Polideportivo, Pedro de Alba, Niños Héroes, Ciudad Universitaria, San Nicolás de los Garza, N.L"
         },
         "shouldIHaveATeam": {
             "question": "¿Debo tener un equipo?",
-            "answer": "Puedes llegar al hack con un equipo ya formado de 4 personas, pero te recomendamos juntarte con personas que no conozcas. Estaremos realizando sesiones de formación de equipos para aquellos que estén buscando compañeros."
+            "answer": "Puedes llegar al hack con un equipo ya formado de 4 personas, pero te recomendamos juntarte con personas que no conozcas. Estaremos realizando sesiones de formación de equipos para aquellos que estén buscando compañeros antes del Hackathon. Así mismo para que tu experiencia en el hackathon sea la mejor te recomendamos que tu equipo sea multidisciplinario y que muchos generos integren a tu equipo."
         },
         "canIAssist": {
             "question": "¿Puedo asistir si no sé programar?",
@@ -97,7 +97,7 @@
         },
         "howMuchDoesItCost": {
             "question": "¿Cuánto cuesta?",
-            "answer": "Aplicar y asistir a Tigre Hacks es completamente gratis—¡Así es $0! Buscamos hacer nuestro hackathon lo más accesible posible, también tendrás acceso a mentores, talleres y premios sin costo extra."
+            "answer": "Aplicar y asistir a Tigre Hacks es completamente gratis ¡Así es $0 MXN! Buscamos hacer nuestro hackathon lo más accesible posible, también tendrás acceso a mentores, talleres y premios sin costo extra."
         },
         "oldProject": {
             "question": "¿Puedo utilizar un proyecto que haya hecho antes?",
@@ -105,7 +105,7 @@
         },
         "whenCanIApply": {
             "question": "¿Cuándo puedo aplicar?",
-            "answer": "Las aplicaciones se abriran pronto. ¡Recuerda aplicar lo más pronto posible para asegurar un lugar en el hackathon!"
+            "answer": "Las aplicaciones se abriran pronto durante el mes de Abril. ¡Recuerda aplicar lo más pronto posible para asegurar un lugar en el hackathon!"
         },
         "whatShouldIBring": {
             "question": "¿Qué debería de llevar al hackathon?",
@@ -113,23 +113,23 @@
         },
         "prizes": {
             "question": "¿Habrá premios?",
-            "answer": "¡Sí! Habrá un premio grande y ganadores novatos para cada tracks. Para los ganadores de los track, la recompensa será una donación a tu nombre a alguna caridad, también habrán muchos premios ofrecios por las compañías sponsor. Estos premios suelen tener el requerimiento de incorporar alguna tecnología en específico en tu proyecto."
+            "answer": "¡Sí! Habran premios para todos y tendremos premios principales para los mejores 3 hacks del hackathon. Nuestros sponsors tambien estarán dando premios para los participantes. Estos premios suelen tener el requerimiento de incorporar alguna tecnología en específico en tu proyecto."
         },
         "events": {
             "question": "¿Qué tipo de eventos habrá durante el hackathon?",
-            "answer": "Estamos planenado organizar una gran variedad de talleres para que los hackers puedan aprovechar al máximo el evento. ¡Espera sesiones con mentorías, talleres y mucho más!"
+            "answer": "Estamos planenado organizar una gran variedad de talleres para que los hackers puedan aprovechar al máximo el evento. ¡Espera sesiones con mentorías, talleres, minijuegos, karaoke por la noche y mucho más!"
         },
         "freeFood": {
             "question": "¿Habrá comida gratis?",
-            "answer": "Puedes esperar mucha comida y sncacks para todos los hackers que participen en el hackathon. Estaremos ofreciendo opciones veganas para aquellos que así lo prefieran, también puedes traer tu propia comida."
+            "answer": "Puedes esperar mucha comida y sncacks para todos los hackers que participen en el hackathon. Estaremos ofreciendo opciones veganas para aquellos que así lo prefieran, también puedes traer tu propia comida si así lo deseas. En nuestra página de registro hay un apartado para que nos hagas saber si eres alergico a algún alimento o tienes una restricción alimenticia para que hagamos de tu experiencia la mejor."
         },
         "categories": {
             "question": "¿Habrá diferentes categorías?",
-            "answer": "¡Sí! El hackathon tendrá diferentes categorías enfocadas en problemas del mundo real en Monterrey."
+            "answer": "¡Sí! El hackathon tendrá diferentes categorías enfocadas en problemas del mundo real en Monterrey. Así mismo algunos de nuestros patrocinadores tendran su propia categoria en el hackathon y daran premios exclusivos para su categoria."
         },
         "moreQuestions": {
             "question": "¿Alguna otra pregunta?",
-            "answer": "¡No hay problema! Puedes enviarnos un mensaje a través de Facebook o Instagram, o bien enviar tu pregunta a aylin.galindo@tigrehacks.com. Estaremos encantados de contestar todas tus preguntas."
+            "answer": "¡No hay problema! Puedes enviarnos un mensaje a través de Facebook o Instagram, o bien enviar tu pregunta a bisontech0@gmail.com. Estaremos encantados de contestar todas tus preguntas."
         }
     },
     "contact": {
@@ -160,8 +160,8 @@
             "title": "Contáctanos",
             "email": "bisontech0@gmail.com",
             "place": "Facultad de Ciencias Fisico Matematicas, Ciudad Universitaria San Nicolas De Los Garza, Nuevo León",
-            "phoneNumber": "+528183294030"
+            "phoneNumber": "+529213043932"
         },
-        "copyright": "Copyright © Bisontech 2023."
+        "copyright": "Copyright © Bisontech 2023. Made with </> 🤍 by Bisontech"
     }
 }

@@ -40,7 +40,7 @@
         "title": "Why you should participate?",
         "winAwesomePrizes": {
             "title": "Win Awesome Prizes!",
-            "description": "Every hacker deserves a prize for an amazing hack! This year we'll be giving more than 5,500 USD worth in prizes"
+            "description": "Every hacker deserves a prize for an amazing hack! This year we'll be giving more than 8,000 USD worth in prizes"
         },
         "haveFunCompeting": {
             "title": "Have Fun Competing!",
@@ -81,7 +81,7 @@
         },
         "neverParticipated": {
             "question": "What If I've Never Participated In a Hackathon?",
-            "answer": "No problem! That's the best reason to join us and try something new, as Hackville recruits people of all skill levels and experiences. We also have workshops, mentors, and other resources to support you during the event!"
+            "answer": "No problem! That's the best reason to join us and try something new, as Tigre Hacks recruits people of all skill levels and experiences. We also have workshops, mentors, and other resources to support you during the event!"
         },
         "whenAndWhere": {
             "question": "When and Where?",
@@ -113,11 +113,11 @@
         },
         "prizes": {
             "question": "Will There Be Prizes?",
-            "answer": "Yes! There will be grand prize and novice winners for each track. For these track winners, the reward is a donation under your name to charities and causes! In addition, there will also be many company-sponsored prizes. These often come with the requirement that you incorporate certain technologies into your project."
+            "answer": "Yes! There will be prizes for everyone and there will be 3 main prizes for the best hacks of the hackathon.  In addition, there will also be many company-sponsored prizes. These often come with the requirement that you incorporate certain technologies into your project."
         },
         "events": {
             "question": "What kind of events will be run in the Hack?",
-            "answer": "We're planning on organizing a wide range of workshops so that hackers can get the most out of the event! Look forward to sessions including mentorship, workshops, and more."
+            "answer": "We're planning on organizing a wide range of workshops so that hackers can get the most out of the event! Look forward to sessions including mentorship, workshops, mini games, karaoke nights and more."
         },
         "freeFood": {
             "question": "Will There Be Free Food?",
@@ -125,7 +125,7 @@
         },
         "categories": {
             "question": "Are there categories?",
-            "answer": "Yes!, the hackathon will have different category focusing in real-world problems in Monterrey."
+            "answer": "Yes!, the hackathon will have different category focusing in real-world problems in Monterrey. In adition some of our sponsors will be having their own categories with their own problems"
         },
         "moreQuestions": {
             "question": "Another Question?",
