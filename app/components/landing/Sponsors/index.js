@@ -13,12 +13,16 @@ const Sponsors = () => {
         </a>
       </p>
       <h4>{language?.getString("sponsors.poweredBy")}</h4>
+
+      {/* Main Sponsor */}
       <img
         src="sponsors/chubb.png"
         className="chubb"
         alt="Chubb seguros logo"
         loading="lazy"
       />
+
+      {/* Sponsors */}
       <div className="container">
         <div className="image-grid">
           <a className="image-container" href="https://aka.ms" target="_blank">
@@ -81,6 +85,109 @@ const Sponsors = () => {
           <a href="https://aws.com" target="_blank" className="image-container">
             <img src="sponsors/aws.png" alt="AWS logo" loading="lazy" />
           </a>
+        </div>
+      </div>
+
+      {/* Partners */}
+      <div className="container">
+        <div className="image-grid">
+
+          <a className="image-container" href="https://appwrite.com" target="_blank">
+            <img
+              src="sponsors/square-logo-pink.svg"
+              alt="AppWrite logo"
+              loading="lazy"
+            />
+          </a>
+
+          <a className="image-container" href="https://auth0.com" target="_blank">
+            <img
+              src="sponsors/auth0.svg"
+              alt="Auth0 logo"
+              loading="lazy"
+            />
+          </a>
+
+          <a className="image-container" href="https://avanade.com" target="_blank">
+            <img
+              src="sponsors/avanade.png"
+              alt="Avanade logo"
+              loading="lazy"
+            />
+          </a>
+
+          <a className="image-container" href="https://capitalone.com" target="_blank">
+            <img
+              src="sponsors/capitalone.png"
+              alt="Capital One logo"
+              loading="lazy"
+            />
+          </a>
+
+          <a className="image-container" href="https://cockroachlabs.com" target="_blank">
+            <img
+              src="sponsors/cockroachdb.png"
+              alt="Cockroach DB logo"
+              loading="lazy"
+            />
+          </a>
+
+          <a className="image-container" href="https://cohere.ai" target="_blank">
+            <img
+              src="sponsors/cohere.png"
+              alt="Cohere logo"
+              loading="lazy"
+            />
+          </a>
+
+          <a className="image-container" href="https://domain.com" target="_blank">
+            <img
+              src="sponsors/domain.png"
+              alt="Domain.com logo"
+              loading="lazy"
+            />
+          </a>
+
+          <a className="image-container" href="https://cloud.google.com" target="_blank">
+            <img
+              src="sponsors/gcp.png"
+              alt="Google Cloud Platform logo"
+              loading="lazy"
+            />
+          </a>
+
+          <a className="image-container" href="https://hedera.com" target="_blank">
+            <img
+              src="sponsors/hedera_logo.png"
+              alt="Hedera logo"
+              loading="lazy"
+            />
+          </a>
+
+          <a className="image-container" href="https://synk.com" target="_blank">
+            <img
+              src="sponsors/synk.png"
+              alt="Synk logo"
+              loading="lazy"
+            />
+          </a>
+
+          <a className="image-container" href="https://twillio.com" target="_blank">
+            <img
+              src="sponsors/twillio.png"
+              alt="Twillio logo"
+              loading="lazy"
+            />
+          </a>
+
+          <a className="image-container" href="https://wix.com" target="_blank">
+            <img
+              src="sponsors/wix.png"
+              alt="Wix logo"
+              loading="lazy"
+            />
+          </a>
+
         </div>
       </div>
     </section>
