@@ -1,8 +1,8 @@
-import {Grid, TextField, FormControl, InputLabel, Select, MenuItem} from '@mui/material'
+import { Grid, TextField, FormControl, InputLabel, Select, MenuItem, Typography } from '@mui/material'
 import PDFDropzone from '../PdfDropzone';
 
 const PersonalData = (props) => {
-    const {gender, setGender, pronoun, setPronoun, universities, setUniversities, handleUniversityChange, selectedUniversity} = props;
+    const { gender, setGender, pronoun, setPronoun, universities, setUniversities, handleUniversityChange, selectedUniversity } = props;
     return (
         <>
             <Grid container
@@ -99,9 +99,19 @@ const PersonalData = (props) => {
                         )}
                     </FormControl>
                 </Grid>
-                <Grid container justifyContent='center' alignItems='center'>
+                <Grid container justifyContent='center' alignItems='center' sx={{ margin: '50px 0px' }}>
                     <Grid item sx={{ width: '100%' }}>
                         <PDFDropzone />
+                    </Grid>
+                    <Grid item sx={{ width: '100%', display: 'flex', flexDirection: 'column', alignItems:'center', color:'#868686', '& a': { color: 'orange' } }}>
+                        <Typography>
+                            ¿No tienes un CV/Résumé? Aprende a crear el tuyo con &nbsp;
+                            <a>Proyecto Nutria</a>
+                        </Typography>
+                        <Typography>
+                            ó Escucha el Podcast de &nbsp;
+                             <a>Hireline.io & Don Chambitas</a>
+                        </Typography>
                     </Grid>
                 </Grid>
             </Grid>

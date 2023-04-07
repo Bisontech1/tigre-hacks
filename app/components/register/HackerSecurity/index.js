@@ -13,7 +13,7 @@ const HackerSecurity = (props) => {
     const gridSX = {display:'flex', alignItems:'center'}
 
     return (
-        <Grid container direction="column" alignItems="flex-start">
+        <Grid container direction="column" alignItems="flex-start" sx={{ marginBottom: '100px' }}>
 
             <Grid item xs={12} sx={gridSX}>
                 <Checkbox />

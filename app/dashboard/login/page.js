@@ -1,6 +1,8 @@
+"use client";
+import SignIn from "../../components/Login/SignIn";
 const Login = () => {
     return (
-        <h1>Login</h1>
+        <SignIn/>
     )
 }
-return Login;
+export default Login;
