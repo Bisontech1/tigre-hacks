@@ -1,0 +1,26 @@
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: hsl(0, 0%, 98%);
+    height: 100%;
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+    
+}
+
+
+@media (max-width: 800px) {
+    .form{
+        width: 600px ;
+    }
+}
+
+@media (max-width: 425px) {
+    .form{
+        width: 300px ;
+    }
+}

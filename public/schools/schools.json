@@ -1,0 +1,19 @@
+{
+    "universidades": [
+        {
+            "nombre": "Universidad Nacional Autónoma de México"
+        },
+        {
+            "nombre": "Instituto Tecnológico de Monterrey"
+        },
+        {
+            "nombre": "Instituto Politécnico Nacional"
+        },
+        {
+            "nombre": "Universidad Autónoma de Nuevo León"
+        },
+        {
+            "nombre": "Universidad de Guadalajara"
+        }
+    ]
+}

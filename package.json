@@ -9,14 +9,20 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@emotion/react": "^11.10.6",
+    "@emotion/styled": "^11.10.6",
+    "@mui/lab": "^5.0.0-alpha.125",
+    "@mui/material": "^5.11.16",
     "create-next-app": "^13.2.4",
     "eslint": "8.36.0",
     "eslint-config-next": "13.2.4",
     "leaflet": "^1.9.3",
     "next": "13.2.4",
+    "papaparse": "^5.4.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-leaflet": "^4.2.1",
+    "react-papaparse": "^4.1.0",
     "react-social-media-embed": "^2.3.4"
   }
 }
