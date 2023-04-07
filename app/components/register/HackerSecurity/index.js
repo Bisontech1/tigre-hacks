@@ -10,23 +10,25 @@ const HackerSecurity = (props) => {
         setUniversities,
         handleUniversityChange,
         selectedUniversity } = props;
-    const gridSX = {display:'flex', alignItems:'center'}
+    const gridSX = { display: 'flex', alignItems: 'flex-start', margin: '20px 0px' }
 
     return (
-        <Grid container direction="column" alignItems="flex-start" sx={{ marginBottom: '100px' }}>
+        <Grid container direction="column" 
+        alignItems="flex-start" 
+        sx={{ marginBottom: '100px', '& .MuiTypography-root':{ marginTop:'10px', color:'#6D6D6D'}, '& a':{ color:'orange'},}}>
 
             <Grid item xs={12} sx={gridSX}>
                 <Checkbox />
-                <Typography>He leído y estoy de acuerdo con el <a>código de conducta de la MLH</a></Typography>
+                <Typography>He leído y estoy de acuerdo con el <a href="https://static.mlh.io/docs/mlh-code-of-conduct.pdf">código de conducta de la MLH</a></Typography>
             </Grid>
             <Grid item xs={12} sx={gridSX}>
                 <Checkbox />
                 <Typography>
                     Autorizo el compartir la información de mi solicitud/inscripción con
-                    la <a>Major League Hacking</a> para la administración del evento,
+                    la <a href="https://mlh.io">Major League Hacking</a> para la administración del evento,
                     la clasificación y la administración de MLH de acuerdo con
-                    la <a>Política de Privacidad de la MLH</a>. Además, acepto los términos de los
-                    <a>Términos y Condiciones del Concurso</a> de MLH y la <a>Política de Privacidad de MLH. </a><b>*</b>
+                    la <a href="https://mlh.io/privacy">Política de Privacidad de la MLH</a>. Además, acepto los términos de los
+                    <a href="https://mlh.io/terms">Términos y Condiciones del Concurso</a> de MLH y la <a href="https://mlh.io/privacy">Política de Privacidad de MLH. </a><b>*</b>
                 </Typography>
             </Grid>
             <Grid item xs={12} sx={gridSX}>

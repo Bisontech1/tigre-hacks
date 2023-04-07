@@ -60,7 +60,7 @@ const PersonalData = (props) => {
                         <Select
                             value={gender}
                             label="Genero"
-                            onChange={(e) => setPronoun(e.target.value)}
+                            onChange={(e) => setGender(e.target.value)}
                         >
                             <MenuItem value="Man">Man</MenuItem>
                             <MenuItem value="Woman">Woman</MenuItem>
@@ -103,14 +103,14 @@ const PersonalData = (props) => {
                     <Grid item sx={{ width: '100%' }}>
                         <PDFDropzone />
                     </Grid>
-                    <Grid item sx={{ width: '100%', display: 'flex', flexDirection: 'column', alignItems:'center', color:'#868686', '& a': { color: 'orange' } }}>
+                    <Grid item sx={{ marginTop:'10px',width: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center', color: '#868686', '& a': { color: 'orange' } }}>
                         <Typography>
                             ¿No tienes un CV/Résumé? Aprende a crear el tuyo con &nbsp;
-                            <a>Proyecto Nutria</a>
+                            <a href="https://akotadi.notion.site/Materials-cad70d8407dd40d38c7d64c0bb4b518c">Proyecto Nutria</a>
                         </Typography>
                         <Typography>
                             ó Escucha el Podcast de &nbsp;
-                             <a>Hireline.io & Don Chambitas</a>
+                            <a href="https://www.youtube.com/watch?v=HNxvj3t3k2M&t=0s">Hireline.io & Don Chambitas</a>
                         </Typography>
                     </Grid>
                 </Grid>
