@@ -63,7 +63,7 @@ function PDFDropzone() {
         </div>
       ) : (
         <div className="dropzone-not-activated">
-          <img src='/gray-cross.png' className="dropzone-img" />
+          <img src='/gray-cross.png' className="dropzone-img" alt="gray cross logo" />
           <Typography variant="subtitle2" sx={{ alignSelf: 'flex-end' }}>CV/Resume</Typography>
         </div>
       )}

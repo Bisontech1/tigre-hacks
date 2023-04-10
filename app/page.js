@@ -39,7 +39,7 @@ export default function Home() {
 
   React.useEffect(() => {
     loadLanguage();
-  }, []);
+  });
 
   return (
     <TranslationContext.Provider value={language}>
