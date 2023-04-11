@@ -2,11 +2,12 @@ import "leaflet/dist/leaflet.css";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import L from "leaflet";
 import "./index.css";
-import { TranslationContext } from "../../../page";
 import React from "react";
+import { useTranslationContext } from "../../../layout";
 
 export default function Map() {
-  const language = React.useContext(TranslationContext);
+  const { language, setLanguage } = useTranslationContext();
+
 
   const icon = L.icon({
     iconUrl: "./tiger.png",

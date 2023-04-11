@@ -14,7 +14,6 @@ import { Inter } from "next/font/google";
 import "leaflet/dist/leaflet.css";
 
 import dynamic from "next/dynamic";
-import { translationService } from "./utils/translations";
 
 const MapWithNoSSR = dynamic(() => import("./components/landing/Map"), {
   ssr: false,
@@ -22,38 +21,16 @@ const MapWithNoSSR = dynamic(() => import("./components/landing/Map"), {
 
 const inter = Inter({ subsets: ["latin"] });
 
-export const TranslationContext = React.createContext();
-
 export default function Home() {
-  const [language, setLanguage] = React.useState(translationService.language);
-
-  const changeLanguage = async (language) => {
-    await translationService.changeLanguage(language);
-    setLanguage(translationService.language);
-  };
-
-  const loadLanguage = async () => {
-    await translationService.loadLanguage();
-    changeLanguage(translationService.language);
-  };
-
-  React.useEffect(() => {
-    loadLanguage();
-  });
-
   return (
-    <TranslationContext.Provider value={language}>
+    <>
       <style jsx global>{`
         * {
           font-family: ${inter.style.fontFamily};
         }
       `}</style>
 
-      <Nav
-        changeLanguage={(language) => {
-          changeLanguage(language);
-        }}
-      />
+      <Nav />
       <Hero />
       <MapWithNoSSR />
       <What />
@@ -64,6 +41,6 @@ export default function Home() {
       <Faq />
       <Contact />
       <Footer />
-    </TranslationContext.Provider>
+    </>
   );
 }

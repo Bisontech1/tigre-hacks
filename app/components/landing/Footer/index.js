@@ -1,8 +1,10 @@
 import React from "react";
 import { TranslationContext } from "../../../page";
 import "./index.css";
+import { useTranslationContext } from "../../../layout";
 const Footer = () => {
-  const language = React.useContext(TranslationContext);
+  const { language, setLanguage } = useTranslationContext();
+  
 
   return (
     <>
