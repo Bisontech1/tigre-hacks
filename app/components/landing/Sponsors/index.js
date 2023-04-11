@@ -1,7 +1,6 @@
 import React from "react";
-import { TranslationContext } from "../../../page";
 import "./index.css";
-import { useTranslationContext } from "../../../layout";
+import { useTranslationContext } from "contexts";
 const Sponsors = () => {
   const { language, setLanguage } = useTranslationContext();
   return (

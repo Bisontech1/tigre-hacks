@@ -1,5 +1,5 @@
 "use client";
-import SignIn from '../components/Login/SignIn'
+import SignIn from 'components/Login/SignIn'
 const Login = () => {
     return (
         <SignIn/>

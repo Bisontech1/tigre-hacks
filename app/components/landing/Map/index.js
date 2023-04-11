@@ -3,7 +3,7 @@ import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import L from "leaflet";
 import "./index.css";
 import React from "react";
-import { useTranslationContext } from "../../../layout";
+import { useTranslationContext } from "contexts";
 
 export default function Map() {
   const { language, setLanguage } = useTranslationContext();
