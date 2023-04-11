@@ -1,8 +1,7 @@
 import React from "react";
-import { TranslationContext } from "../../../page";
-import { Language } from "../../../utils/language";
+import { Language } from "utils/language";
 import "./index.css";
-import { useTranslationContext } from "../../../layout";
+import { useTranslationContext } from "contexts";
 const Nav = (props) => {
   const { language, setLanguage } = useTranslationContext();
 

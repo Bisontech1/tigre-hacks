@@ -1,8 +1,7 @@
 import "./index.css";
 import { InstagramEmbed } from "react-social-media-embed";
-import { TranslationContext } from "../../../page";
 import React from "react";
-import { useTranslationContext } from "../../../layout";
+import { useTranslationContext } from "contexts";
 
 const Contact = () => {
   const { language, setLanguage } = useTranslationContext();
