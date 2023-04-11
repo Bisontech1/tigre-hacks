@@ -1,8 +1,9 @@
 import React from "react";
 import { TranslationContext } from "../../../page";
 import "./index.css";
+import { useTranslationContext } from "../../../layout";
 const Sponsors = () => {
-  const language = React.useContext(TranslationContext);
+  const { language, setLanguage } = useTranslationContext();
   return (
     <section className="sponsors">
       <h3>{language?.getString("sponsors.title")}</h3>

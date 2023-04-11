@@ -1,8 +1,9 @@
 import React from "react";
 import { TranslationContext } from "../../../page";
 import "./index.css";
+import { useTranslationContext } from "../../../layout";
 const Why = () => {
-  const language = React.useContext(TranslationContext);
+  const { language, setLanguage } = useTranslationContext();
 
   return (
     <section className="why">
@@ -17,7 +18,9 @@ const Why = () => {
       </div>
       <div className="row">
         <div className="left">
-          <h3>{language?.getString("whyParticipate.winAwesomePrizes.title")}</h3>
+          <h3>
+            {language?.getString("whyParticipate.winAwesomePrizes.title")}
+          </h3>
           <p>
             {language?.getString("whyParticipate.winAwesomePrizes.description")}
           </p>
@@ -57,7 +60,9 @@ const Why = () => {
           </div>
         </div>
         <div className="left">
-          <h3>{language?.getString("whyParticipate.haveFunCompeting.title")}</h3>
+          <h3>
+            {language?.getString("whyParticipate.haveFunCompeting.title")}
+          </h3>
           <p>
             {language?.getString("whyParticipate.haveFunCompeting.description")}
           </p>
