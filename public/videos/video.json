@@ -1,0 +1,108 @@
+[
+    {
+        "src": "/videos/Facebook post - 1.png",
+        "name": "Hackathons 101",
+        "description": "Conoce a Ricardo Mirón y a Rodolfo Ferro ganadores del Hack Centro Fox, desarrolladores, emprendedores y lideres de la comunidad Future Lab. Si este es tu primer Hackathon, aprende todo lo que necesitas para sobrevivir a tu primer hackathon y preparate para disfrutar de la mejor forma esta nueva experiencia para tí ",
+        "url": "https://youtube.com",
+        "color":"#3F62BC"
+    },
+    {
+        "src": "/videos/Facebook post - 2.png",
+        "name": "Streamlit 101",
+        "description": "Conoce a David Pedroza y Missael Barco Físicos ganadores del Lince Hack, desarrolladores, lideres en la comunidad G.O.L.F y organizadores en Future Lab. Aprende como crear aplicaciones web interactivas con Python de forma rapida y sencillas, con las cuales podras implementar modelos de inteligencia artificial y combinarlos con tu aplicación web.",
+        "url": "https://youtube.com",
+        "color":"#FCD56C"
+    },
+    {
+        "src": "/videos/Facebook post - 3.png",
+        "name": "Data Collection",
+        "description": "Conoce a José Mireles, Desarrollador y actuarío en multiples aseguradoras internacionales. Aprende en este taller como recolectar datos que no son faciles de obtener y hacer gran uso de ellos con Web Scrapping y Python. Crea una aplicación con estos y despliegala a la internet.",
+        "url": "https://youtube.com",
+        "color":"#FF8E01"
+    },
+    {
+        "src": "/videos/Facebook post - 4.png",
+        "name": "Deploying AI Models",
+        "description": "Conoce a Zaid de Anda, Ing. en Aeronautica y ML Engineer en multiples empresas. Conoce todo acerca de como hacer accesibles tus modelos de inteligencia artificial, como subirlos a la web y como consumirlos desde cualquier aplicación.",
+        "url": "https://youtube.com",
+        "color":"#FCD56C"
+    },
+    {
+        "src": "/videos/Facebook post - 5.png",
+        "name": "Welcome to GitHub Codespaces",
+        "description": "Conoce a David Lázaro, Estudiante de Ciencias Computacionales y Fundador de Bisontech. Conoce la nueva herramienta de GitHub: Codespaces. Una alternativa a tu IDE la cual hace acccesible para todos la tarea de programar, desarrollar soluciones y crear aplicaciones con la nube. Familiarizate con todo lo que necesitas para crear tus ideas en este nuevo entorno y lleva al siguiente nivel tu creatividad.",
+        "url": "https://youtube.com",
+        "color":"#FF5145"
+    },
+    {
+        "src": "/videos/Facebook post - 6.png",
+        "name": "Evaluating Your Projects",
+        "description": "Conoce a Estefanía Saucedo, Estudiante de Computación y Program Manager en multiples empresas y organizaciones. El crear un nuevo proyecto en muy poco tiempo no es una tarea facil, aprende todo lo necesario para tomar las mejores decisiones en tu proyecto, aprende a evaluar sus potenciales, riesgos, pros y contras y la cantidad de valor que te da cada una de las desiciones que puedes tomar en este.",
+        "url": "https://youtube.com",
+        "color":"#A065FE"
+    },
+    {
+        "src": "/videos/Facebook post - 7.png",
+        "name": "ML Models 101",
+        "description": "Conoce a Andrea Arredondo, cientifica de datos en multiples empresas y impulsadoras de mujeres en STEM. La inteligencia artificial esta evolucionando de forma rapida y tenemos que aprender a crecer junto a ella, conoce todo lo que necesitas para crear tus primeros modelos de inteligencia artificial, donde conseguir los datos para su entrenamiento, como entrenarlos y verificar si sus predicciones son correctas.  ",
+        "url": "https://youtube.com",
+        "color":"#A065FE"
+    },
+    {
+        "src": "/videos/Facebook post - 8.png",
+        "name": "Creating Your Business Model",
+        "description": "Conoce a Sara Murillo, Gerente de ventas en multiples compañias, organizadora de la comunidad She ++ y impulsadora de mujeres en STEM. Todo proyecto necesita ser viable economicamente para poder ser llevado adelante. Conoce todo lo que necesitas para crear un modelo de negocios para que tu proyecto sea efectivo, solido y pueda lograr sus objetivos financieros. Aprende a identificar a tus clientes, identificar el valor y los diferenciadores de tu proyecto y la forma en la cual podras venderlo.",
+        "url": "https://youtube.com",
+        "color":"#A065FE"
+    },
+    {
+        "src": "/videos/Facebook post - 9.png",
+        "name": "Smiles & Hugs With HuiggingFace",
+        "description": "Conoce a Cynthia Castillo, Matematica , Gerente de Analsis en multiples empresas, divulgadora cientifica y impulsadora de mujeres en STEM. NLP ha llegado y esta para quedarse y evolucionar contigo, explorará cómo la tecnología de Hugging Face puede mejorar tus habilidades de procesamiento del lenguaje natural, y aprendere a utilizar herramientas como transformers y tokenizers para mejorar tus modelos de aprendizaje automático.",
+        "url": "https://youtube.com",
+        "color":"#A065FE"
+    },
+    {
+        "src": "/videos/Facebook post - 10.png",
+        "name": "Learn how to use GitHub",
+        "description": "Conoce a Leslie Saucedo, estudiante de Ciencias Computacionales y GitHub Campus Expert. Si quieres aprender a colaborar de forma eficiente proyectos con tu equipo, GitHub es tu plataforma. Conoce como trabajar de forma eficiente con GitHub, sus comandos basicos y como hacer del trabajo en equipo algo súper sencillo con esta plataforma. ",
+        "url": "https://youtube.com",
+        "color":"#A065FE"
+    },
+    {
+        "src": "/videos/Facebook post - 11.png",
+        "name": "Awesome Mobile Apps",
+        "description": "Conoce a Fernando Maldonado, estudiante de Ciencias computacionales, Desarrollador de apps moviles y Lider del Google Developer Student Clubs UANL. Crear aplicaciones moviles se ha vuelto muy sencillo con la gran cantidad de nuevas herramientas que tenemos en la actualidad, aprende como crear tu primer aplicación desde 0, las mejores practicas para la creación de tus aplicaciones, como hacerlas accesibles a cualquier dispositivo y como continuar con tu aprendizaje en el desarrolo movil.",
+        "url": "https://youtube.com",
+        "color":"#3FBC5D"
+    },
+    {
+        "src": "/videos/Facebook post - 12.png",
+        "name": "Rendering 3D Models",
+        "description": "Conoce a Aylin Galindo y Byran Duarte estudiantes de Multimedia y Animación Digital, desarrolladores y miembros de Bisontech. Crear renders 3D puede sonar a algo super dificil y complicado, pero es todo lo contrario. Conoce todo lo que necesitas para crear renders de espacios, objetos y personajes desde 0 y como exportarlos para que puedas usarlos en cualquiera de tus proyectos.",
+        "url": "https://youtube.com",
+        "color":"#3F62BC"
+    },
+    {
+        "src": "/videos/Facebook post - 13.png",
+        "name": "Data Visualization With IoT",
+        "description": "Conoce a Juan Carlos Valdéz, cientifico de datos en multiples empresas y coach del equipo de robotica de Tigres 6635. Si eres alguien que le apasiona medir todo lo que existe en la vida real y quieres que todos vean la cantidad de datos que recolectas IoT te espera con los brazos abiertos. Aprende como medir tus datos con IoT, como enviarlos a internet, almacenarlos y visualizarlos de forma rapida y eficiente. Conoce el mundo de oportunidades que existen en IoT y lleva todas tus ideas al mundo real.",
+        "url": "https://youtube.com",
+        "color":"#3FBC5D"
+    },
+    {
+        "src": "/videos/Facebook post - 14.png",
+        "name": "Create Your First API",
+        "description": "Conoce a David Pedroza, Físico, desarrollador y organizador en la comunidad Future Lab. ¿Alguna vez te has preguntado como es que multiples aplicaciones consumen toda su información? Las API's son una herramienta que todos estamos utilizando sin saberlo. Aprende los conceptos básicos acerca de las API's, como funcionan y lo faciles que son de crear con Python y FastAPI.",
+        "url": "https://youtube.com",
+        "color":"#FF5145"
+    },
+    {
+        "src": "/videos/Facebook post - 15.png",
+        "name": "Prototype Your Apps With Figma",
+        "description": "Conoce a David Lázaro, Estudiante de Ciencias Computacionales y Fundador de Bisontech. Si el tiempo esta en tu contra y quieres mostrar como se vería tu aplicación en un futuro, Figma ha venido a salvarte, aprende a como utilizar esta herramienta y como hacer que esta te sea de gran ayuda para mostrar como se vería tu aplicación y ganarte el 👍 de los jueces.",
+        "url": "https://youtube.com",
+        "color":"#FF8E01"
+    }
+    
+]
