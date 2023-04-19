@@ -25,7 +25,12 @@ const App = () => {
                 alignItems: 'center',
                 '& .MuiTypography-root': { textAlign: 'center', width: '80%' }
             }}>
-                <Typography variant="h2" sx={{ fontWeight: '600' }}>Workshops</Typography>
+                <Box sx={{
+                display: 'flex',
+                flexDirection: 'row'}}>
+                    <Typography variant="h2" sx={{ fontWeight: '600' }}>Workshops</Typography>
+                    <img src="/videos/its.png" style={{width:'60px', objectFit:'contain', marginLeft:'20px'}}/>
+                </Box>
                 <Typography variant="h5" >It's dangerous to go alone take this!</Typography>
                 <Typography variant="h6">Ya seas el hacker más malevolo y norteño del condado o eres solo un compita que quiere ver que onda con el hackathon y aprender un rato, este lugar es para ti</Typography>
             </Box>
