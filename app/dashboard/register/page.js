@@ -8,6 +8,9 @@ import PersonalData from "../../components/register/PersonalData";
 import AdditionalInfo from "../../components/register/AdditionalInfo";
 import HackerSecurity from "../../components/register/HackerSecurity";
 import WelcomeModal from "../../components/register/WelcomeDialog";
+import { User } from "models/user";
+
+const user = new User();
 
 const PersonalDataForm = () => {
   const [gender, setGender] = useState("");
@@ -20,6 +23,8 @@ const PersonalDataForm = () => {
   const [selectedUniversity, setSelectedUniversity] = useState("");
   const [otherUniversity, setOtherUniversity] = useState("");
   const [activeStep, setActiveStep] = useState(0);
+  const [name, setName] = useState("");
+  const [lastname, setLastname] = useState("");
 
   useEffect(() => {
     // Fetch schools from JSON file
@@ -82,7 +87,7 @@ const PersonalDataForm = () => {
   };
 
   const handleNext = () => {
-    console.log()
+    console.log(name);
     setActiveStep(activeStep + 1);
   };
 
@@ -100,7 +105,19 @@ const PersonalDataForm = () => {
         return (
           <PersonalData
             pronoun={pronoun}
-            setPronoun={setPronoun}
+            setPronoun={(value) => {
+              user.pronouns = value;
+              setPronoun(value);
+            }}
+            setName={(value) => {
+              user.name = value;
+              setName(value);
+            }}
+            name={name}
+            setLastname={(value) => {
+              user.lastname = value;
+              setLastname(value);
+            }}
             universities={universities}
             setUniversities={setUniversities}
             gender={gender}
