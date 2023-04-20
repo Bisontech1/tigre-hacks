@@ -41,7 +41,13 @@ const PersonalData = (props) => {
         }}
       >
         <Grid item xl={6} sm={12}>
-          <TextField onChange={setName} label="Nombre" />
+          <TextField
+            onChange={(e) => {
+              console.log(e.target.value)
+              setName(e.target.value);
+            }}
+            label="Nombre"
+          />
         </Grid>
         <Grid item xl={6} sm={12}>
           <TextField onChange={setLastname} label="Apellidos" />
@@ -140,10 +146,7 @@ const PersonalData = (props) => {
               <MenuItem value="other">Other</MenuItem>
             </Select>
             {selectedUniversity === "other" && (
-              <TextField
-                label="Otra Escuela"
-                variant="outlined"
-              />
+              <TextField label="Otra Escuela" variant="outlined" />
             )}
           </FormControl>
         </Grid>
