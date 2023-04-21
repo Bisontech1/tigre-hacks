@@ -16,10 +16,6 @@ const PersonalDataForm = () => {
   const [gender, setGender] = useState("");
   const [pronoun, setPronoun] = useState("");
   const [universities, setUniversities] = useState([]);
-  const [grade, setGrade] = useState("");
-  const [country, setCountry] = useState("");
-  const [schools, setSchools] = useState([]);
-  const [otherGender, setOtherGender] = useState("");
   const [selectedUniversity, setSelectedUniversity] = useState("");
   const [otherUniversity, setOtherUniversity] = useState("");
   const [activeStep, setActiveStep] = useState(0);
@@ -164,31 +160,9 @@ const PersonalDataForm = () => {
           />
         );
       case 1:
-        return (
-          <AdditionalInfo
-            pronoun={pronoun}
-            setPronoun={pronoun}
-            universities={universities}
-            setUniversities={setUniversities}
-            gender={gender}
-            setGender={setGender}
-            selectedUniversity={selectedUniversity}
-            handleUniversityChange={handleUniversityChange}
-          />
-        );
+        return <AdditionalInfo />;
       case 2:
-        return (
-          <HackerSecurity
-            pronoun={pronoun}
-            setPronoun={pronoun}
-            universities={universities}
-            setUniversities={setUniversities}
-            gender={gender}
-            setGender={setGender}
-            selectedUniversity={selectedUniversity}
-            handleUniversityChange={handleUniversityChange}
-          />
-        );
+        return <HackerSecurity />;
       default:
         return <h3>XD</h3>;
     }
