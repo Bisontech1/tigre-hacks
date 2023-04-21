@@ -25,6 +25,26 @@ const PersonalDataForm = () => {
   const [activeStep, setActiveStep] = useState(0);
   const [name, setName] = useState("");
   const [lastname, setLastname] = useState("");
+  const [email, setEmail] = useState("");
+  const [phoneNumber, setPhoneNumber] = useState("");
+  const [age, setAge] = useState("");
+
+  const isNextButtonDisabled = {
+    0: () => {
+      if (
+        !user.name ||
+        !user.lastname ||
+        !user.phoneNumber ||
+        !user.university ||
+        !user.pronouns ||
+        !user.gender ||
+        !user.age
+      )
+        return true;
+
+      return false;
+    },
+  };
 
   useEffect(() => {
     // Fetch schools from JSON file
@@ -77,9 +97,9 @@ const PersonalDataForm = () => {
     const value = event.target.value;
     setSelectedUniversity(value);
 
-    if (value === "other") {
-      setOtherUniversity("");
-    }
+    if (value === "other") setOtherUniversity("");
+
+    user.university = value;
   };
 
   const handleOtherUniversityChange = (event) => {
@@ -87,7 +107,6 @@ const PersonalDataForm = () => {
   };
 
   const handleNext = () => {
-    console.log(name);
     setActiveStep(activeStep + 1);
   };
 
@@ -109,19 +128,37 @@ const PersonalDataForm = () => {
               user.pronouns = value;
               setPronoun(value);
             }}
+            name={name}
             setName={(value) => {
               user.name = value;
               setName(value);
             }}
-            name={name}
+            lastname={lastname}
             setLastname={(value) => {
               user.lastname = value;
               setLastname(value);
             }}
             universities={universities}
-            setUniversities={setUniversities}
             gender={gender}
-            setGender={setGender}
+            setGender={(value) => {
+              user.gender = value;
+              setGender(value);
+            }}
+            email={email}
+            setEmail={(value) => {
+              user.email = value;
+              setEmail(value);
+            }}
+            phoneNumber={phoneNumber}
+            setPhoneNumber={(value) => {
+              user.phoneNumber = value;
+              setPhoneNumber(value);
+            }}
+            age={age}
+            setAge={(value) => {
+              user.age = value;
+              setAge(value);
+            }}
             selectedUniversity={selectedUniversity}
             handleUniversityChange={handleUniversityChange}
           />
@@ -218,7 +255,11 @@ const PersonalDataForm = () => {
                   Finalizar Registro
                 </Button>
               ) : (
-                <Button color="secondary" onClick={handleNext}>
+                <Button
+                  disabled={isNextButtonDisabled[activeStep]?.()}
+                  color="secondary"
+                  onClick={handleNext}
+                >
                   Siguiente
                 </Button>
               )}

@@ -16,7 +16,6 @@ const PersonalData = (props) => {
     pronoun,
     setPronoun,
     universities,
-    setUniversities,
     handleUniversityChange,
     selectedUniversity,
     name,
@@ -42,15 +41,21 @@ const PersonalData = (props) => {
       >
         <Grid item xl={6} sm={12}>
           <TextField
+            value={name}
             onChange={(e) => {
-              console.log(e.target.value)
               setName(e.target.value);
             }}
             label="Nombre"
           />
         </Grid>
         <Grid item xl={6} sm={12}>
-          <TextField onChange={setLastname} label="Apellidos" />
+          <TextField
+            value={lastname}
+            onChange={(e) => {
+              setLastname(e.target.value);
+            }}
+            label="Apellidos"
+          />
         </Grid>
       </Grid>
 
@@ -63,10 +68,22 @@ const PersonalData = (props) => {
         }}
       >
         <Grid item xl={6} sm={12}>
-          <TextField label="Email" />
+          <TextField
+            value={email}
+            onChange={(e) => {
+              setEmail(e.target.value);
+            }}
+            label="Email"
+          />
         </Grid>
         <Grid item xl={6} sm={12}>
-          <TextField label="Teléfono" />
+          <TextField
+            value={phoneNumber}
+            onChange={(e) => {
+              setPhoneNumber(e.target.value);
+            }}
+            label="Teléfono"
+          />
         </Grid>
       </Grid>
 
@@ -86,10 +103,9 @@ const PersonalData = (props) => {
               label="Pronombres"
               onChange={(e) => setPronoun(e.target.value)}
             >
-              <MenuItem value={10}>She/Her</MenuItem>
-              <MenuItem value={20}>He/Him</MenuItem>
-              <MenuItem value={30}>They/Them</MenuItem>
-              <MenuItem value={30}>Other</MenuItem>
+              <MenuItem value="She/Her">She/Her</MenuItem>
+              <MenuItem value="He/Him">He/Him</MenuItem>
+              <MenuItem value="They/Them">They/Them</MenuItem>
               <MenuItem value="She/They">She/They</MenuItem>
               <MenuItem value="He/They">He/They</MenuItem>
               <MenuItem value="Prefer Not to Answer">
@@ -129,13 +145,20 @@ const PersonalData = (props) => {
         }}
       >
         <Grid item xl={6} sm={12}>
-          <TextField label="Edad" />
+          <TextField
+            value={age}
+            onChange={(e) => {
+              setAge(e.target.value);
+            }}
+            label="Edad"
+          />
         </Grid>
         <Grid item xl={6} sm={12}>
           <FormControl fullWidth>
             <InputLabel>Escuela</InputLabel>
             <Select
               value={selectedUniversity}
+              label="Escuela"
               onChange={handleUniversityChange}
             >
               {universities.map((university) => (
