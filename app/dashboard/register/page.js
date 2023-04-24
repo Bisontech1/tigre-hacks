@@ -17,7 +17,8 @@ const PersonalDataForm = () => {
   const [pronoun, setPronoun] = useState("");
   const [universities, setUniversities] = useState([]);
   const [selectedUniversity, setSelectedUniversity] = useState("");
-  const [otherUniversity, setOtherUniversity] = useState("");
+  const [showOtherUniversity, setShowOtherUniversity] = useState(false);
+  const [otherUniversity, setOtherUniversity] = useState(false);
   const [activeStep, setActiveStep] = useState(0);
   const [name, setName] = useState("");
   const [lastname, setLastname] = useState("");
@@ -27,6 +28,7 @@ const PersonalDataForm = () => {
 
   const isNextButtonDisabled = {
     0: () => {
+      console.log("HOLA");
       if (
         !user.name ||
         !user.lastname ||
@@ -43,13 +45,25 @@ const PersonalDataForm = () => {
   };
 
   useEffect(() => {
-    // Fetch schools from JSON file
-    fetch("/schools/schools.json")
-      .then((response) => response.json())
-      .then((data) => {
-        setUniversities(data.universidades);
-      });
+    initForm();
   }, []);
+
+  const initForm = async () => {
+    const response = await fetch("/schools/schools.json");
+    const json = await response.json();
+    setUniversities(json.universidades);
+    user.age = age;
+    user.phoneNumber = phoneNumber;
+    user.pronouns = pronoun;
+    user.name = name;
+    user.lastname = lastname;
+    user.email = email;
+    user.gender = gender;
+    if (selectedUniversity == "other") user.university = otherUniversity;
+    else user.university = selectedUniversity;
+    console.log(user);
+
+  };
 
   const theme = createTheme({
     status: {
@@ -87,19 +101,6 @@ const PersonalDataForm = () => {
     "& .MuiStepLabel-root .Mui-active .MuiStepIcon-text": {
       fill: "white", // circle's number (ACTIVE)
     },
-  };
-
-  const handleUniversityChange = (event) => {
-    const value = event.target.value;
-    setSelectedUniversity(value);
-
-    if (value === "other") setOtherUniversity("");
-
-    user.university = value;
-  };
-
-  const handleOtherUniversityChange = (event) => {
-    setOtherUniversity(event.target.value);
   };
 
   const handleNext = () => {
@@ -156,7 +157,15 @@ const PersonalDataForm = () => {
               setAge(value);
             }}
             selectedUniversity={selectedUniversity}
-            handleUniversityChange={handleUniversityChange}
+            setUniversity={(value) => {
+              user.university = value;
+              setOtherUniversity(value);
+            }}
+            handleUniversityChange={(value) => {
+              setShowOtherUniversity(value != "other");
+              setSelectedUniversity(value);
+              user.university = value == "other" ? null : value;
+            }}
           />
         );
       case 1:
