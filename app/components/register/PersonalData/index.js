@@ -16,6 +16,7 @@ const PersonalData = (props) => {
     pronoun,
     setPronoun,
     universities,
+    setUniversity,
     handleUniversityChange,
     selectedUniversity,
     name,
@@ -159,7 +160,10 @@ const PersonalData = (props) => {
             <Select
               value={selectedUniversity}
               label="Escuela"
-              onChange={handleUniversityChange}
+              onChange={(e) => {
+                const value = e.target.value;
+                handleUniversityChange(value);
+              }}
             >
               {universities.map((university) => (
                 <MenuItem key={university.nombre} value={university.nombre}>
@@ -169,7 +173,13 @@ const PersonalData = (props) => {
               <MenuItem value="other">Other</MenuItem>
             </Select>
             {selectedUniversity === "other" && (
-              <TextField label="Otra Escuela" variant="outlined" />
+              <TextField
+                onChange={(e) => {
+                  setUniversity(e.target.value);
+                }}
+                label="Otra Escuela"
+                variant="outlined"
+              />
             )}
           </FormControl>
         </Grid>
