@@ -9,7 +9,26 @@ import {
 import { useState, useEffect } from "react";
 
 const AdditionalInfo = (props) => {
-  const { diet, setDiet } = props;
+  const {
+    diet,
+    setDiet,
+    dietSpecification,
+    setDietSpecification,
+    shirtSize,
+    setShirtSize,
+    identifyAsGroup,
+    setIdentifyAsGroup,
+    race,
+    raceSpecification,
+    setRaceSpecification,
+    setRace,
+    maxStudies,
+    setMaxStudies,
+    mainStudyAreaSpecification,
+    setMainStudyAreaSpecification,
+    mainStudyArea,
+    setMainStudyArea,
+  } = props;
 
   const renderGridItem = (child) => (
     <Grid item xl={12} sm={12}>
@@ -17,21 +36,22 @@ const AdditionalInfo = (props) => {
     </Grid>
   );
 
-  const renderFormControl = (label, value, onChange, items) => {
-    const [stateValue, set] = useState("");
-
-    useEffect(() => {
-      set(value);
-    }, []);
-
+  const renderFormControl = (
+    label,
+    value,
+    onChange,
+    items,
+    showSpecify = false,
+    onSpecifyChange = null,
+    specifyValue = null
+  ) => {
     return (
       <FormControl fullWidth>
         <InputLabel>{label}</InputLabel>
         <Select
           label={label}
-          value={stateValue}
+          value={value}
           onChange={(event) => {
-            set(event.target.value);
             onChange(event.target.value);
           }}
         >
@@ -41,6 +61,16 @@ const AdditionalInfo = (props) => {
             </MenuItem>
           ))}
         </Select>
+        {showSpecify && (
+          <TextField
+            className="other-input"
+            onChange={(e) => {
+              onSpecifyChange(e.target.value);
+            }}
+            label="Especifique"
+            variant="outlined"
+          />
+        )}
       </FormControl>
     );
   };
@@ -69,8 +99,14 @@ const AdditionalInfo = (props) => {
               { value: "Allergies", label: "Allergies" },
               { value: "Kosher", label: "Kosher" },
               { value: "Halal", label: "Halal" },
+              { value: "Other", label: "Other" },
               { value: "None", label: "None" },
-            ]
+            ],
+            diet == "Other" || diet == "Allergies",
+            (e) => {
+              setDietSpecification(e);
+            },
+            dietSpecification
           )
         )}
       </Grid>
@@ -79,8 +115,10 @@ const AdditionalInfo = (props) => {
         {renderGridItem(
           renderFormControl(
             "Talla de camisa",
-            "",
-            (e) => {},
+            shirtSize,
+            (e) => {
+              setShirtSize(e);
+            },
 
             [
               { value: "XS", label: "XS" },
@@ -96,8 +134,10 @@ const AdditionalInfo = (props) => {
         {renderGridItem(
           renderFormControl(
             "¿Te identificas con algún grupo no representado en la industria?",
-            "",
-            (e) => {},
+            identifyAsGroup,
+            (e) => {
+              setIdentifyAsGroup(e);
+            },
 
             [
               { value: "Sí", label: "Sí" },
@@ -116,8 +156,10 @@ const AdditionalInfo = (props) => {
         {renderGridItem(
           renderFormControl(
             "¿Cuál de los siguientes Razas/ Etnias te representa mejor?",
-            "",
-            (e) => {},
+            race,
+            (e) => {
+              setRace(e);
+            },
             [
               { value: "Asian Indian", label: "Asian Indian" },
               { value: "Black or African", label: "Black or African" },
@@ -155,15 +197,22 @@ const AdditionalInfo = (props) => {
                 label: "Other (Please Specify)",
               },
               { value: "Prefer Not to Answer", label: "Prefer Not to Answer" },
-            ]
+            ],
+            race == "Other (Please Specify)",
+            (e) => {
+              setRaceSpecification(e);
+            },
+            raceSpecification
           )
         )}
 
         {renderGridItem(
           renderFormControl(
             "¿Cuál es el grado maximo de estudios que has completado?",
-            "",
-            (e) => {},
+            maxStudies,
+            (e) => {
+              setMaxStudies(e);
+            },
             [
               { value: "Preparatoria", label: "Preparatoria" },
               { value: "Universidad", label: "Universidad" },
@@ -174,8 +223,10 @@ const AdditionalInfo = (props) => {
         {renderGridItem(
           renderFormControl(
             "¿Cuál fue tu principal área de estudios?",
-            "",
-            (e) => {},
+            mainStudyArea,
+            (e) => {
+              setMainStudyArea(e);
+            },
 
             [
               {
@@ -255,29 +306,12 @@ const AdditionalInfo = (props) => {
                   "My school does not offer majors / primary areas of study",
               },
               { value: "Prefer not to answer", label: "Prefer not to answer" },
-            ]
-          )
-        )}
-
-        {renderGridItem(
-          renderFormControl(
-            "¿Te consideras alguno de los siguientes?",
-            "",
-            (e) => {},
-
-            [
-              {
-                value: "Heterosexual or straight",
-                label: "Heterosexual or straight",
-              },
-              { value: "Gay or lesbian", label: "Gay or lesbian" },
-              { value: "Bisexual", label: "Bisexual" },
-              {
-                value: "Different identity",
-                label: "Different identity ________",
-              },
-              { value: "Prefer Not to Answer", label: "Prefer Not to Answer" },
-            ]
+            ],
+            mainStudyArea == "Other (please specify)",
+            (e) => {
+              setMainStudyAreaSpecification(e);
+            },
+            mainStudyAreaSpecification
           )
         )}
       </Grid>

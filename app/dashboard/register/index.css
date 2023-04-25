@@ -12,6 +12,10 @@
     
 }
 
+.other-input{
+    width: 98% !important;
+}
+
 
 @media (max-width: 800px) {
     .form{
