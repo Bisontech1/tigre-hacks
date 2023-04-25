@@ -4,8 +4,19 @@ export class User {
     email
     phoneNumber
     pronouns
+    gender
+    genderSpecification
     age
-    school
     cvUrl
+    university
+    universitySpecification
     dietRestricions
+    dietSpecifications
+    shirtSize
+    identifyAsGroup
+    race
+    raceSpecification
+    maxStudies
+    mainStudyArea
+    mainStudyAreaSpecification
 }

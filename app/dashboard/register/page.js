@@ -13,18 +13,29 @@ import { User } from "models/user";
 const user = new User();
 
 const PersonalDataForm = () => {
-  const [gender, setGender] = useState("");
   const [pronoun, setPronoun] = useState("");
   const [universities, setUniversities] = useState([]);
-  const [selectedUniversity, setSelectedUniversity] = useState("");
-  const [showOtherUniversity, setShowOtherUniversity] = useState(false);
-  const [otherUniversity, setOtherUniversity] = useState(false);
+  const [university, setUniversity] = useState("");
+  const [universitySpecification, setUniversitySpecification] = useState("");
+  const [gender, setGender] = useState("");
+  const [genderSpecification, setGenderSpecification] = useState("");
   const [activeStep, setActiveStep] = useState(0);
   const [name, setName] = useState("");
   const [lastname, setLastname] = useState("");
   const [email, setEmail] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
   const [age, setAge] = useState("");
+
+  const [diet, setDiet] = useState("");
+  const [dietSpecifications, setDietSpecifications] = useState("");
+  const [shirtSize, setShirtSize] = useState("");
+  const [identifyAsGroup, setIdentifyAsGroup] = useState("");
+  const [race, setRace] = useState("");
+  const [raceSpecification, setRaceSpecification] = useState("");
+  const [maxStudies, setMaxStudies] = useState("");
+  const [mainStudyArea, setMainStudyArea] = useState("");
+  const [mainStudyAreaSpecification, setMainStudyAreaSpecification] =
+    useState("");
 
   const isNextButtonDisabled = {
     0: () => {
@@ -37,6 +48,31 @@ const PersonalDataForm = () => {
         !user.gender ||
         !user.age
       )
+        return true;
+
+      return false;
+    },
+    1: () => {
+      if (
+        !user.dietRestricions ||
+        !user.shirtSize ||
+        !user.identifyAsGroup ||
+        !user.race ||
+        !user.maxStudies ||
+        !user.mainStudyArea
+      )
+        return true;
+
+      if (user.dietRestricions == "Other" && !user.dietSpecifications)
+        return true;
+
+      if (
+        user.mainStudyArea == "Other (please specify)" &&
+        !user.mainStudyAreaSpecification
+      )
+        return true;
+
+      if (user.race == "Other (Please Specify)" && !user.raceSpecification)
         return true;
 
       return false;
@@ -58,9 +94,19 @@ const PersonalDataForm = () => {
     user.lastname = lastname;
     user.email = email;
     user.gender = gender;
-    if (selectedUniversity == "other") user.university = otherUniversity;
-    else user.university = selectedUniversity;
-    console.log(user);
+    user.genderSpecification = genderSpecification;
+    user.university = university;
+    user.universitySpecification = universitySpecification;
+
+    user.dietRestricions = diet;
+    user.dietSpecifications = dietSpecifications;
+    user.shirtSize = shirtSize;
+    user.identifyAsGroup = identifyAsGroup;
+    user.race = race;
+    user.raceSpecification = raceSpecification;
+    user.maxStudies = maxStudies;
+    user.mainStudyArea = mainStudyArea;
+    user.mainStudyAreaSpecification = mainStudyAreaSpecification;
   };
 
   const theme = createTheme({
@@ -112,7 +158,6 @@ const PersonalDataForm = () => {
   const handleRegistration = () => {
     //TODO
   };
-
   const getStepContent = (step) => {
     switch (step) {
       case 0:
@@ -139,6 +184,11 @@ const PersonalDataForm = () => {
               user.gender = value;
               setGender(value);
             }}
+            genderSpecification={genderSpecification}
+            setGenderSpecification={(value) => {
+              user.genderSpecification = value;
+              setGenderSpecification(value);
+            }}
             email={email}
             setEmail={(value) => {
               user.email = value;
@@ -154,24 +204,65 @@ const PersonalDataForm = () => {
               user.age = value;
               setAge(value);
             }}
-            selectedUniversity={selectedUniversity}
+            university={university}
             setUniversity={(value) => {
               user.university = value;
-              setOtherUniversity(value);
+              setUniversity(value);
             }}
-            handleUniversityChange={(value) => {
-              setShowOtherUniversity(value != "other");
-              setSelectedUniversity(value);
-              user.university = value == "other" ? null : value;
+            universitySpecification={universitySpecification}
+            setUniversitySpecification={(value) => {
+              user.universitySpecification = value;
+              setUniversitySpecification(value);
             }}
           />
         );
       case 1:
         return (
           <AdditionalInfo
-            diet={user.dietRestricions}
+            diet={diet}
             setDiet={(value) => {
               user.dietRestricions = value;
+              setDiet(value);
+            }}
+            dietSpecifications={dietSpecifications}
+            setDietSpecification={(value) => {
+              user.dietSpecifications = value;
+              setDietSpecifications(value);
+            }}
+            shirtSize={shirtSize}
+            setShirtSize={(value) => {
+              user.shirtSize = value;
+              setShirtSize(value);
+            }}
+            identifyAsGroup={identifyAsGroup}
+            setIdentifyAsGroup={(value) => {
+              user.identifyAsGroup = value;
+              setIdentifyAsGroup(value);
+            }}
+            race={race}
+            setRace={(value) => {
+              user.race = value;
+              setRace(value);
+            }}
+            raceSpecification={raceSpecification}
+            setRaceSpecification={(value) => {
+              user.raceSpecification = value;
+              setRaceSpecification(value);
+            }}
+            maxStudies={maxStudies}
+            setMaxStudies={(value) => {
+              user.maxStudies = value;
+              setMaxStudies(value);
+            }}
+            mainStudyArea={mainStudyArea}
+            setMainStudyArea={(value) => {
+              user.mainStudyArea = value;
+              setMainStudyArea(value);
+            }}
+            mainStudyAreaSpecification={mainStudyAreaSpecification}
+            setMainStudyAreaSpecification={(value) => {
+              user.mainStudyAreaSpecification = value;
+              setMainStudyAreaSpecification(value);
             }}
           />
         );

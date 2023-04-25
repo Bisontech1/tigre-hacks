@@ -11,14 +11,18 @@ import PDFDropzone from "../PdfDropzone";
 
 const PersonalData = (props) => {
   const {
+    genderSpecification,
+    setGenderSpecification,
     gender,
     setGender,
     pronoun,
     setPronoun,
     universities,
+    universitySpecification,
+    setUniversitySpecification,
+    university,
+
     setUniversity,
-    handleUniversityChange,
-    selectedUniversity,
     name,
     setName,
     lastname,
@@ -134,6 +138,18 @@ const PersonalData = (props) => {
                 Prefer Not to Answer
               </MenuItem>
             </Select>
+            {gender === "Prefer to self-describe" && (
+              <TextField
+                fullWidth
+                value={genderSpecification}
+                className="other-input"
+                onChange={(e) => {
+                  setGenderSpecification(e.target.value);
+                }}
+                label="Especifique"
+                variant="outlined"
+              />
+            )}
           </FormControl>
         </Grid>
       </Grid>
@@ -158,11 +174,11 @@ const PersonalData = (props) => {
           <FormControl fullWidth>
             <InputLabel>Escuela</InputLabel>
             <Select
-              value={selectedUniversity}
+              value={university}
               label="Escuela"
               onChange={(e) => {
                 const value = e.target.value;
-                handleUniversityChange(value);
+                setUniversity(value);
               }}
             >
               {universities.map((university) => (
@@ -172,10 +188,13 @@ const PersonalData = (props) => {
               ))}
               <MenuItem value="other">Other</MenuItem>
             </Select>
-            {selectedUniversity === "other" && (
+            {university === "other" && (
               <TextField
+                value={universitySpecification}
+                fullWidth
+                className="other-input"
                 onChange={(e) => {
-                  setUniversity(e.target.value);
+                  setUniversitySpecification(e.target.value);
                 }}
                 label="Otra Escuela"
                 variant="outlined"
