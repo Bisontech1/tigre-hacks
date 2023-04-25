@@ -12,7 +12,7 @@ const AdditionalInfo = (props) => {
   const {
     diet,
     setDiet,
-    dietSpecification,
+    dietSpecifications,
     setDietSpecification,
     shirtSize,
     setShirtSize,
@@ -64,7 +64,9 @@ const AdditionalInfo = (props) => {
         {showSpecify && (
           <TextField
             className="other-input"
+            value={specifyValue ? specifyValue : ""}
             onChange={(e) => {
+              console.log(e)
               onSpecifyChange(e.target.value);
             }}
             label="Especifique"
@@ -106,7 +108,7 @@ const AdditionalInfo = (props) => {
             (e) => {
               setDietSpecification(e);
             },
-            dietSpecification
+            dietSpecifications
           )
         )}
       </Grid>
@@ -319,3 +321,6 @@ const AdditionalInfo = (props) => {
   );
 };
 export default AdditionalInfo;
+
+
+
