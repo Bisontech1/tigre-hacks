@@ -37,6 +37,11 @@ const PersonalDataForm = () => {
   const [mainStudyAreaSpecification, setMainStudyAreaSpecification] =
     useState("");
 
+  const [agreesToConductCode, setAgreesToConductCode] = useState(false);
+
+  const [agreesToShareInfo, setAgreesToShareInfo] = useState(false);
+  const [agreesToSendMail, setAgreesToSendMail] = useState(false);
+
   const isNextButtonDisabled = {
     0: () => {
       if (
@@ -74,6 +79,11 @@ const PersonalDataForm = () => {
 
       if (user.race == "Other (Please Specify)" && !user.raceSpecification)
         return true;
+
+      return false;
+    },
+    2: () => {
+      if (!user.agreesToConductCode || !user.agreesToShareInfo) return true;
 
       return false;
     },
@@ -267,7 +277,26 @@ const PersonalDataForm = () => {
           />
         );
       case 2:
-        return <HackerSecurity />;
+        return (
+          <HackerSecurity
+            agreesToConductCode={agreesToConductCode}
+            setAgreesToConductCode={(value) => {
+              user.agreesToConductCode = value;
+              setAgreesToConductCode(value);
+              console.log(user);
+            }}
+            agreesToShareInfo={agreesToShareInfo}
+            setAgreesToShareInfo={(value) => {
+              user.agreesToShareInfo = value;
+              setAgreesToShareInfo(value);
+            }}
+            agreesToSendMail={agreesToSendMail}
+            setAgreesToSendMail={(value) => {
+              user.agreesToSendMail = agreesToSendMail;
+              setAgreesToSendMail(value);
+            }}
+          />
+        );
       default:
         return <h3>XD</h3>;
     }
@@ -330,7 +359,11 @@ const PersonalDataForm = () => {
             </Grid>
             <Grid item>
               {activeStep >= 2 ? (
-                <Button color="secondary" onClick={handleRegistration}>
+                <Button
+                  disabled={isNextButtonDisabled[activeStep]?.()}
+                  color="secondary"
+                  onClick={handleRegistration}
+                >
                   Finalizar Registro
                 </Button>
               ) : (
