@@ -28,7 +28,6 @@ const PersonalDataForm = () => {
 
   const isNextButtonDisabled = {
     0: () => {
-      console.log("HOLA");
       if (
         !user.name ||
         !user.lastname ||
@@ -62,7 +61,6 @@ const PersonalDataForm = () => {
     if (selectedUniversity == "other") user.university = otherUniversity;
     else user.university = selectedUniversity;
     console.log(user);
-
   };
 
   const theme = createTheme({
@@ -169,7 +167,14 @@ const PersonalDataForm = () => {
           />
         );
       case 1:
-        return <AdditionalInfo />;
+        return (
+          <AdditionalInfo
+            diet={user.dietRestricions}
+            setDiet={(value) => {
+              user.dietRestricions = value;
+            }}
+          />
+        );
       case 2:
         return <HackerSecurity />;
       default:

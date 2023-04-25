@@ -6,9 +6,10 @@ import {
   Select,
   MenuItem,
 } from "@mui/material";
+import { useState, useEffect } from "react";
 
 const AdditionalInfo = (props) => {
-  const {} = props;
+  const { diet, setDiet } = props;
 
   const renderGridItem = (child) => (
     <Grid item xl={12} sm={12}>
@@ -16,18 +17,33 @@ const AdditionalInfo = (props) => {
     </Grid>
   );
 
-  const renderFormControl = (label, value, onChange, items) => (
-    <FormControl fullWidth>
-      <InputLabel>{label}</InputLabel>
-      <Select label={label} value={value} onChange={onChange}>
-        {items.map((item) => (
-          <MenuItem key={item.value} value={item.value}>
-            {item.label}
-          </MenuItem>
-        ))}
-      </Select>
-    </FormControl>
-  );
+  const renderFormControl = (label, value, onChange, items) => {
+    const [stateValue, set] = useState("");
+
+    useEffect(() => {
+      set(value);
+    }, []);
+
+    return (
+      <FormControl fullWidth>
+        <InputLabel>{label}</InputLabel>
+        <Select
+          label={label}
+          value={stateValue}
+          onChange={(event) => {
+            set(event.target.value);
+            onChange(event.target.value);
+          }}
+        >
+          {items.map((item) => (
+            <MenuItem key={item.value} value={item.value}>
+              {item.label}
+            </MenuItem>
+          ))}
+        </Select>
+      </FormControl>
+    );
+  };
 
   const gridContainerProps = {
     container: true,
@@ -40,15 +56,22 @@ const AdditionalInfo = (props) => {
     <>
       <Grid {...gridContainerProps}>
         {renderGridItem(
-          renderFormControl("Restricciones Dietarias", "", (e) => {}, [
-            { value: "Vegetarian", label: "Vegetarian" },
-            { value: "Vegan", label: "Vegan" },
-            { value: "Celiac Disease", label: "Celiac Disease" },
-            { value: "Allergies", label: "Allergies" },
-            { value: "Kosher", label: "Kosher" },
-            { value: "Halal", label: "Halal" },
-            { value: "None", label: "None" },
-          ])
+          renderFormControl(
+            "Restricciones Dietarias",
+            diet,
+            (e) => {
+              setDiet(e);
+            },
+            [
+              { value: "Vegetarian", label: "Vegetarian" },
+              { value: "Vegan", label: "Vegan" },
+              { value: "Celiac Disease", label: "Celiac Disease" },
+              { value: "Allergies", label: "Allergies" },
+              { value: "Kosher", label: "Kosher" },
+              { value: "Halal", label: "Halal" },
+              { value: "None", label: "None" },
+            ]
+          )
         )}
       </Grid>
 
