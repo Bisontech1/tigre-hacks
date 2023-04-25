@@ -11,7 +11,7 @@ const HackerSecurity = (props) => {
         handleUniversityChange,
         selectedUniversity } = props;
     const gridSX = { display: 'flex', alignItems: 'flex-start', margin: '20px 0px' }
-
+    
     return (
         <Grid container direction="column" 
         alignItems="flex-start" 

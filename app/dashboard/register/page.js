@@ -9,6 +9,7 @@ import {
     Button
 } from '@mui/material';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+import {agregarParticipante} from '../../utils/firebase' 
 
 import './index.css'
 import PersonalData from '../../components/register/PersonalData';
@@ -100,7 +101,30 @@ const PersonalDataForm = () => {
     };
 
     const handleRegistration = () =>{
-        //TODO
+        const participantData={
+            nombre: 'David',
+            apellidos: 'Lazaro Fernandez',
+            email: 'davidlazaro20@hotmail.com',
+            telefono: '9213043932',
+            pronombres: 'He/Him',
+            genero: 'Hombre',
+            edad: '22',
+            escuela: 'Universidad Autonoma de Nuevo León',
+            resumeUrl: '',
+            restriccionesDietarias: 'Ninguna',
+            tallaCamisa: 'XL',
+            generoSubrepresentado: 'Latino',
+            raza: 'Hispanic',
+            gradoDeEstudios: 'Licenciatura No Graduado',
+            lgbt: 'Si',
+            mlhemail: true
+        }
+        
+        agregarParticipante(participantData)
+        .then(() => console.log("Participante agregado a la base de datos"))
+        .catch(error => console.error("Error al agregar participante", error));
+
+
     }
 
 

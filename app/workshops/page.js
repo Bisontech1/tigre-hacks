@@ -5,6 +5,7 @@ import Video from '../components/workshops/Video';
 import data from '../../public/videos/video.json';
 import Nav from '../components/landing/Nav'
 import { Box, Grid, Typography } from '@mui/material';
+import './index.css'
 const App = () => {
     const videoData = {
         thumbnail: 'https://cdn2.unrealengine.com/c4-s2-battle-pass-1920x1080-603842488c24.jpg',
@@ -16,7 +17,7 @@ const App = () => {
 
     return (
         <Box >
-            <Box sx={{ marginBottom: 20 }}>
+            <Box sx={{ marginBottom: 20, cursor:'url(/public/videos/dog.png)'}}>
                 <Nav />
             </Box>
             <Box sx={{
