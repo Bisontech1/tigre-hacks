@@ -2,6 +2,7 @@ import {
   createUserWithEmailAndPassword,
   deleteUser,
   getAuth,
+  signInWithEmailAndPassword,
 } from "firebase/auth";
 
 export class FirebaseAuth {
@@ -23,5 +24,7 @@ export class FirebaseAuth {
     return deleteUser(user);
   }
 
-
+  async signIn(email, password) {
+    return signInWithEmailAndPassword(this.auth, email, password);
+  }
 }
