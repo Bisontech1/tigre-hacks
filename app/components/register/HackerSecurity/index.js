@@ -1,6 +1,9 @@
 import { Grid, Checkbox, Typography } from "@mui/material";
+import { useTranslationContext } from "contexts";
 
 const HackerSecurity = (props) => {
+  const { language, setLanguage } = useTranslationContext();
+
   const {
     agreesToConductCode,
     setAgreesToConductCode,
@@ -48,17 +51,22 @@ const HackerSecurity = (props) => {
           }}
         />
         <Typography>
-          Autorizo el compartir la información de mi solicitud/inscripción con
-          la <a href="https://mlh.io">Major League Hacking</a> para la
-          administración del evento, la clasificación y la administración de MLH
-          de acuerdo con la{" "}
-          <a href="https://mlh.io/privacy">Política de Privacidad de la MLH</a>.
-          Además, acepto los términos de los
-          <a href="https://mlh.io/terms">
-            Términos y Condiciones del Concurso
+          {language?.getString("register.hackerSecurity.shareInfo1")}{" "}
+          <a href="https://mlh.io">
+            {language?.getString("register.hackerSecurity.shareInfo2")}
           </a>{" "}
-          de MLH y la{" "}
-          <a href="https://mlh.io/privacy">Política de Privacidad de MLH. </a>
+          {language?.getString("register.hackerSecurity.shareInfo3")}{" "}
+          <a href="https://mlh.io/privacy">
+            {language?.getString("register.hackerSecurity.shareInfo4")}
+          </a>{" "}
+          {language?.getString("register.hackerSecurity.shareInfo5")}{" "}
+          <a href="https://mlh.io/terms">
+            {language?.getString("register.hackerSecurity.shareInfo6")}
+          </a>{" "}
+          {language?.getString("register.hackerSecurity.shareInfo7")}{" "}
+          <a href="https://mlh.io/privacy">
+            {language?.getString("register.hackerSecurity.shareInfo8")}
+          </a>
           <b>*</b>
         </Typography>
       </Grid>
@@ -70,9 +78,7 @@ const HackerSecurity = (props) => {
           }}
         />
         <Typography>
-          Autorizo a la MLH a enviarme un correo electrónico en el que pueda
-          suscribirme a los newsletters de los Hackers, Eventos ó Organizadores
-          de la MLH y otras comunicaciones de la MLH.
+          {language?.getString("register.hackerSecurity.sendEmail")}
         </Typography>
       </Grid>
     </Grid>
