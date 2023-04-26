@@ -11,6 +11,8 @@ import PDFDropzone from "../PdfDropzone";
 
 const PersonalData = (props) => {
   const {
+    file,
+    onFileChange,
     genderSpecification,
     setGenderSpecification,
     gender,
@@ -251,7 +253,7 @@ const PersonalData = (props) => {
         sx={{ margin: "50px 0px" }}
       >
         <Grid item sx={{ width: "100%" }}>
-          <PDFDropzone />
+          <PDFDropzone selectedFile={file} onFileChange={onFileChange} />
         </Grid>
         <Grid
           item

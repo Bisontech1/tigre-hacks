@@ -11,6 +11,7 @@ const SuccessDialog = (props) => {
 
   const handleClose = () => {
     setOpen(false);
+    onClick();
   };
 
   return (
@@ -34,7 +35,7 @@ const SuccessDialog = (props) => {
               {message}
             </Typography>
 
-            <Button variant="contained" color="primary" onClick={handleClose}>
+            <Button href="/" variant="contained" color="primary" >
               Cerrar
             </Button>
           </div>

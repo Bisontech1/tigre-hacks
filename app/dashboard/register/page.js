@@ -9,10 +9,9 @@ import AdditionalInfo from "../../components/register/AdditionalInfo";
 import HackerSecurity from "../../components/register/HackerSecurity";
 import WelcomeModal from "../../components/register/WelcomeDialog";
 import { User } from "models/user";
-import { authService, usersDatabase } from "services/firebase";
+import { authService, cvStorage, usersDatabase } from "services/firebase";
 import ErrorDialog from "components/register/ErrorDialog";
 import SuccessDialog from "components/register/SuccessDialog";
-import { FirebaseError } from "firebase/app";
 
 const user = new User();
 
@@ -57,6 +56,8 @@ const PersonalDataForm = () => {
   const [successTitle, setSuccessTitle] = useState("");
   const [successMessage, setSuccessMessage] = useState("");
 
+  const [file, setFile] = useState(null);
+
   const isNextButtonDisabled = {
     0: () => {
       if (
@@ -68,7 +69,8 @@ const PersonalDataForm = () => {
         !user.gender ||
         !user.age ||
         !user.password ||
-        !confirmPassword
+        !confirmPassword ||
+        !file
       )
         return true;
 
@@ -190,31 +192,57 @@ const PersonalDataForm = () => {
   };
 
   const handleRegistration = async () => {
+    let registeredUser;
+
     try {
-      const registeredUser = await authService.register(
-        user.email,
-        user.password
-      );
+      registeredUser = await authService.register(user.email, user.password);
       user.id = registeredUser.uid;
-      await usersDatabase.add(user);
-
-      setSuccessTitle("Usuario Registrado");
-      setSuccessMessage("¡Gracias por registrarte a Tigre Hacks!");
-      setSuccessDialogOpen(true);
     } catch (error) {
-      if (error?.code == "auth/email-already-in-use")
-        setErrorMessage("Ya existe un usuario con el correo electrónico proporcionado");
-      else setErrorMessage("Ocurrió un error al registrar el usuario");
+      setErrorMessage(
+        "Ya existe un usuario con el correo electrónico proporcionado"
+      );
+      setErrorDialogOpen(true);
+      return;
+    }
 
+    let uploadedFile;
+
+    try {
+      uploadedFile = await cvStorage.addFile(file);
+      user.cvUrl = await cvStorage.getDownloadURL(uploadedFile);
+    } catch (error) {
+      await authService.deleteUser(registeredUser);
+      setErrorMessage("Ocurrió un error al subir el CV");
       setErrorTitle("¡Error!");
       setErrorDialogOpen(true);
+      return;
     }
+
+    try {
+      await usersDatabase.add(user);
+    } catch (error) {
+      await authService.deleteUser(registeredUser);
+      await cvStorage.deleteFile(uploadedFile);
+      setErrorMessage("Ocurrió un error al registrar el usuario");
+      setErrorTitle("¡Error!");
+      setErrorDialogOpen(true);
+      return;
+    }
+
+    setSuccessTitle("Usuario Registrado");
+    setSuccessMessage("¡Gracias por registrarte a Tigre Hacks!");
+    setSuccessDialogOpen(true);
   };
   const getStepContent = (step) => {
     switch (step) {
       case 0:
         return (
           <PersonalData
+            file={file}
+            onFileChange={(value) => {
+              setFile(value);
+              console.log(value);
+            }}
             pronoun={pronoun}
             setPronoun={(value) => {
               user.pronouns = value;
