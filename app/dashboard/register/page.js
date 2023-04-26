@@ -115,7 +115,7 @@ const PersonalDataForm = () => {
 
   useEffect(() => {
     initForm();
-  }, []);
+  });
 
   const initForm = async () => {
     const response = await fetch("/schools/schools.json");
