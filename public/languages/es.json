@@ -192,11 +192,11 @@
             "phoneNumber": "Teléfono",
             "pronouns": "Pronombres",
             "pronounsSelect": {
-                "sheHer": "",
-                "heHim": "",
-                "theyThem": "",
-                "sheThey": "",
-                "heThey": "",
+                "sheHer": "She/Her",
+                "heHim": "He/Him",
+                "theyThem": "They/Them",
+                "sheThey": "She/They",
+                "heThey": "He/They",
                 "notAnswer": "Prefiero no contestar",
                 "other": "Otro"
             },
@@ -225,6 +225,7 @@
                 "other": "Otros",
                 "none": "Ninguno"
             },
+            "specify":"Especifique",
             "shirtSize": "Talla de Camisa",
             "shirtSizeSelect": {
                 "xs": "XS",
@@ -246,7 +247,7 @@
                 "asianIndian": "Indio Asiático",
                 "blackAfrican": "Negro o Africano",
                 "chinese": "Chino",
-                "philippine": "Filipino",
+                "philipine": "Filipino",
                 "guamanian": "Guameña o Chamorro",
                 "hispanic": "Hispano / Latina / Origen Español",
                 "japanese": "Japonés",

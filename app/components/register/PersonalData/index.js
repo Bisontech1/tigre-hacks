@@ -91,7 +91,9 @@ const PersonalData = (props) => {
         </Grid>
         <Grid item md={6} xs={12}>
           <FormControl fullWidth>
-            <InputLabel>Genero</InputLabel>
+            <InputLabel>
+              {language?.getString("register.personalData.gender")}
+            </InputLabel>
             <Select
               value={gender}
               label={language?.getString("register.personalData.gender")}
