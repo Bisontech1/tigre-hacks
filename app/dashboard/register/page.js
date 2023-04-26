@@ -12,10 +12,13 @@ import { User } from "models/user";
 import { authService, cvStorage, usersDatabase } from "services/firebase";
 import ErrorDialog from "components/register/ErrorDialog";
 import SuccessDialog from "components/register/SuccessDialog";
+import { useTranslationContext } from "contexts";
 
 const user = new User();
 
 const PersonalDataForm = () => {
+  const { language, setLanguage } = useTranslationContext();
+
   const [pronoun, setPronoun] = useState("");
   const [universities, setUniversities] = useState([]);
   const [university, setUniversity] = useState("");
@@ -425,13 +428,19 @@ const PersonalDataForm = () => {
         >
           <Stepper activeStep={activeStep} sx={stepperStyle}>
             <Step>
-              <StepLabel>Personal Data</StepLabel>
+              <StepLabel>
+                {language?.getString("register.personalData.title")}
+              </StepLabel>
             </Step>
             <Step>
-              <StepLabel>Additional Information</StepLabel>
+              <StepLabel>
+                {language?.getString("register.additionalInformation.title")}
+              </StepLabel>
             </Step>
             <Step>
-              <StepLabel>Hacker Security and Protection</StepLabel>
+              <StepLabel>
+                {language?.getString("register.hackerSecurity.title")}
+              </StepLabel>
             </Step>
           </Stepper>
           {getStepContent(activeStep)}

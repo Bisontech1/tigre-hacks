@@ -8,8 +8,11 @@ import {
   Typography,
 } from "@mui/material";
 import PDFDropzone from "../PdfDropzone";
+import { useTranslationContext } from "contexts";
 
 const PersonalData = (props) => {
+  const { language, setLanguage } = useTranslationContext();
+
   const {
     file,
     onFileChange,
@@ -55,7 +58,7 @@ const PersonalData = (props) => {
             onChange={(e) => {
               setName(e.target.value);
             }}
-            label="Nombre"
+            label={language?.getString("register.personalData.name")}
           />
         </Grid>
         <Grid item md={6} xs={12}>
@@ -64,7 +67,7 @@ const PersonalData = (props) => {
             onChange={(e) => {
               setLastname(e.target.value);
             }}
-            label="Apellidos"
+            label={language?.getString("register.personalData.lastname")}
           />
         </Grid>
       </Grid>
@@ -83,7 +86,7 @@ const PersonalData = (props) => {
             onChange={(e) => {
               setEmail(e.target.value);
             }}
-            label="Email"
+            label={language?.getString("register.personalData.email")}
           />
         </Grid>
         <Grid item md={6} xs={12}>
@@ -91,17 +94,25 @@ const PersonalData = (props) => {
             <InputLabel>Genero</InputLabel>
             <Select
               value={gender}
-              label="Genero"
+              label={language?.getString("register.personalData.gender")}
               onChange={(e) => setGender(e.target.value)}
             >
-              <MenuItem value="Man">Man</MenuItem>
-              <MenuItem value="Woman">Woman</MenuItem>
-              <MenuItem value="Non-Binary">Non-Binary</MenuItem>
+              <MenuItem value="Man">
+                {language?.getString("register.personalData.genders.man")}
+              </MenuItem>
+              <MenuItem value="Woman">
+                {language?.getString("register.personalData.genders.woman")}
+              </MenuItem>
+              <MenuItem value="Non-Binary">
+                {language?.getString("register.personalData.genders.nonBinary")}
+              </MenuItem>
               <MenuItem value="Prefer to self-describe">
-                Prefer to self-describe
+                {language?.getString(
+                  "register.personalData.genders.selfDescribe"
+                )}
               </MenuItem>
               <MenuItem value="Prefer Not to Answer">
-                Prefer Not to Answer
+                {language?.getString("register.personalData.genders.notAnswer")}
               </MenuItem>
             </Select>
             {gender === "Prefer to self-describe" && (
@@ -112,7 +123,9 @@ const PersonalData = (props) => {
                 onChange={(e) => {
                   setGenderSpecification(e.target.value);
                 }}
-                label="Especifique"
+                label={language?.getString(
+                  "register.personalData.genders.specify"
+                )}
                 variant="outlined"
               />
             )}
@@ -135,7 +148,7 @@ const PersonalData = (props) => {
             onChange={(e) => {
               setPassword(e.target.value);
             }}
-            label="Password"
+            label={language?.getString("register.personalData.password")}
           />
         </Grid>
         <Grid item md={6} xs={12}>
@@ -148,10 +161,10 @@ const PersonalData = (props) => {
             error={confirmPassword != "" && password != confirmPassword}
             helperText={
               confirmPassword && password != confirmPassword
-                ? "Contraseñas no coinciden"
+                ? language?.getString("register.personalData.passwordNotMatch")
                 : ""
             }
-            label="Confirm Password"
+            label={language?.getString("register.personalData.confirmPassword")}
           />
         </Grid>
       </Grid>
@@ -170,7 +183,7 @@ const PersonalData = (props) => {
             onChange={(e) => {
               setPhoneNumber(e.target.value);
             }}
-            label="Teléfono"
+            label={language?.getString("register.personalData.phoneNumber")}
           />
         </Grid>
         <Grid item md={6} xs={12}>
@@ -178,18 +191,44 @@ const PersonalData = (props) => {
             <InputLabel>Pronombres</InputLabel>
             <Select
               value={pronoun}
-              label="Pronombres"
+              label={language?.getString("register.personalData.pronouns")}
               onChange={(e) => setPronoun(e.target.value)}
             >
-              <MenuItem value="She/Her">She/Her</MenuItem>
-              <MenuItem value="He/Him">He/Him</MenuItem>
-              <MenuItem value="They/Them">They/Them</MenuItem>
-              <MenuItem value="She/They">She/They</MenuItem>
-              <MenuItem value="He/They">He/They</MenuItem>
-              <MenuItem value="Prefer Not to Answer">
-                Prefer Not to Answer
+              <MenuItem value="She/Her">
+                {language?.getString(
+                  "register.personalData.pronounsSelect.sheHer"
+                )}
               </MenuItem>
-              <MenuItem value="Other">Other</MenuItem>
+              <MenuItem value="He/Him">
+                {language?.getString(
+                  "register.personalData.pronounsSelect.heHim"
+                )}
+              </MenuItem>
+              <MenuItem value="They/Them">
+                {language?.getString(
+                  "register.personalData.pronounsSelect.theyThem"
+                )}
+              </MenuItem>
+              <MenuItem value="She/They">
+                {language?.getString(
+                  "register.personalData.pronounsSelect.sheThey"
+                )}
+              </MenuItem>
+              <MenuItem value="He/They">
+                {language?.getString(
+                  "register.personalData.pronounsSelect.heThey"
+                )}
+              </MenuItem>
+              <MenuItem value="Prefer Not to Answer">
+                {language?.getString(
+                  "register.personalData.pronounsSelect.notAnswer"
+                )}
+              </MenuItem>
+              <MenuItem value="Other">
+                {language?.getString(
+                  "register.personalData.pronounsSelect.other"
+                )}
+              </MenuItem>
             </Select>
           </FormControl>
         </Grid>
@@ -208,7 +247,7 @@ const PersonalData = (props) => {
             onChange={(e) => {
               setAge(e.target.value);
             }}
-            label="Edad"
+            label={language?.getString("register.personalData.age")}
           />
         </Grid>
 
@@ -217,7 +256,7 @@ const PersonalData = (props) => {
             <InputLabel>Escuela</InputLabel>
             <Select
               value={university}
-              label="Escuela"
+              label={language?.getString("register.personalData.school")}
               onChange={(e) => {
                 const value = e.target.value;
                 setUniversity(value);
@@ -228,7 +267,11 @@ const PersonalData = (props) => {
                   {university.nombre}
                 </MenuItem>
               ))}
-              <MenuItem value="other">Other</MenuItem>
+              <MenuItem value="other">
+                {language?.getString(
+                  "register.personalData.schoolSelect.other"
+                )}
+              </MenuItem>
             </Select>
             {university === "other" && (
               <TextField
@@ -238,7 +281,7 @@ const PersonalData = (props) => {
                 onChange={(e) => {
                   setUniversitySpecification(e.target.value);
                 }}
-                label="Otra Escuela"
+                label={language?.getString("register.personalData.otherSchool")}
                 variant="outlined"
               />
             )}
@@ -268,15 +311,15 @@ const PersonalData = (props) => {
           }}
         >
           <Typography>
-            ¿No tienes un CV/Résumé? Aprende a crear el tuyo con &nbsp;
+            {language?.getString("register.personalData.dontHaveCV")} &nbsp;
             <a href="https://akotadi.notion.site/Materials-cad70d8407dd40d38c7d64c0bb4b518c">
-              Proyecto Nutria
+              {language?.getString("register.personalData.proyectoNutria")}
             </a>
           </Typography>
           <Typography>
-            ó Escucha el Podcast de &nbsp;
+            {language?.getString("register.personalData.podcast")} &nbsp;
             <a href="https://www.youtube.com/watch?v=HNxvj3t3k2M&t=0s">
-              Hireline.io & Don Chambitas
+              {language?.getString("register.personalData.podcastTitle")}
             </a>
           </Typography>
         </Grid>

@@ -163,5 +163,139 @@
             "phoneNumber": "+529213043932"
         },
         "copyright": "Copyright © Bisontech 2023. Made with </> 🤍 by Bisontech"
+    },
+    "register": {
+        "personalData": {
+            "title": "Información Personal",
+            "name": "Nombre",
+            "lastname": "Apellidos",
+            "email": "Email",
+            "gender": "Género",
+            "genders": {
+                "man": "Hombre",
+                "woman": "Mujer",
+                "nonBinary": "No Binario",
+                "selfDescribe": "Prefiero describirme",
+                "notAnswer": "Prefiero no contestar",
+                "specify": "Especifique"
+            },
+            "password": "Contraseña",
+            "confirmPassword": "Confirmar Contraseña",
+            "passwordNotMatch": "Las contraseñas no coinciden",
+            "phoneNumber": "Teléfono",
+            "pronouns": "Pronombres",
+            "pronounsSelect": {
+                "sheHer": "",
+                "heHim": "",
+                "theyThem": "",
+                "sheThey": "",
+                "heThey": "",
+                "notAnswer": "Prefiero no contestar",
+                "other": "Otro"
+            },
+            "age": "Edad",
+            "school": "Escuela",
+            "schoolSelect": {
+                "other": "Otra"
+            },
+            "otherSchool":"Otra Escuela",
+            "cvResume": "CV/Currículum",
+            "dontHaveCV": "¿No tienes un CV/Résumé? Aprende a crear el tuyo con",
+            "podcast": "ó Escucha el Podcast de",
+            "podcastTitle": "Hireline.io & Don Chambitas",
+            "proyectoNutria": "Proyecto Nutria"
+        },
+        "additionalInformation": {
+            "title": "Información Adicional",
+            "dietRestrictions": "Restricciones Dietarias",
+            "dietRestrictionsSelect": {
+                "vegetarian": "Vegetariano",
+                "vegan": "Vegano",
+                "celiacDisease": "Enfermedad Celíaca",
+                "allergies": "Alergias",
+                "kosher": "Kosher",
+                "halal": "Halal",
+                "other": "Otros",
+                "none": "Ninguno"
+            },
+            "shirtSize": "Talla de Camisa",
+            "shirtSizeSelect": {
+                "xs": "XS",
+                "s": "S",
+                "m": "M",
+                "l": "L",
+                "xl": "XL",
+                "xxl": "XXL"
+            },
+            "identifyAsGroup": "¿Te identificas con algún grupo no representado en la industria?",
+            "identifyAsGroupSelect": {
+                "yes": "Sí",
+                "no": "No",
+                "dontKnow": "No sé",
+                "notAnswer": "Prefiero no contestar"
+            },
+            "race": "¿Cuál de las siguientes razas/etnias te representa mejor",
+            "raceSelect": {
+                "asianIndian": "Indio Asiático",
+                "blackAfrican": "Negro o Africano",
+                "chinese": "Chino",
+                "philippine": "Filipino",
+                "guamanian": "Guameña o Chamorro",
+                "hispanic": "Hispano / Latina / Origen Español",
+                "japanese": "Japonés",
+                "korean": "Coreano",
+                "middleEastern": "Medio este",
+                "nativeAmerican": "Nativo Americano o Nativo de Alaska",
+                "nativeHawaiian": "Nativo Hawaiano",
+                "samoan": "Samoano",
+                "vietnamese": "Vietnamita",
+                "white": "Blanco",
+                "otherAsian": "Asiático Otros (Tailandes, Camboyano, etc.)",
+                "otherPacificIslander": "Isleño del pacífico Otros",
+                "other": "Otros",
+                "notAnswer": "Prefiero no contestar"
+            },
+            "maxStudies": "¿Cuál es el grado máximo de estudios que has completado?",
+            "maxStudiesSelect": {
+                "highSchool": "Preparatoria",
+                "university": "Universidad"
+            },
+            "mainStudyArea": "¿Cuál es tu principal área de estudios?",
+            "mainStudyAreaSelect": {
+                "computerScience": "Ciencias computacionales, ingeniería en computación o ingeniería de software",
+                "engineering": "Otra disciplina en ingeniería (ingeniero civil, eléctrico, mecánico)",
+                "informationSystems": "Sistemas de la información, tecnologías de la información o administración de sistemas",
+                "naturalScience": "Ciencias naturales (biología, química, física)",
+                "math": "Matemáticas o estadística",
+                "webDev": "Desarrollo o diseño web",
+                "business": "Disciplina en negocios (contaduróa, finanzas, marketing, etc.)",
+                "humanities": "Disciplina en humanidades (literatura, historia, filosofía, etc.)",
+                "socialScience": "Ciencias Sociales (antropología, psicología, ciencias políticas, etc.)",
+                "fineArts": "Artes o artes escénicas (diseño gráfico, música, teatro, etc.)",
+                "health": "Ciencias de la salud (enfermería, radilogía, veterinaria, etc.)",
+                "other": "Other",
+                "undecided": "Aún por decidir",
+                "doesntOffer": "Mi escuela no ofrece áreas de estudio principales",
+                "notAnswer": "Prefiero no contestar"
+            }
+        },
+        "hackerSecurity": {
+            "title": "Seguridad y Protección del Hacker",
+            "codeOfConduct1": "He leído y estoy de acuerdo con el",
+            "codeOfConduct2": "código de conducta de la MLH",
+            "shareInfo1": "Autorizo el compartir la información de mi solicitud/inscripción con la",
+            "shareInfo2": "Major League Hacking",
+            "shareInfo3": "para la administración del evento, la clasificación y la administración de MLH de acuerdo con la",
+            "shareInfo4": "Política de Privacidad de la MLH.",
+            "shareInfo5": "Además, acepto los términos de los",
+            "shareInfo6": "Términos y Condiciones del Concurso",
+            "shareInfo7": "de MLH y la",
+            "shareInfo8": "Política de Privacidad de MLH.",
+            "sendEmail": "Autorizo a la MLH a enviarme un correo electrónico en el que pueda suscribirme a los newsletters de los Hackers, Eventos ó Organizadores de la MLH y otras comunicaciones de la MLH."
+        },
+        "next": "Siguiente",
+        "cancel": "Cancelar",
+        "previous": "Anterior",
+        "complete": "Finalizar Registro"
     }
 }
