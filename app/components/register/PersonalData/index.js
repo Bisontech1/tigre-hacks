@@ -21,7 +21,10 @@ const PersonalData = (props) => {
     universitySpecification,
     setUniversitySpecification,
     university,
-
+    password,
+    setPassword,
+    confirmPassword ,
+    setConfirmPassword,
     setUniversity,
     name,
     setName,
@@ -44,7 +47,7 @@ const PersonalData = (props) => {
           "& .MuiGrid-item": { display: "flex", justifyContent: "center" },
         }}
       >
-        <Grid item xl={6} sm={12}>
+        <Grid item md={6} xs={12}>
           <TextField
             value={name}
             onChange={(e) => {
@@ -53,7 +56,7 @@ const PersonalData = (props) => {
             label="Nombre"
           />
         </Grid>
-        <Grid item xl={6} sm={12}>
+        <Grid item md={6} xs={12}>
           <TextField
             value={lastname}
             onChange={(e) => {
@@ -72,7 +75,7 @@ const PersonalData = (props) => {
           "& .MuiGrid-item": { display: "flex", justifyContent: "center" },
         }}
       >
-        <Grid item xl={6} sm={12}>
+        <Grid item md={6} xs={12}>
           <TextField
             value={email}
             onChange={(e) => {
@@ -81,46 +84,7 @@ const PersonalData = (props) => {
             label="Email"
           />
         </Grid>
-        <Grid item xl={6} sm={12}>
-          <TextField
-            value={phoneNumber}
-            onChange={(e) => {
-              setPhoneNumber(e.target.value);
-            }}
-            label="Teléfono"
-          />
-        </Grid>
-      </Grid>
-
-      <Grid
-        container
-        justifyContent="center"
-        alignItems="center"
-        sx={{
-          "& .MuiGrid-item": { display: "flex", justifyContent: "center" },
-        }}
-      >
-        <Grid item xl={6} sm={12}>
-          <FormControl fullWidth>
-            <InputLabel>Pronombres</InputLabel>
-            <Select
-              value={pronoun}
-              label="Pronombres"
-              onChange={(e) => setPronoun(e.target.value)}
-            >
-              <MenuItem value="She/Her">She/Her</MenuItem>
-              <MenuItem value="He/Him">He/Him</MenuItem>
-              <MenuItem value="They/Them">They/Them</MenuItem>
-              <MenuItem value="She/They">She/They</MenuItem>
-              <MenuItem value="He/They">He/They</MenuItem>
-              <MenuItem value="Prefer Not to Answer">
-                Prefer Not to Answer
-              </MenuItem>
-              <MenuItem value="Other">Other</MenuItem>
-            </Select>
-          </FormControl>
-        </Grid>
-        <Grid item xl={6} sm={12}>
+        <Grid item md={6} xs={12}>
           <FormControl fullWidth>
             <InputLabel>Genero</InputLabel>
             <Select
@@ -153,6 +117,7 @@ const PersonalData = (props) => {
           </FormControl>
         </Grid>
       </Grid>
+
       <Grid
         container
         justifyContent="center"
@@ -161,7 +126,77 @@ const PersonalData = (props) => {
           "& .MuiGrid-item": { display: "flex", justifyContent: "center" },
         }}
       >
-        <Grid item xl={6} sm={12}>
+        <Grid item md={6} xs={12}>
+          <TextField
+            value={password}
+            type="password"
+            onChange={(e) => {
+              setPassword(e.target.value);
+            }}
+            label="Password"
+          />
+        </Grid>
+        <Grid item md={6} xs={12}>
+          <TextField
+            value={confirmPassword}
+            type="password"
+            onChange={(e) => {
+              setConfirmPassword(e.target.value);
+            }}
+            error={confirmPassword && password != confirmPassword}
+            helperText={confirmPassword && password != confirmPassword ? "Contraseñas no coinciden" : ""}
+            label="Confirm Password"
+          />
+        </Grid>
+      </Grid>
+
+      <Grid
+        container
+        justifyContent="center"
+        alignItems="center"
+        sx={{
+          "& .MuiGrid-item": { display: "flex", justifyContent: "center" },
+        }}
+      >
+        <Grid item md={6} xs={12}>
+          <TextField
+            value={phoneNumber}
+            onChange={(e) => {
+              setPhoneNumber(e.target.value);
+            }}
+            label="Teléfono"
+          />
+        </Grid>
+        <Grid item md={6} xs={12}>
+          <FormControl fullWidth>
+            <InputLabel>Pronombres</InputLabel>
+            <Select
+              value={pronoun}
+              label="Pronombres"
+              onChange={(e) => setPronoun(e.target.value)}
+            >
+              <MenuItem value="She/Her">She/Her</MenuItem>
+              <MenuItem value="He/Him">He/Him</MenuItem>
+              <MenuItem value="They/Them">They/Them</MenuItem>
+              <MenuItem value="She/They">She/They</MenuItem>
+              <MenuItem value="He/They">He/They</MenuItem>
+              <MenuItem value="Prefer Not to Answer">
+                Prefer Not to Answer
+              </MenuItem>
+              <MenuItem value="Other">Other</MenuItem>
+            </Select>
+          </FormControl>
+        </Grid>
+      </Grid>
+      <Grid
+        container
+        justifyContent="center"
+        alignItems="center"
+        sx={{
+          "& .MuiGrid-item": { display: "flex", justifyContent: "center" },
+        }}
+      >
+        <Grid item md={6} xs={12}>
           <TextField
             value={age}
             onChange={(e) => {
@@ -170,7 +205,8 @@ const PersonalData = (props) => {
             label="Edad"
           />
         </Grid>
-        <Grid item xl={6} sm={12}>
+
+        <Grid item md={6} xs={12}>
           <FormControl fullWidth>
             <InputLabel>Escuela</InputLabel>
             <Select
@@ -202,40 +238,41 @@ const PersonalData = (props) => {
             )}
           </FormControl>
         </Grid>
+      </Grid>
+
+      <Grid
+        container
+        justifyContent="center"
+        alignItems="center"
+        sx={{ margin: "50px 0px" }}
+      >
+        <Grid item sx={{ width: "100%" }}>
+          <PDFDropzone />
+        </Grid>
         <Grid
-          container
-          justifyContent="center"
-          alignItems="center"
-          sx={{ margin: "50px 0px" }}
+          item
+          sx={{
+            marginTop: "10px",
+            width: "100%",
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            color: "#868686",
+            "& a": { color: "orange" },
+          }}
         >
-          <Grid item sx={{ width: "100%" }}>
-            <PDFDropzone />
-          </Grid>
-          <Grid
-            item
-            sx={{
-              marginTop: "10px",
-              width: "100%",
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "center",
-              color: "#868686",
-              "& a": { color: "orange" },
-            }}
-          >
-            <Typography>
-              ¿No tienes un CV/Résumé? Aprende a crear el tuyo con &nbsp;
-              <a href="https://akotadi.notion.site/Materials-cad70d8407dd40d38c7d64c0bb4b518c">
-                Proyecto Nutria
-              </a>
-            </Typography>
-            <Typography>
-              ó Escucha el Podcast de &nbsp;
-              <a href="https://www.youtube.com/watch?v=HNxvj3t3k2M&t=0s">
-                Hireline.io & Don Chambitas
-              </a>
-            </Typography>
-          </Grid>
+          <Typography>
+            ¿No tienes un CV/Résumé? Aprende a crear el tuyo con &nbsp;
+            <a href="https://akotadi.notion.site/Materials-cad70d8407dd40d38c7d64c0bb4b518c">
+              Proyecto Nutria
+            </a>
+          </Typography>
+          <Typography>
+            ó Escucha el Podcast de &nbsp;
+            <a href="https://www.youtube.com/watch?v=HNxvj3t3k2M&t=0s">
+              Hireline.io & Don Chambitas
+            </a>
+          </Typography>
         </Grid>
       </Grid>
     </>

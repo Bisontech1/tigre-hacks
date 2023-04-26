@@ -9,6 +9,7 @@ import AdditionalInfo from "../../components/register/AdditionalInfo";
 import HackerSecurity from "../../components/register/HackerSecurity";
 import WelcomeModal from "../../components/register/WelcomeDialog";
 import { User } from "models/user";
+import { authService, usersDatabase } from "services/firebase";
 
 const user = new User();
 
@@ -25,6 +26,7 @@ const PersonalDataForm = () => {
   const [email, setEmail] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
   const [age, setAge] = useState("");
+  const [password, setPassword] = useState("");
 
   const [diet, setDiet] = useState("");
   const [dietSpecifications, setDietSpecifications] = useState("");
@@ -42,6 +44,8 @@ const PersonalDataForm = () => {
   const [agreesToShareInfo, setAgreesToShareInfo] = useState(false);
   const [agreesToSendMail, setAgreesToSendMail] = useState(false);
 
+  const [confirmPassword, setConfirmPassword] = useState("");
+
   const isNextButtonDisabled = {
     0: () => {
       if (
@@ -51,9 +55,13 @@ const PersonalDataForm = () => {
         !user.university ||
         !user.pronouns ||
         !user.gender ||
-        !user.age
+        !user.age ||
+        !user.password ||
+        !confirmPassword
       )
         return true;
+
+      if (password != confirmPassword) return true;
 
       return false;
     },
@@ -107,6 +115,7 @@ const PersonalDataForm = () => {
     user.genderSpecification = genderSpecification;
     user.university = university;
     user.universitySpecification = universitySpecification;
+    user.password = password;
 
     user.dietRestricions = diet;
     user.dietSpecifications = dietSpecifications;
@@ -165,8 +174,13 @@ const PersonalDataForm = () => {
     setActiveStep(activeStep - 1);
   };
 
-  const handleRegistration = () => {
-    //TODO
+  const handleRegistration = async () => {
+    const registeredUser = await authService.register(
+      user.email,
+      user.password
+    );
+    user.id = registeredUser.uid;
+    await usersDatabase.add(user);
   };
   const getStepContent = (step) => {
     switch (step) {
@@ -223,6 +237,15 @@ const PersonalDataForm = () => {
             setUniversitySpecification={(value) => {
               user.universitySpecification = value;
               setUniversitySpecification(value);
+            }}
+            password={password}
+            setPassword={(value) => {
+              user.password = value;
+              setPassword(value);
+            }}
+            confirmPassword={confirmPassword}
+            setConfirmPassword={(value) => {
+              setConfirmPassword(value);
             }}
           />
         );

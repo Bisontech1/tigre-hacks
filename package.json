@@ -19,7 +19,10 @@
     "eslint": "8.36.0",
     "eslint-config-next": "13.2.4",
     "firebase": "^9.20.0",
+<<<<<<< HEAD
     "fs": "^0.0.1-security",
+=======
+>>>>>>> c893673 (Se añade registro de usuarios)
     "leaflet": "^1.9.3",
     "next": "13.2.4",
     "papaparse": "^5.4.1",
