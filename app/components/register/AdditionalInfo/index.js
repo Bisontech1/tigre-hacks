@@ -6,9 +6,11 @@ import {
   Select,
   MenuItem,
 } from "@mui/material";
+import { useTranslationContext } from "contexts";
 import { useState, useEffect } from "react";
 
 const AdditionalInfo = (props) => {
+  const { language, setLanguage } = useTranslationContext();
   const {
     diet,
     setDiet,
@@ -66,10 +68,11 @@ const AdditionalInfo = (props) => {
             className="other-input"
             value={specifyValue ? specifyValue : ""}
             onChange={(e) => {
-              console.log(e)
               onSpecifyChange(e.target.value);
             }}
-            label="Especifique"
+            label={language?.getString(
+              "register.additionalInformation.specify"
+            )}
             variant="outlined"
           />
         )}
@@ -89,20 +92,62 @@ const AdditionalInfo = (props) => {
       <Grid {...gridContainerProps}>
         {renderGridItem(
           renderFormControl(
-            "Restricciones Dietarias",
+            language?.getString(
+              "register.additionalInformation.dietRestrictions"
+            ),
             diet,
             (e) => {
               setDiet(e);
             },
             [
-              { value: "Vegetarian", label: "Vegetarian" },
-              { value: "Vegan", label: "Vegan" },
-              { value: "Celiac Disease", label: "Celiac Disease" },
-              { value: "Allergies", label: "Allergies" },
-              { value: "Kosher", label: "Kosher" },
-              { value: "Halal", label: "Halal" },
-              { value: "Other", label: "Other" },
-              { value: "None", label: "None" },
+              {
+                value: "Vegetarian",
+                label: language?.getString(
+                  "register.additionalInformation.dietRestrictionsSelect.vegetarian"
+                ),
+              },
+              {
+                value: "Vegan",
+                label: language?.getString(
+                  "register.additionalInformation.dietRestrictionsSelect.vegan"
+                ),
+              },
+              {
+                value: "Celiac Disease",
+                label: language?.getString(
+                  "register.additionalInformation.dietRestrictionsSelect.celiacDisease"
+                ),
+              },
+              {
+                value: "Allergies",
+                label: language?.getString(
+                  "register.additionalInformation.dietRestrictionsSelect.allergies"
+                ),
+              },
+              {
+                value: "Kosher",
+                label: language?.getString(
+                  "register.additionalInformation.dietRestrictionsSelect.kosher"
+                ),
+              },
+              {
+                value: "Halal",
+                label: language?.getString(
+                  "register.additionalInformation.dietRestrictionsSelect.halal"
+                ),
+              },
+              {
+                value: "Other",
+                label: language?.getString(
+                  "register.additionalInformation.dietRestrictionsSelect.other"
+                ),
+              },
+              {
+                value: "None",
+                label: language?.getString(
+                  "register.additionalInformation.dietRestrictionsSelect.none"
+                ),
+              },
             ],
             diet == "Other" || diet == "Allergies",
             (e) => {
@@ -135,19 +180,38 @@ const AdditionalInfo = (props) => {
 
         {renderGridItem(
           renderFormControl(
-            "¿Te identificas con algún grupo no representado en la industria?",
+            language?.getString(
+              "register.additionalInformation.identifyAsGroup"
+            ),
             identifyAsGroup,
             (e) => {
               setIdentifyAsGroup(e);
             },
 
             [
-              { value: "Sí", label: "Sí" },
-              { value: "No", label: "No" },
-              { value: "No se", label: "No se" },
+              {
+                value: "Sí",
+                label: language?.getString(
+                  "register.additionalInformation.identifyAsGroupSelect.yes"
+                ),
+              },
+              {
+                value: "No",
+                label: language?.getString(
+                  "register.additionalInformation.identifyAsGroupSelect.no"
+                ),
+              },
+              {
+                value: "No se",
+                label: language?.getString(
+                  "register.additionalInformation.identifyAsGroupSelect.dontKnow"
+                ),
+              },
               {
                 value: "Prefiero no responder",
-                label: "Prefiero no responder",
+                label: language?.getString(
+                  "register.additionalInformation.identifyAsGroupSelect.notAnswer"
+                ),
               },
             ]
           )
@@ -157,48 +221,120 @@ const AdditionalInfo = (props) => {
       <Grid {...gridContainerProps}>
         {renderGridItem(
           renderFormControl(
-            "¿Cuál de los siguientes Razas/ Etnias te representa mejor?",
+            language?.getString("register.additionalInformation.race"),
             race,
             (e) => {
               setRace(e);
             },
             [
-              { value: "Asian Indian", label: "Asian Indian" },
-              { value: "Black or African", label: "Black or African" },
-              { value: "Chinese", label: "Chinese" },
-              { value: "Filipino", label: "Filipino" },
+              {
+                value: "Asian Indian",
+                label: language?.getString(
+                  "register.additionalInformation.raceSelect.asianIndian"
+                ),
+              },
+              {
+                value: "Black or African",
+                label: language?.getString(
+                  "register.additionalInformation.raceSelect.blackAfrican"
+                ),
+              },
+              {
+                value: "Chinese",
+                label: language?.getString(
+                  "register.additionalInformation.raceSelect.chinese"
+                ),
+              },
+              {
+                value: "Filipino",
+                label: language?.getString(
+                  "register.additionalInformation.raceSelect.philipine"
+                ),
+              },
               {
                 value: "Guamanian or Chamorro",
-                label: "Guamanian or Chamorro",
+                label: language?.getString(
+                  "register.additionalInformation.raceSelect.guamanian"
+                ),
               },
               {
                 value: "Hispanic / Latino / Spanish Origin",
-                label: "Hispanic / Latino / Spanish Origin",
+                label: language?.getString(
+                  "register.additionalInformation.raceSelect.hispanic"
+                ),
               },
-              { value: "Japanese", label: "Japanese" },
-              { value: "Korean", label: "Korean" },
-              { value: "Middle Eastern", label: "Middle Eastern" },
+              {
+                value: "Japanese",
+                label: language?.getString(
+                  "register.additionalInformation.raceSelect.japanese"
+                ),
+              },
+              {
+                value: "Korean",
+                label: language?.getString(
+                  "register.additionalInformation.raceSelect.korean"
+                ),
+              },
+              {
+                value: "Middle Eastern",
+                label: language?.getString(
+                  "register.additionalInformation.raceSelect.middleEastern"
+                ),
+              },
               {
                 value: "Native American or Alaskan Native",
-                label: "Native American or Alaskan Native",
+                label: language?.getString(
+                  "register.additionalInformation.raceSelect.nativeAmerican"
+                ),
               },
-              { value: "Native Hawaiian", label: "Native Hawaiian" },
-              { value: "Samoan", label: "Samoan" },
-              { value: "Vietnamese", label: "Vietnamese" },
-              { value: "White", label: "White" },
+              {
+                value: "Native Hawaiian",
+                label: language?.getString(
+                  "register.additionalInformation.raceSelect.nativeHawaiian"
+                ),
+              },
+              {
+                value: "Samoan",
+                label: language?.getString(
+                  "register.additionalInformation.raceSelect.samoan"
+                ),
+              },
+              {
+                value: "Vietnamese",
+                label: language?.getString(
+                  "register.additionalInformation.raceSelect.vietnamese"
+                ),
+              },
+              {
+                value: "White",
+                label: language?.getString(
+                  "register.additionalInformation.raceSelect.white"
+                ),
+              },
               {
                 value: "Other Asian (Thai, Cambodian, etc)",
-                label: "Other Asian (Thai, Cambodian, etc)",
+                label: language?.getString(
+                  "register.additionalInformation.raceSelect.otherAsian"
+                ),
               },
               {
                 value: "Other Pacific Islander",
-                label: "Other Pacific Islander",
+                label: language?.getString(
+                  "register.additionalInformation.raceSelect.otherPacificIslander"
+                ),
               },
               {
                 value: "Other (Please Specify)",
-                label: "Other (Please Specify)",
+                label: language?.getString(
+                  "register.additionalInformation.raceSelect.other"
+                ),
               },
-              { value: "Prefer Not to Answer", label: "Prefer Not to Answer" },
+              {
+                value: "Prefer Not to Answer",
+                label: language?.getString(
+                  "register.additionalInformation.raceSelect.notAnswer"
+                ),
+              },
             ],
             race == "Other (Please Specify)",
             (e) => {
@@ -210,21 +346,31 @@ const AdditionalInfo = (props) => {
 
         {renderGridItem(
           renderFormControl(
-            "¿Cuál es el grado maximo de estudios que has completado?",
+            language?.getString("register.additionalInformation.maxStudies"),
             maxStudies,
             (e) => {
               setMaxStudies(e);
             },
             [
-              { value: "Preparatoria", label: "Preparatoria" },
-              { value: "Universidad", label: "Universidad" },
+              {
+                value: "Preparatoria",
+                label: language?.getString(
+                  "register.additionalInformation.maxStudiesSelect.highSchool"
+                ),
+              },
+              {
+                value: "Universidad",
+                label: language?.getString(
+                  "register.additionalInformation.maxStudiesSelect.university"
+                ),
+              },
             ]
           )
         )}
 
         {renderGridItem(
           renderFormControl(
-            "¿Cuál fue tu principal área de estudios?",
+            language?.getString("register.additionalInformation.mainStudyArea"),
             mainStudyArea,
             (e) => {
               setMainStudyArea(e);
@@ -234,80 +380,103 @@ const AdditionalInfo = (props) => {
               {
                 value:
                   "Computer science, computer engineering, or software engineering",
-                label:
-                  "Computer science, computer engineering, or software engineering",
+                label: language?.getString(
+                  "register.additionalInformation.mainStudyAreaSelect.computerScience"
+                ),
               },
               {
                 value:
                   "Another engineering discipline (such as civil, electrical, mechanical, etc.)",
-                label:
-                  "Another engineering discipline (such as civil, electrical, mechanical, etc.)",
+                label: language?.getString(
+                  "register.additionalInformation.mainStudyAreaSelect.engineering"
+                ),
               },
               {
                 value:
                   "Information systems, information technology, or system administration",
-                label:
-                  "Information systems, information technology, or system administration",
+                label: language?.getString(
+                  "register.additionalInformation.mainStudyAreaSelect.informationSystems"
+                ),
               },
               {
                 value:
                   "A natural science (such as biology, chemistry, physics, etc.)",
-                label:
-                  "A natural science (such as biology, chemistry, physics, etc.)",
+                label: language?.getString(
+                  "register.additionalInformation.mainStudyAreaSelect.naturalScience"
+                ),
               },
               {
                 value: "Mathematics or statistics",
-                label: "Mathematics or statistics",
+                label: language?.getString(
+                  "register.additionalInformation.mainStudyAreaSelect.math"
+                ),
               },
               {
                 value: "Web development or web design",
-                label: "Web development or web design",
+                label: language?.getString(
+                  "register.additionalInformation.mainStudyAreaSelect.webDev"
+                ),
               },
               {
                 value:
                   "Business discipline (such as accounting, finance, marketing, etc.)",
-                label:
-                  "Business discipline (such as accounting, finance, marketing, etc.)",
+                label: language?.getString(
+                  "register.additionalInformation.mainStudyAreaSelect.business"
+                ),
               },
               {
                 value:
                   "Humanities discipline (such as literature, history, philosophy, etc.)",
-                label:
-                  "Humanities discipline (such as literature, history, philosophy, etc.)",
+                label: language?.getString(
+                  "register.additionalInformation.mainStudyAreaSelect.humanities"
+                ),
               },
               {
                 value:
                   "Social science (such as anthropology, psychology, political science, etc.)",
-                label:
-                  "Social science (such as anthropology, psychology, political science, etc.)",
+                label: language?.getString(
+                  "register.additionalInformation.mainStudyAreaSelect.socialScience"
+                ),
               },
               {
                 value:
                   "Fine arts or performing arts (such as graphic design, music, studio art, etc.)",
-                label:
-                  "Fine arts or performing arts (such as graphic design, music, studio art, etc.)",
+                label: language?.getString(
+                  "register.additionalInformation.mainStudyAreaSelect.fineArts"
+                ),
               },
               {
                 value:
                   "Health science (such as nursing, pharmacy, radiology, etc.)",
-                label:
-                  "Health science (such as nursing, pharmacy, radiology, etc.)",
+                label: language?.getString(
+                  "register.additionalInformation.mainStudyAreaSelect.health"
+                ),
               },
               {
                 value: "Other (please specify)",
-                label: "Other (please specify)",
+                label: language?.getString(
+                  "register.additionalInformation.mainStudyAreaSelect.other"
+                ),
               },
               {
                 value: "Undecided / No Declared Major",
-                label: "Undecided / No Declared Major",
+                label: language?.getString(
+                  "register.additionalInformation.mainStudyAreaSelect.undecided"
+                ),
               },
               {
                 value:
                   "My school does not offer majors / primary areas of study",
-                label:
-                  "My school does not offer majors / primary areas of study",
+                label: language?.getString(
+                  "register.additionalInformation.mainStudyAreaSelect.doesntOffer"
+                ),
               },
-              { value: "Prefer not to answer", label: "Prefer not to answer" },
+              {
+                value: "Prefer not to answer",
+                label: language?.getString(
+                  "register.additionalInformation.mainStudyAreaSelect.notAnswer"
+                ),
+              },
             ],
             mainStudyArea == "Other (please specify)",
             (e) => {
@@ -321,6 +490,3 @@ const AdditionalInfo = (props) => {
   );
 };
 export default AdditionalInfo;
-
-
-
