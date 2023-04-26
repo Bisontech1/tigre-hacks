@@ -23,7 +23,7 @@ const PersonalData = (props) => {
     university,
     password,
     setPassword,
-    confirmPassword ,
+    confirmPassword,
     setConfirmPassword,
     setUniversity,
     name,
@@ -143,8 +143,12 @@ const PersonalData = (props) => {
             onChange={(e) => {
               setConfirmPassword(e.target.value);
             }}
-            error={confirmPassword && password != confirmPassword}
-            helperText={confirmPassword && password != confirmPassword ? "Contraseñas no coinciden" : ""}
+            error={confirmPassword != "" && password != confirmPassword}
+            helperText={
+              confirmPassword && password != confirmPassword
+                ? "Contraseñas no coinciden"
+                : ""
+            }
             label="Confirm Password"
           />
         </Grid>
