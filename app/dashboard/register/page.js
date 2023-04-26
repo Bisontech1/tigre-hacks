@@ -452,11 +452,11 @@ const PersonalDataForm = () => {
             <Grid item>
               {activeStep <= 0 ? (
                 <Button color="secondary" href="/">
-                  Cancelar
+                  {language?.getString("register.cancel")}
                 </Button>
               ) : (
                 <Button color="secondary" onClick={handleBack}>
-                  Atras
+                  {language?.getString("register.previous")}
                 </Button>
               )}
             </Grid>
@@ -467,7 +467,7 @@ const PersonalDataForm = () => {
                   color="secondary"
                   onClick={handleRegistration}
                 >
-                  Finalizar Registro
+                  {language?.getString("register.complete")}
                 </Button>
               ) : (
                 <Button
@@ -475,7 +475,7 @@ const PersonalDataForm = () => {
                   color="secondary"
                   onClick={handleNext}
                 >
-                  Siguiente
+                  {language?.getString("register.next")}
                 </Button>
               )}
             </Grid>

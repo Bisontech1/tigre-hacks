@@ -188,7 +188,9 @@ const PersonalData = (props) => {
         </Grid>
         <Grid item md={6} xs={12}>
           <FormControl fullWidth>
-            <InputLabel>Pronombres</InputLabel>
+            <InputLabel>
+              {language?.getString("register.personalData.pronouns")}
+            </InputLabel>
             <Select
               value={pronoun}
               label={language?.getString("register.personalData.pronouns")}
@@ -253,7 +255,9 @@ const PersonalData = (props) => {
 
         <Grid item md={6} xs={12}>
           <FormControl fullWidth>
-            <InputLabel>Escuela</InputLabel>
+            <InputLabel>
+              {language?.getString("register.personalData.school")}
+            </InputLabel>
             <Select
               value={university}
               label={language?.getString("register.personalData.school")}

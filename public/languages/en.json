@@ -165,48 +165,55 @@
         "copyright": "Copyright © Bisontech 2023."
     },
     "register": {
+        "welcome": {
+            "title": "Welcome Hacker! 🐯",
+            "subtitle": "We are glad to have you here",
+            "description1": "We are very happy to welcome you to our hackathon and we thank you interest on participating. We are sure that you will have a unique and exciting experience.",
+            "description2": "Before we start we are going to need to register some of your data to make your experience as a hacker the best as it can be",
+            "start": "Start"
+        },
         "personalData": {
-            "title": "Información Personal",
-            "name": "Nombre",
-            "lastname": "Apellidos",
+            "title": "Personal Information",
+            "name": "Name",
+            "lastname": "Lastname",
             "email": "Email",
-            "gender": "Género",
+            "gender": "Gender",
             "genders": {
-                "man": "Hombre",
-                "woman": "Mujer",
-                "nonBinary": "No Binario",
-                "selfDescribe": "Prefiero describirme",
-                "notAnswer": "Prefiero no contestar",
-                "specify": "Especifique"
+                "man": "Man",
+                "woman": "Woman",
+                "nonBinary": "Non-Binary",
+                "selfDescribe": "Prefer to self describe",
+                "notAnswer": "Prefer not to answer",
+                "specify": "Specify"
             },
-            "password": "Contraseña",
-            "confirmPassword": "Confirmar Contraseña",
+            "password": "Password",
+            "confirmPassword": "Confirm Password",
             "passwordNotMatch": "Passwords don't match",
-            "phoneNumber": "Teléfono",
-            "pronouns": "Pronombres",
+            "phoneNumber": "Phone number",
+            "pronouns": "Pronouns",
             "pronounsSelect": {
-                "sheHer": "",
-                "heHim": "",
-                "theyThem": "",
-                "sheThey": "",
-                "heThey": "",
-                "notAnswer": "Prefiero no contestar",
-                "other": "Otro"
+                "sheHer": "She/Her",
+                "heHim": "He/Him",
+                "theyThem": "They/Them",
+                "sheThey": "She/They",
+                "heThey": "He/They",
+                "notAnswer": "Prefer not to answer",
+                "other": "Other"
             },
-            "age": "Edad",
-            "school": "Escuela",
+            "age": "Age",
+            "school": "School",
             "schoolSelect": {
-                "other": "Otra"
+                "other": "Other"
             },
-            "otherSchool":"Other School",
-            "cvResume": "CV/Currículum",
-            "dontHaveCV": "¿No tienes un CV/Résumé? Aprende a crear el tuyo con",
-            "podcast": "ó Escucha el Podcast de",
+            "otherSchool": "Other School",
+            "cvResume": "CV/Resume",
+            "dontHaveCV": "Don't have a CV/Resume? Learn to create yours with",
+            "podcast": "or Listen to the Podcast",
             "podcastTitle": "Hireline.io & Don Chambitas",
             "proyectoNutria": "Proyecto Nutria"
         },
         "additionalInformation": {
-            "title": "Información Adicional",
+            "title": "Additional Information",
             "dietRestrictions": "Restricciones Dietarias",
             "dietRestrictionsSelect": {
                 "vegetarian": "Vegetariano",
@@ -280,7 +287,7 @@
             }
         },
         "hackerSecurity": {
-            "title": "Seguridad y Protección del Hacker",
+            "title": "Hacker Security and Protection",
             "codeOfConduct1": "He leído y estoy de acuerdo con el",
             "codeOfConduct2": "código de conducta de la MLH",
             "shareInfo1": "Autorizo el compartir la información de mi solicitud/inscripción con la",
@@ -293,9 +300,9 @@
             "shareInfo8": "Política de Privacidad de MLH.",
             "sendEmail": "Autorizo a la MLH a enviarme un correo electrónico en el que pueda suscribirme a los newsletters de los Hackers, Eventos ó Organizadores de la MLH y otras comunicaciones de la MLH."
         },
-        "next": "Siguiente",
-        "cancel": "Cancelar",
-        "previous": "Anterior",
-        "complete": "Finalizar Registro"
+        "next": "Next",
+        "cancel": "Cancel",
+        "previous": "Previous",
+        "complete": "Complete Register"
     }
 }
