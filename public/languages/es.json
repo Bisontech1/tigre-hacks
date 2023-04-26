@@ -29,7 +29,7 @@
         },
         "safeSpace": {
             "title": "Un Espacio Seguro",
-            "description": "Este hackathon fue construido por estudiantes como tú, que estan buscando un espacio inclusivo y empoderador para desafiarse a sí mismos e innovar."
+            "description": "Este hackathon fue construido por estudiantes como tú, que están buscando un espacio inclusivo y empoderador para desafiarse a sí mismos e innovar."
         },
         "networkWithOther": {
             "title": "Conecta con Otros",
@@ -44,15 +44,15 @@
         },
         "haveFunCompeting": {
             "title": "¡Diviértete compitiendo!",
-            "description": "¡Un fin de semana lleno de diversión hacker! Juntate con tus amigos y experimenta tu primer hackathon lleno de comida gratis, mini juegos, actividades, carreras, premios, swag, beneficios y muchas cosas más!"
+            "description": "¡Un fin de semana lleno de diversión hacker! Júntate con tus amigos y experimenta tu primer hackathon lleno de comida gratis, minijuegos, actividades, carreras, premios, swag, beneficios y muchas cosas más!"
         },
         "hackRealProblem": {
             "title": "¡Hackea un problema de la vida real!",
-            "description": "No importa si eres un hacker experimentado o no, ¡en este hack tendrás retos emocionantes e infinitas posibilidades! ¡Tenemos todos los recursos y herramientos para hacer de este hackathon la mejor experiencia posible para tí!"
+            "description": "No importa si eres un hacker experimentado o no, ¡en este hack tendrás retos emocionantes e infinitas posibilidades! ¡Tenemos todos los recursos y herramientas para hacer de este hackathon la mejor experiencia posible para ti!"
         },
         "moreThanAHackathon": {
             "title": "Más que un Hackathon",
-            "description": "Nosotros creemos que los hackathones son más que únicamente construir proyectos geniales. Son también lugares para discutir, compartir y convertir ideas que harán una diferencia en realidad. Espera trabajar con organizaciones sin ánimos de lucro, programar junto con expertos en la industria y, sobretodo, colaborar con tus compañeros para crear algo verdaderamente increíble."
+            "description": "Nosotros creemos que los hackathones son más que únicamente construir proyectos geniales. Son también lugares para discutir, compartir y convertir ideas que harán una diferencia en realidad. Espera trabajar con organizaciones sin ánimos de lucro, programar junto con expertos en la industria y, sobre todo, colaborar con tus compañeros para crear algo verdaderamente increíble."
         }
     },
     "everyoneCanParticipate": {
@@ -65,7 +65,7 @@
         "entrepeneurs": "Emprendedores",
         "architects": "Arquitectos",
         "recentGraduates": "Recién Graduados",
-        "firstTime": "¿Es tu primera vez participando en un hackathon? ¿No estás familiarizado con la programación? ¡No te preocupes! Sal de tu zona de comfort construyendo un proyecto nuevo."
+        "firstTime": "¿Es tu primera vez participando en un hackathon? ¿No estás familiarizado con la programación? ¡No te preocupes! Sal de tu zona de confort construyendo un proyecto nuevo."
     },
     "sponsors": {
         "title": "Sponsors",
@@ -105,7 +105,7 @@
         },
         "whenCanIApply": {
             "question": "¿Cuándo puedo aplicar?",
-            "answer": "Las aplicaciones se abriran pronto durante el mes de Abril. ¡Recuerda aplicar lo más pronto posible para asegurar un lugar en el hackathon!"
+            "answer": "Las aplicaciones se abrirán pronto durante el mes de abril. ¡Recuerda aplicar lo más pronto posible para asegurar un lugar en el hackathon!"
         },
         "whatShouldIBring": {
             "question": "¿Qué debería de llevar al hackathon?",
@@ -113,19 +113,19 @@
         },
         "prizes": {
             "question": "¿Habrá premios?",
-            "answer": "¡Sí! Habran premios para todos y tendremos premios principales para los mejores 3 hacks del hackathon. Nuestros sponsors tambien estarán dando premios para los participantes. Estos premios suelen tener el requerimiento de incorporar alguna tecnología en específico en tu proyecto."
+            "answer": "¡Sí! Habrán premios para todos y tendremos premios principales para los mejores 3 hacks del hackathon. Nuestros sponsors tambien estarán dando premios para los participantes. Estos premios suelen tener el requerimiento de incorporar alguna tecnología en específico en tu proyecto."
         },
         "events": {
             "question": "¿Qué tipo de eventos habrá durante el hackathon?",
-            "answer": "Estamos planenado organizar una gran variedad de talleres para que los hackers puedan aprovechar al máximo el evento. ¡Espera sesiones con mentorías, talleres, minijuegos, karaoke por la noche y mucho más!"
+            "answer": "Estamos planeando organizar una gran variedad de talleres para que los hackers puedan aprovechar al máximo el evento. ¡Espera sesiones con mentorías, talleres, minijuegos, karaoke por la noche y mucho más!"
         },
         "freeFood": {
             "question": "¿Habrá comida gratis?",
-            "answer": "Puedes esperar mucha comida y sncacks para todos los hackers que participen en el hackathon. Estaremos ofreciendo opciones veganas para aquellos que así lo prefieran, también puedes traer tu propia comida si así lo deseas. En nuestra página de registro hay un apartado para que nos hagas saber si eres alergico a algún alimento o tienes una restricción alimenticia para que hagamos de tu experiencia la mejor."
+            "answer": "Puedes esperar mucha comida y snacks para todos los hackers que participen en el hackathon. Estaremos ofreciendo opciones veganas para aquellos que así lo prefieran, también puedes traer tu propia comida si así lo deseas. En nuestra página de registro hay un apartado para que nos hagas saber si eres alergico a algún alimento o tienes una restricción alimenticia para que hagamos de tu experiencia la mejor."
         },
         "categories": {
             "question": "¿Habrá diferentes categorías?",
-            "answer": "¡Sí! El hackathon tendrá diferentes categorías enfocadas en problemas del mundo real en Monterrey. Así mismo algunos de nuestros patrocinadores tendran su propia categoria en el hackathon y daran premios exclusivos para su categoria."
+            "answer": "¡Sí! El hackathon tendrá diferentes categorías enfocadas en problemas del mundo real en Monterrey. Así mismo algunos de nuestros patrocinadores tendran su propia categoría en el hackathon y daran premios exclusivos para su categoría."
         },
         "moreQuestions": {
             "question": "¿Alguna otra pregunta?",
