@@ -165,6 +165,13 @@
         "copyright": "Copyright © Bisontech 2023. Made with </> 🤍 by Bisontech"
     },
     "register": {
+        "welcome": {
+            "title": "¡Bienvenido Hacker 🐯!",
+            "subtitle": "Estamos emocionados de tenerte aquí",
+            "description1": "Nos complace darte la bienvenida a nuestro hackathon y agradecemos tu interés en participar. Estamos seguros de que tendrás una experiencia única y emocionante.",
+            "description2": "Antes de comenzar necesitamos registrar algunos de tus datos para que tu experiencia como hacker sea la mejor.",
+            "start": "Empezar"
+        },
         "personalData": {
             "title": "Información Personal",
             "name": "Nombre",
@@ -198,7 +205,7 @@
             "schoolSelect": {
                 "other": "Otra"
             },
-            "otherSchool":"Otra Escuela",
+            "otherSchool": "Otra Escuela",
             "cvResume": "CV/Currículum",
             "dontHaveCV": "¿No tienes un CV/Résumé? Aprende a crear el tuyo con",
             "podcast": "ó Escucha el Podcast de",
