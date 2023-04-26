@@ -1,49 +1,70 @@
-import React, { useState } from 'react';
-import './index.css'
-import { Typography } from '@mui/material';
+import React, { useEffect, useState } from "react";
+import "./index.css";
+import { Typography } from "@mui/material";
 
-function PDFDropzone() {
+function PDFDropzone(props) {
+  const { onFileChange, selectedFile } = props;
+
   const [file, setFile] = useState(null);
-  const [error, setError] = useState('');
+  const [error, setError] = useState("");
   const [isHovered, setIsHovered] = useState(false);
 
-  const handleDrop = event => {
+  useEffect(() => {
+    if (selectedFile) setFile(selectedFile);
+  }, []);
+
+  const handleDrop = (event) => {
     event.preventDefault();
     const droppedFile = event.dataTransfer.files[0];
 
     // Check file type and size
-    if (droppedFile.type === 'application/pdf' && droppedFile.size <= 2 * 1024 * 1024) {
+    if (
+      droppedFile.type === "application/pdf" &&
+      droppedFile.size <= 2 * 1024 * 1024
+    ) {
       setFile(droppedFile);
-      setError('');
+      onFileChange(droppedFile);
+      setError("");
     } else {
       setFile(null);
-      setError('Invalid file. Please drop a PDF file with a maximum size of 2MB.');
+      onFileChange(null);
+      setError(
+        "Invalid file. Please drop a PDF file with a maximum size of 2MB."
+      );
     }
   };
 
-  const handleDragOver = event => {
+  const handleDragOver = (event) => {
     event.preventDefault();
     setIsHovered(true);
   };
 
-  const handleDragLeave = event => {
+  const handleDragLeave = (event) => {
     event.preventDefault();
     setIsHovered(false);
   };
 
-  const handleClick = event => {
+  const handleClick = (event) => {
     event.preventDefault();
-    const fileInput = document.createElement('input');
-    fileInput.type = 'file';
-    fileInput.accept = '.pdf';
-    fileInput.onchange = event => {
+    const fileInput = document.createElement("input");
+    fileInput.type = "file";
+    fileInput.accept = ".pdf";
+    fileInput.onchange = (event) => {
       const selectedFile = event.target.files[0];
-      if (selectedFile && selectedFile.type === 'application/pdf' && selectedFile.size <= 2 * 1024 * 1024) {
+      if (
+        selectedFile &&
+        selectedFile.type === "application/pdf" &&
+        selectedFile.size <= 2 * 1024 * 1024
+      ) {
         setFile(selectedFile);
-        setError('');
+        onFileChange(selectedFile);
+        setError("");
       } else {
         setFile(null);
-        setError('Invalid file. Please select a PDF file with a maximum size of 2MB.');
+        onFileChange(null);
+        setError(
+          "Invalid file. Please select a PDF file with a maximum size of 2MB."
+        );
       }
     };
     fileInput.click();
@@ -55,7 +76,7 @@ function PDFDropzone() {
       onDragOver={handleDragOver}
       onDragLeave={handleDragLeave}
       onClick={handleClick}
-      className='dropzone'
+      className="dropzone"
     >
       {file ? (
         <div className="dropzone-not-activated">
@@ -63,11 +84,23 @@ function PDFDropzone() {
         </div>
       ) : (
         <div className="dropzone-not-activated">
-          <img src='/gray-cross.png' className="dropzone-img" alt="gray cross logo" />
-          <Typography variant="subtitle2" sx={{ alignSelf: 'flex-end' }}>CV/Resume</Typography>
+          <img
+            src="/gray-cross.png"
+            className="dropzone-img"
+            alt="gray cross logo"
+          />
+          <Typography variant="subtitle2" sx={{ alignSelf: "flex-end" }}>
+            CV/Resume
+          </Typography>
         </div>
       )}
-      {error && <p>{error}</p>}
+
+      {error && (
+        <div className="cv-error">
+          {" "}
+          <Typography>{error}</Typography>
+        </div>
+      )}
     </div>
   );
 }

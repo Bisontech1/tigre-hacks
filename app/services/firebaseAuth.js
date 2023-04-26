@@ -1,4 +1,8 @@
-import { createUserWithEmailAndPassword, getAuth } from "firebase/auth";
+import {
+  createUserWithEmailAndPassword,
+  deleteUser,
+  getAuth,
+} from "firebase/auth";
 
 export class FirebaseAuth {
   auth;
@@ -14,4 +18,10 @@ export class FirebaseAuth {
     );
     return credential.user;
   }
+
+  async deleteUser(user) {
+    return deleteUser(user);
+  }
+
+
 }
