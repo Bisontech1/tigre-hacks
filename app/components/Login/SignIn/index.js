@@ -11,6 +11,8 @@ import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
+import { authService } from '../../../services/firebase'
+import { useRouter } from "next/navigation";
 
 function Copyright(props) {
   return (
@@ -33,6 +35,8 @@ function Copyright(props) {
 const theme = createTheme();
 
 export default function SignIn(props) {
+  const router = useRouter();
+
   const { onSignInClicked } = props;
 
   const handleSubmit = (event) => {
@@ -46,6 +50,10 @@ export default function SignIn(props) {
       email: data.get("email"),
       password: data.get("password"),
     });
+
+    authService.signIn(data.get("email"),data.get("password"))
+    .then(res => router.push("dashboard/my-dashboard"))
+    .catch(res=> console.log(res))
   };
 
   return (
