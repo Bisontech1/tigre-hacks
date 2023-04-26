@@ -10,6 +10,9 @@ import HackerSecurity from "../../components/register/HackerSecurity";
 import WelcomeModal from "../../components/register/WelcomeDialog";
 import { User } from "models/user";
 import { authService, usersDatabase } from "services/firebase";
+import ErrorDialog from "components/register/ErrorDialog";
+import SuccessDialog from "components/register/SuccessDialog";
+import { FirebaseError } from "firebase/app";
 
 const user = new User();
 
@@ -45,6 +48,14 @@ const PersonalDataForm = () => {
   const [agreesToSendMail, setAgreesToSendMail] = useState(false);
 
   const [confirmPassword, setConfirmPassword] = useState("");
+
+  const [errorDialogOpen, setErrorDialogOpen] = useState(false);
+  const [errorTitle, setErrorTitle] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
+
+  const [successDialogOpen, setSuccessDialogOpen] = useState(false);
+  const [successTitle, setSuccessTitle] = useState("");
+  const [successMessage, setSuccessMessage] = useState("");
 
   const isNextButtonDisabled = {
     0: () => {
@@ -126,6 +137,10 @@ const PersonalDataForm = () => {
     user.maxStudies = maxStudies;
     user.mainStudyArea = mainStudyArea;
     user.mainStudyAreaSpecification = mainStudyAreaSpecification;
+
+    user.agreesToConductCode = agreesToConductCode;
+    user.agreesToSendMail = agreesToSendMail;
+    user.agreesToShareInfo = agreesToShareInfo;
   };
 
   const theme = createTheme({
@@ -175,12 +190,25 @@ const PersonalDataForm = () => {
   };
 
   const handleRegistration = async () => {
-    const registeredUser = await authService.register(
-      user.email,
-      user.password
-    );
-    user.id = registeredUser.uid;
-    await usersDatabase.add(user);
+    try {
+      const registeredUser = await authService.register(
+        user.email,
+        user.password
+      );
+      user.id = registeredUser.uid;
+      await usersDatabase.add(user);
+
+      setSuccessTitle("Usuario Registrado");
+      setSuccessMessage("¡Gracias por registrarte a Tigre Hacks!");
+      setSuccessDialogOpen(true);
+    } catch (error) {
+      if (error?.code == "auth/email-already-in-use")
+        setErrorMessage("Ya existe un usuario con el correo electrónico proporcionado");
+      else setErrorMessage("Ocurrió un error al registrar el usuario");
+
+      setErrorTitle("¡Error!");
+      setErrorDialogOpen(true);
+    }
   };
   const getStepContent = (step) => {
     switch (step) {
@@ -306,7 +334,6 @@ const PersonalDataForm = () => {
             setAgreesToConductCode={(value) => {
               user.agreesToConductCode = value;
               setAgreesToConductCode(value);
-              console.log(user);
             }}
             agreesToShareInfo={agreesToShareInfo}
             setAgreesToShareInfo={(value) => {
@@ -329,6 +356,22 @@ const PersonalDataForm = () => {
     <div className="container">
       <ThemeProvider theme={theme}>
         <WelcomeModal />
+        <SuccessDialog
+          title={successTitle}
+          message={successMessage}
+          open={successDialogOpen}
+          setOpen={(value) => {
+            setSuccessDialogOpen(value);
+          }}
+        />
+        <ErrorDialog
+          title={errorTitle}
+          message={errorMessage}
+          open={errorDialogOpen}
+          setOpen={(value) => {
+            setErrorDialogOpen(value);
+          }}
+        />
         <Box
           component="form"
           sx={{
