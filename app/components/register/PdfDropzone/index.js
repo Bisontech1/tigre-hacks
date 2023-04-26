@@ -11,7 +11,7 @@ function PDFDropzone(props) {
 
   useEffect(() => {
     if (selectedFile) setFile(selectedFile);
-  });
+  },[selectedFile]);
 
   const handleDrop = (event) => {
     event.preventDefault();
