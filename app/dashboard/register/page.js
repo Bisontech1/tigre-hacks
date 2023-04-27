@@ -167,6 +167,8 @@ const PersonalDataForm = () => {
     },
   });
 
+
+
   const stepperStyle = {
     margin: "50px 0px",
     "& .MuiStepLabel-root .Mui-completed": {

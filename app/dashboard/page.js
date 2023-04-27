@@ -11,7 +11,9 @@ const Login = () => {
     try {
       const result = await authService.signIn(email, password);
       router.push("/dashboard/my-dashboard")
-    } catch (error) {}
+    } catch (error) {
+      console.log(error)
+    }
   };
 
   return (

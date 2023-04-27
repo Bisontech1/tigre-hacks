@@ -18,7 +18,7 @@ export const TranslationContextProvider = (props) => {
 
   React.useEffect(() => {
     loadLanguage();
-  },[]);
+  });
 
   return (
     <TranslationContext.Provider

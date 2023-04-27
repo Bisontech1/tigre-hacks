@@ -11,11 +11,13 @@ import Box from "@mui/material/Box";
 
 function Navbar() {
     const Links = [
-        { name: 'Inicio', href: '/my-dashboard' },
-        { name: 'Mi Perfil', href: '/my-dashboard/profile' },
-        { name: 'Mi Estado', href: '/my-dashboard/state' },
-        { name: 'Horario', href: '/my-dashboard/schedule' },
-        { name: 'Talleres', href: '/my-dashboard/workshops' }
+        { name: 'Inicio', href: '/dashboard/my-dashboard' },
+        { name: 'Mi Perfil', href: '/dashboard/my-dashboard/myprofile' },
+        { name: 'Mi Equipo', href: '/dashboard/my-dashboard/myteam' },
+        { name: 'Mi Estado', href: '/dashboard/my-dashboard/mystate' },
+        { name: 'Horario', href: '/dashboard/my-dashboard/schedule' },
+        { name: 'Talleres', href: '/workshops' },
+        
 
     ]
     return (
@@ -33,12 +35,18 @@ function Navbar() {
                             },
                         }}
                     />
-                    <Box sx={{ marginLeft:'40px','& .MuiLink-root': { color: '#868686', mx: 1 }, '& .MuiLink-root:hover': { color: 'orange' } }}>
-                        {Links.map((index,element) => {
+                    <Box sx={{ 
+                        marginLeft:'40px',
+                        '& .MuiLink-root': { color: '#000', mx: 1 }, 
+                        '& .MuiLink-root:hover': { color: 'orange' } }}>
+                        {Links.map((element,index) => {
                             return (
+                                <>
                                 <Link variant="subtitle1" href={element.href} underline="none" key={index}>
                                     {element.name}
                                 </Link>
+                                </>
+                                
                             )
                         })}
                     </Box>

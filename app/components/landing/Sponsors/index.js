@@ -39,13 +39,13 @@ const Sponsors = () => {
           >
             <img src="sponsors/github.png" alt="GitHub logo" loading="lazy" />
           </a>
-          <a className="image-container">
+          {/* <a className="image-container">
             <img
               src="sponsors/timhortons.png"
               alt="Tim Hortons logo"
               loading="lazy"
             />
-          </a>
+          </a> */}
           <a href="https://mlh.io" target="_blank" className="image-container">
             <img
               src="sponsors/mlh-logo-color.png"
@@ -64,13 +64,13 @@ const Sponsors = () => {
               loading="lazy"
             />
           </a>
-          <a
+          {/* <a
             href="https://platzi.com"
             target="_blank"
             className="image-container"
           >
             <img src="sponsors/platzi.png" alt="Platzi logo" loading="lazy" />
-          </a>
+          </a> */}
           <a
             href="https://instagram.com/donchambitas"
             target="_blank"
