@@ -134,6 +134,7 @@ const PersonalDataForm = () => {
     user.agreesToSendMail = agreesToSendMail;
     user.agreesToShareInfo = agreesToShareInfo;
     user.agreesToShareSponsor = agreesToShareSponsor;
+    user.team = ""
   };
 
   const theme = createTheme({

@@ -11,19 +11,19 @@ import Box from "@mui/material/Box";
 
 function Navbar() {
     const Links = [
-        { name: 'Inicio', href: '/dashboard/my-dashboard' },
-        { name: 'Mi Perfil', href: '/dashboard/my-dashboard/myprofile' },
-        { name: 'Mi Equipo', href: '/dashboard/my-dashboard/myteam' },
-        { name: 'Mi Estado', href: '/dashboard/my-dashboard/mystate' },
-        { name: 'Horario', href: '/dashboard/my-dashboard/schedule' },
-        { name: 'Talleres', href: '/workshops' },
-        
+        { key: 1, name: 'Inicio', href: '/dashboard/my-dashboard' },
+        { key: 2, name: 'Mi Perfil', href: '/dashboard/my-dashboard/myprofile' },
+        { key: 3, name: 'Mi Equipo', href: '/dashboard/my-dashboard/myteam' },
+        { key: 4, name: 'Mi Estado', href: '/dashboard/my-dashboard/mystate' },
+        { key: 5, name: 'Horario', href: '/dashboard/my-dashboard/schedule' },
+        { key: 6, name: 'Talleres', href: '/workshops' },
+
 
     ]
     return (
         <div>
-            <AppBar position="static" sx={{boxShadow:'none', borderBottom:'solid 1px #ebebeb'}}>
-                <Toolbar sx={{ backgroundColor: '#FFFFFF', height:'100px'}}>
+            <AppBar position="static" sx={{ boxShadow: 'none', borderBottom: 'solid 1px #ebebeb' }}>
+                <Toolbar sx={{ backgroundColor: '#FFFFFF', height: '100px' }}>
                     <img
                         src="/logo.png"
                         alt="Logo"
@@ -35,18 +35,16 @@ function Navbar() {
                             },
                         }}
                     />
-                    <Box sx={{ 
-                        marginLeft:'40px',
-                        '& .MuiLink-root': { color: '#000', mx: 1 }, 
-                        '& .MuiLink-root:hover': { color: 'orange' } }}>
-                        {Links.map((element,index) => {
+                    <Box sx={{
+                        marginLeft: '40px',
+                        '& .MuiLink-root': { color: '#000', mx: 1 },
+                        '& .MuiLink-root:hover': { color: 'orange' }
+                    }}>
+                        {Links.map((element, index) => {
                             return (
-                                <>
-                                <Link variant="subtitle1" href={element.href} underline="none" key={index}>
+                                <Link variant="subtitle1" href={element.href} underline="none" key={element.key}>
                                     {element.name}
                                 </Link>
-                                </>
-                                
                             )
                         })}
                     </Box>

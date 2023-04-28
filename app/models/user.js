@@ -25,5 +25,5 @@ export class User {
   agreesToSendMail = null;
   agreesToShareSponsor = null;
   password = null;
-
+  team = null;
 }

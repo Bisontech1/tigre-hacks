@@ -12,7 +12,8 @@ const Team = () => {
     const [team, setTeam] = useState("")
     const [error, setError] = useState(false)
     const [errorMessage, setErrorMessage] = useState("")
-
+    const [teamsList, setTeamsList] = useState({})
+    const [teamSearch, setTeamSearch] = useState(false)
     const [teamData, setTeamData] = useState(
         {
             participante1: '',
@@ -22,6 +23,23 @@ const Team = () => {
         }
     )
     const [createTeam, setCreateTeam] = useState(false)
+
+    const handleTeams = async () => {
+        await teamsDatabase.read()
+            .then(res => {
+                const filteredTeams = Object.fromEntries(Object.entries(res).filter(([key, value]) => {
+                    console.log(value)
+                    return value.team_name.toLowerCase().includes(team.toLowerCase());
+                }));
+                console.log(filteredTeams)
+                setTeamsList(filteredTeams);    
+                setTeamSearch(true)
+            })
+            .catch(err => console.log(err))
+
+    }
+    
+
     const handleAddTeam = async () => {
         try {
             //Campos vacíos
@@ -41,18 +59,21 @@ const Team = () => {
 
                 //No se encontraron todos los emails registrados
                 const foundedEmails = await usersDatabase.findEmails(teamData);
-                if (foundedEmails.notFoundEmails) {
+                if (foundedEmails.notFoundEmails.length > 0) {
                     setError(true);
                     setErrorMessage(`No se pudieron encontrar los siguientes emails: ${foundedEmails.notFoundEmails}, asegúrate de que todos los miembros de tu equipo estén registrados`);
                     return;
                 }
 
                 try {
+                    console.log(team)
+                    console.log(teamData)
                     teamsDatabase.add(team)
                     setError(true);
                     setErrorMessage("¡Equipo registrado con éxito! 🚀👩‍🚀👨‍🚀");
-                    await usersDatabase.addTeamToUsers(team,Object.values(teamData))
-                    router.push("/dashboard/mydashboard")
+                    await usersDatabase.addTeamToUsers(team, Object.values(teamData))
+                    await teamsDatabase.addUsersToTeam(team, Object.values(teamData))
+                    //router.push("/dashboard/mydashboard")
                 } catch (error) {
                     console.log(error)
                 }
@@ -107,6 +128,11 @@ const Team = () => {
                     createTeam={createTeam}
                     setCreateTeam={setCreateTeam}
                     handleFindTeam={handleFindTeam}
+                    teamSearch={teamSearch}
+                    setTeamSearch={setTeamSearch}
+                    handleTeams={handleTeams}
+                    teamsList={teamsList}
+                    setTeamsList={setTeamsList}
                 />
             }
 
