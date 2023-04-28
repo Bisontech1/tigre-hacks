@@ -19,7 +19,7 @@ const Hero = () => {
             {language?.getString("hero.place")}
           </h6>
           <div className="button-row">
-            <a className="white-background" href="/dashboard/register">
+            <a className="white-background" href="/dashboard/login">
               {language?.getString("hero.register" ?? "Regístrate")}
             </a>
             <a className="orange-background">

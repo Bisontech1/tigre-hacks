@@ -299,7 +299,8 @@
             "shareInfo6": "Términos y Condiciones del Concurso",
             "shareInfo7": "de MLH y la",
             "shareInfo8": "Política de Privacidad de MLH.",
-            "sendEmail": "Autorizo a la MLH a enviarme un correo electrónico en el que pueda suscribirme a los newsletters de los Hackers, Eventos ó Organizadores de la MLH y otras comunicaciones de la MLH."
+            "sendEmail": "Autorizo a la MLH a enviarme un correo electrónico en el que pueda suscribirme a los newsletters de los Hackers, Eventos ó Organizadores de la MLH y otras comunicaciones de la MLH.",
+            "shareSponsor":"By checking this box, I consent to my registration information, including my name, email address and affiliation, being shared with sponsors, mentors and other event participants."
         },
         "next": "Next",
         "cancel": "Cancel",

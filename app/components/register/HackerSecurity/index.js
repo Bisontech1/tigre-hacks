@@ -11,6 +11,8 @@ const HackerSecurity = (props) => {
     setAgreesToShareInfo,
     agreesToSendMail,
     setAgreesToSendMail,
+    agreesToShareSponsor, 
+    setAgreesToShareSponsor
   } = props;
   const gridSX = {
     display: "flex",
@@ -40,6 +42,7 @@ const HackerSecurity = (props) => {
           He leído y estoy de acuerdo con el{" "}
           <a href="https://static.mlh.io/docs/mlh-code-of-conduct.pdf">
             código de conducta de la MLH
+            <b style={{color:'orange'}}>*</b>
           </a>
         </Typography>
       </Grid>
@@ -67,7 +70,7 @@ const HackerSecurity = (props) => {
           <a href="https://mlh.io/privacy">
             {language?.getString("register.hackerSecurity.shareInfo8")}
           </a>
-          <b>*</b>
+          <b style={{color:'orange'}}>*</b>
         </Typography>
       </Grid>
       <Grid item xs={12} sx={gridSX}>
@@ -79,6 +82,17 @@ const HackerSecurity = (props) => {
         />
         <Typography>
           {language?.getString("register.hackerSecurity.sendEmail")}
+        </Typography>
+      </Grid>
+      <Grid item xs={12} sx={gridSX}>
+        <Checkbox
+          checked={agreesToShareSponsor}
+          onChange={(e) => {
+            setAgreesToShareSponsor(e.target.checked);
+          }}
+        />
+        <Typography>
+          {language?.getString("register.hackerSecurity.shareSponsor")}
         </Typography>
       </Grid>
     </Grid>

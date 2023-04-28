@@ -23,5 +23,7 @@ export class User {
   agreesToConductCode = null;
   agreesToShareInfo = null;
   agreesToSendMail = null;
+  agreesToShareSponsor = null;
   password = null;
+
 }

@@ -32,7 +32,24 @@ function Copyright(props) {
   );
 }
 
-const theme = createTheme();
+const theme = createTheme({
+  status: {
+    danger: "#e53e3e",
+  },
+  palette: {
+    primary: {
+      main: "#FFA500",
+      darker: "#053e85",
+    },
+    secondary: {
+      main: "#306de0",
+    },
+    neutral: {
+      main: "",
+      contrastText: "#fff",
+    },
+  },
+});
 
 export default function SignIn(props) {
   const router = useRouter();
@@ -76,7 +93,12 @@ export default function SignIn(props) {
             component="form"
             onSubmit={handleSubmit}
             noValidate
-            sx={{ mt: 1 }}
+            sx={{ 
+              mt: 1,
+              '& .MuiLink-root':{color:'orange'},
+              '& .MuiButton-root':{backgroundColor:'orange', color:'#fff'},
+              '& .MuiButton-root: hover':{backgroundColor:'#fff', color:'#000', border:'solid black 1px'}
+            }}
           >
             <TextField
               margin="normal"
@@ -106,7 +128,6 @@ export default function SignIn(props) {
               type="submit"
               fullWidth
               variant="contained"
-              sx={{ mt: 3, mb: 2 }}
             >
               Ingresar
             </Button>

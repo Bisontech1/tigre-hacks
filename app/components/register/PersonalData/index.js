@@ -318,7 +318,7 @@ const PersonalData = (props) => {
         >
           <Typography>
             {language?.getString("register.personalData.dontHaveCV")} &nbsp;
-            <a href="https://akotadi.notion.site/Materials-cad70d8407dd40d38c7d64c0bb4b518c">
+            <a href="https://proyectonutria.notion.site/Proyecto-Nutria-4e1b2ba24d4a46188207c2ca10acea5f">
               {language?.getString("register.personalData.proyectoNutria")}
             </a>
           </Typography>

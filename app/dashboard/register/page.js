@@ -48,7 +48,7 @@ const PersonalDataForm = () => {
 
   const [agreesToShareInfo, setAgreesToShareInfo] = useState(false);
   const [agreesToSendMail, setAgreesToSendMail] = useState(false);
-
+  const [agreesToShareSponsor, setAgreesToShareSponsor ] = useState(false);
   const [confirmPassword, setConfirmPassword] = useState("");
 
   const [errorDialogOpen, setErrorDialogOpen] = useState(false);
@@ -84,24 +84,11 @@ const PersonalDataForm = () => {
     1: () => {
       if (
         !user.dietRestricions ||
-        !user.shirtSize ||
-        !user.identifyAsGroup ||
-        !user.race ||
-        !user.maxStudies ||
-        !user.mainStudyArea
+        !user.shirtSize
       )
         return true;
 
       if (user.dietRestricions == "Other" && !user.dietSpecifications)
-        return true;
-
-      if (
-        user.mainStudyArea == "Other (please specify)" &&
-        !user.mainStudyAreaSpecification
-      )
-        return true;
-
-      if (user.race == "Other (Please Specify)" && !user.raceSpecification)
         return true;
 
       return false;
@@ -146,6 +133,7 @@ const PersonalDataForm = () => {
     user.agreesToConductCode = agreesToConductCode;
     user.agreesToSendMail = agreesToSendMail;
     user.agreesToShareInfo = agreesToShareInfo;
+    user.agreesToShareSponsor = agreesToShareSponsor;
   };
 
   const theme = createTheme({
@@ -377,6 +365,11 @@ const PersonalDataForm = () => {
             setAgreesToSendMail={(value) => {
               user.agreesToSendMail = agreesToSendMail;
               setAgreesToSendMail(value);
+            }}
+            agreesToShareSponsor = {agreesToShareSponsor}
+            setAgreesToShareSponsor ={(value) => {
+              user.agreesToShareSponsor = agreesToShareSponsor;
+              setAgreesToShareSponsor(value);
             }}
           />
         );
