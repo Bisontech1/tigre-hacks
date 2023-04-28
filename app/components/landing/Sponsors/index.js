@@ -15,12 +15,15 @@ const Sponsors = () => {
       <h4>{language?.getString("sponsors.poweredBy")}</h4>
 
       {/* Main Sponsor */}
-      <img
-        src="sponsors/chubb.png"
-        className="chubb"
-        alt="Chubb seguros logo"
-        loading="lazy"
-      />
+      <a href="https://www.chubb.com/mx-es/">
+        <img
+          src="sponsors/chubb.png"
+          className="chubb"
+          alt="Chubb seguros logo"
+          loading="lazy"
+        />
+      </a>
+
 
       {/* Sponsors */}
       <div className="container">
