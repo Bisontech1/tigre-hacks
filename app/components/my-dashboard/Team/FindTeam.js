@@ -53,9 +53,9 @@ const FindTeam = (props) => {
                             Crea un nuevo equipo
                         </Button>
 
-                        {teamsList ? Object.entries(teamsList).map((team) => {
+                        {teamsList ? Object.entries(teamsList).map((team, index) => {
                             return (
-                                <Grid item>
+                                <Grid item key={index}>
                                     <Card sx={{ m: 2 }}>
                                         <CardContent>
 
