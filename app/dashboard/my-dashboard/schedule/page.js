@@ -2,17 +2,8 @@
 import { useState } from 'react'
 import { Box, Typography } from '@mui/material'
 import Schedule from '../../../components/my-dashboard/Schedule';
-import PersonalData from '../../../components/register/PersonalData';
-import AdditionalInfo from '../../../components/register/AdditionalInfo';
-const MyProfile = () => {
-    const handleUniversityChange = event => {
-        const value = event.target.value;
-        setSelectedUniversity(value);
 
-        if (value === 'other') {
-            setOtherUniversity('');
-        }
-    };
+const MyProfile = () => {
     return (
         <div>
             <div style={{
@@ -21,7 +12,9 @@ const MyProfile = () => {
                 alignItems: 'center',
             }}>
                 <Box sx={{ '& .MuiTypography-root': { margin: '20px 0px', color:'#868686' } }}>
-                    <Schedule />
+                    {/* <Schedule /> */}
+
+                    <Typography variant="h5">Proximamente</Typography>
                 </Box>
             </div>
 
