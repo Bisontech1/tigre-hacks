@@ -33,7 +33,7 @@ const AdditionalInfo = (props) => {
   } = props;
 
   const renderGridItem = (child) => (
-    <Grid item xl={12} sm={12}>
+    <Grid item xl={12} sm={12} xs={12}>
       {child}
     </Grid>
   );

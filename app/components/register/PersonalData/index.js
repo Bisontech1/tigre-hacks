@@ -52,6 +52,11 @@ const PersonalData = (props) => {
           "& .MuiGrid-item": { display: "flex", justifyContent: "center" },
         }}
       >
+        <Typography variant="subtitle1"
+          sx={{ marginBottom: '20px', color: '#c5c5c5', textAlign: 'center' }}>
+          Para una mejor experiencia te recomendamos usar Chrome en tu registro
+        </Typography>
+
         <Grid item md={6} xs={12}>
           <TextField
             value={name}

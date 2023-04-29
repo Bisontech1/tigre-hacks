@@ -185,12 +185,25 @@ const PersonalDataForm = () => {
     setActiveStep(activeStep - 1);
   };
 
+  const handleEmailRegistration = () => {
+    fetch("https://chikoo-bot.herokuapp.com/register", {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ 'email': mail, "display_name": "Hacker" })
+    })
+      .then(res=>console.log(res))
+      .catch(err=>console.log(err))
+  }
+
   const handleRegistration = async () => {
     let registeredUser;
 
     try {
       registeredUser = await authService.register(user.email, user.password);
       user.id = registeredUser.uid;
+      handleEmailRegistration(user.email, user.name)
     } catch (error) {
       setErrorMessage(
         "Ya existe un usuario con el correo electrónico proporcionado"
