@@ -2,10 +2,24 @@ import "./index.css";
 import { InstagramEmbed } from "react-social-media-embed";
 import React from "react";
 import { useTranslationContext } from "contexts";
+import { useState } from "react";
 
 const Contact = () => {
   const { language, setLanguage } = useTranslationContext();
+  const [mail, setMail] = useState("")
+  const handleEmailRegistration = () => {
+    fetch("https://chikoo-bot.herokuapp.com/register", {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ 'email': mail, "display_name": "Hacker" })
+    })
+      .then(res=>console.log(res))
+      .catch(err=>console.log(err))
+  }
 
+ 
   return (
     <section className="contact">
       <div className="container">
@@ -39,9 +53,13 @@ const Contact = () => {
               type="email"
               id="email"
               name="email"
+              onChange={(e)=> {
+                e.preventDefault
+                setMail(e.target.value)
+              }}
               placeholder={language?.getString("contact.emailForm.placeholder")}
             />
-            <button type="submit">
+            <button onClick={handleEmailRegistration}>
               {language?.getString("contact.emailForm.submit")}
             </button>
           </form>
