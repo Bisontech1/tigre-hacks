@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import { Box, Stepper, Step, StepLabel, Grid, Button } from "@mui/material";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 
@@ -100,11 +100,7 @@ const PersonalDataForm = () => {
     },
   };
 
-  useEffect(() => {
-    initForm();
-  });
-
-  const initForm = async () => {
+  const initForm = useCallback(async () => {
     const response = await fetch("/schools/schools.json");
     const json = await response.json();
     setUniversities(json.universidades);
@@ -135,7 +131,33 @@ const PersonalDataForm = () => {
     user.agreesToShareInfo = agreesToShareInfo;
     user.agreesToShareSponsor = agreesToShareSponsor;
     user.team = ""
-  };
+  },[
+    age,
+    phoneNumber,
+    pronoun,
+    name,
+    lastname,
+    email,
+    gender,
+    genderSpecification,
+    university,
+    universitySpecification,
+    password,
+    diet,
+    dietSpecifications,
+    shirtSize,
+    identifyAsGroup,
+    race,
+    raceSpecification,
+    maxStudies,
+    mainStudyArea,
+    mainStudyAreaSpecification,
+    agreesToConductCode,
+    agreesToSendMail,
+    agreesToShareInfo,
+    agreesToShareSponsor,
+  ]);
+ 
 
   const theme = createTheme({
     status: {
@@ -191,7 +213,7 @@ const PersonalDataForm = () => {
       headers: {
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify({ 'email': mail, "display_name": "Hacker" })
+      body: JSON.stringify({ 'email': email, "display_name": "Hacker" })
     })
       .then(res=>console.log(res))
       .catch(err=>console.log(err))
@@ -203,8 +225,9 @@ const PersonalDataForm = () => {
     try {
       registeredUser = await authService.register(user.email, user.password);
       user.id = registeredUser.uid;
-      handleEmailRegistration(user.email, user.name)
+      handleEmailRegistration(email, name)
     } catch (error) {
+      console.log(error)
       setErrorMessage(
         "Ya existe un usuario con el correo electrónico proporcionado"
       );
@@ -391,6 +414,10 @@ const PersonalDataForm = () => {
         return <h3>XD</h3>;
     }
   };
+
+  useEffect(() => {
+    initForm();
+  }, [initForm]);
 
   return (
     <div className="container">
