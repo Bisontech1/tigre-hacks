@@ -1,5 +1,5 @@
 "use client";
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Box } from '@mui/material'
 import CreateTeam from './CreateTeam'
 import FindTeam from './FindTeam'
@@ -28,10 +28,8 @@ const Team = () => {
         await teamsDatabase.read()
             .then(res => {
                 const filteredTeams = Object.fromEntries(Object.entries(res).filter(([key, value]) => {
-                    console.log(value)
                     return value.team_name.toLowerCase().includes(team.toLowerCase());
                 }));
-                console.log(filteredTeams)
                 setTeamsList(filteredTeams);    
                 setTeamSearch(true)
             })
@@ -89,6 +87,10 @@ const Team = () => {
     const handleFindTeam = async (e) => {
         console.log('finding..')
     }
+
+    useEffect(()=>{
+        handleTeams();
+    },[])
 
 
 
