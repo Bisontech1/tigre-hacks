@@ -7,11 +7,10 @@ import CheckIcon from "@mui/icons-material/Check";
 import "./index.css";
 
 const SuccessDialog = (props) => {
-  const { open, setOpen, title, message } = props;
+  const { open, setOpen, title, message, route = "/" } = props;
 
   const handleClose = () => {
     setOpen(false);
-    onClick();
   };
 
   return (
@@ -35,7 +34,14 @@ const SuccessDialog = (props) => {
               {message}
             </Typography>
 
-            <Button href="/" variant="contained" color="primary" >
+            <Button
+              onClick={() => {
+                handleClose();
+              }}
+              href={route}
+              variant="contained"
+              color="primary"
+            >
               Cerrar
             </Button>
           </div>

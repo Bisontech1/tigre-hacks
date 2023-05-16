@@ -6,9 +6,17 @@ import FindTeam from './FindTeam'
 import { teamsDatabase, usersDatabase } from '../../../services/firebase'
 import { useRouter } from 'next/navigation';
 
+export const Status = {
+    loading:0,
+    initial:1,
+    loaded:2,
+    empty:3,
+}
+
 const Team = () => {
 
     const router = useRouter();
+    const [searchStatus,setSearchStatus] = useState(Status.initial);
     const [team, setTeam] = useState("")
     const [error, setError] = useState(false)
     const [errorMessage, setErrorMessage] = useState("")
@@ -124,6 +132,7 @@ const Team = () => {
                 :
                 <FindTeam
                     team={team}
+                    status={searchStatus}
                     setTeam={setTeam}
                     createTeam={createTeam}
                     setCreateTeam={setCreateTeam}

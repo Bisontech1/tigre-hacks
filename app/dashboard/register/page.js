@@ -48,7 +48,7 @@ const PersonalDataForm = () => {
 
   const [agreesToShareInfo, setAgreesToShareInfo] = useState(false);
   const [agreesToSendMail, setAgreesToSendMail] = useState(false);
-  const [agreesToShareSponsor, setAgreesToShareSponsor ] = useState(false);
+  const [agreesToShareSponsor, setAgreesToShareSponsor] = useState(false);
   const [confirmPassword, setConfirmPassword] = useState("");
 
   const [errorDialogOpen, setErrorDialogOpen] = useState(false);
@@ -84,12 +84,24 @@ const PersonalDataForm = () => {
     1: () => {
       if (
         !user.dietRestricions ||
-        !user.shirtSize
+        !user.shirtSize ||
+        !user.race ||
+        !user.identifyAsGroup ||
+        !user.mainStudyArea ||
+        !user.maxStudies
       )
         return true;
 
       if (user.dietRestricions == "Other" && !user.dietSpecifications)
         return true;
+
+      if (user.race == "Other (Please Specify)" && !user.raceSpecification)
+        return true;
+
+      if (user.mainStudyArea == "Other (please specify)" && !user.mainStudyAreaSpecification)
+        return true;
+
+   
 
       return false;
     },
@@ -130,8 +142,8 @@ const PersonalDataForm = () => {
     user.agreesToSendMail = agreesToSendMail;
     user.agreesToShareInfo = agreesToShareInfo;
     user.agreesToShareSponsor = agreesToShareSponsor;
-    user.team = ""
-  },[
+    user.team = "";
+  }, [
     age,
     phoneNumber,
     pronoun,
@@ -157,7 +169,6 @@ const PersonalDataForm = () => {
     agreesToShareInfo,
     agreesToShareSponsor,
   ]);
- 
 
   const theme = createTheme({
     status: {
@@ -177,8 +188,6 @@ const PersonalDataForm = () => {
       },
     },
   });
-
-
 
   const stepperStyle = {
     margin: "50px 0px",
@@ -209,15 +218,15 @@ const PersonalDataForm = () => {
 
   const handleEmailRegistration = () => {
     fetch("https://chikoo-bot.herokuapp.com/register", {
-      method: 'POST',
+      method: "POST",
       headers: {
-        'Content-Type': 'application/json'
+        "Content-Type": "application/json",
       },
-      body: JSON.stringify({ 'email': email, "display_name": "Hacker" })
+      body: JSON.stringify({ email: email, display_name: "Hacker" }),
     })
-      .then(res=>console.log(res))
-      .catch(err=>console.log(err))
-  }
+      .then((res) => console.log(res))
+      .catch((err) => console.log(err));
+  };
 
   const handleRegistration = async () => {
     let registeredUser;
@@ -225,9 +234,9 @@ const PersonalDataForm = () => {
     try {
       registeredUser = await authService.register(user.email, user.password);
       user.id = registeredUser.uid;
-      handleEmailRegistration(email, name)
+      handleEmailRegistration(email, name);
     } catch (error) {
-      console.log(error)
+      console.log(error);
       setErrorMessage(
         "Ya existe un usuario con el correo electrónico proporcionado"
       );
@@ -403,8 +412,8 @@ const PersonalDataForm = () => {
               user.agreesToSendMail = agreesToSendMail;
               setAgreesToSendMail(value);
             }}
-            agreesToShareSponsor = {agreesToShareSponsor}
-            setAgreesToShareSponsor ={(value) => {
+            agreesToShareSponsor={agreesToShareSponsor}
+            setAgreesToShareSponsor={(value) => {
               user.agreesToShareSponsor = agreesToShareSponsor;
               setAgreesToShareSponsor(value);
             }}

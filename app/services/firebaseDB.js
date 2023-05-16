@@ -1,4 +1,16 @@
-import { child, getDatabase, push, ref, set, onValue, query, orderByChild, equalTo, off, update } from "firebase/database";
+import {
+  child,
+  getDatabase,
+  push,
+  ref,
+  set,
+  onValue,
+  query,
+  orderByChild,
+  equalTo,
+  off,
+  update,
+} from "firebase/database";
 
 class FirebaseDatabase {
   table;
@@ -13,7 +25,6 @@ class FirebaseDatabase {
     data.id = newElement.key;
     await set(child(this.table, data.id), data);
   }
-
 }
 
 export class UserDatabase extends FirebaseDatabase {
@@ -23,55 +34,75 @@ export class UserDatabase extends FirebaseDatabase {
 
   async add(data) {
     data.password = null;
-    await set(child(this.table, data.id), data)
+    await set(child(this.table, data.id), data);
+  }
+
+  async update(data) {
+    data.password = null;
+    await set(child(this.table, data.id), data);
+    return data
   }
 
   async getUserData(email) {
     return new Promise((resolve, reject) => {
-      const emailQuery = query(this.table, orderByChild("email"), equalTo(email));
-      const eventHandler = onValue(emailQuery, (snapshot) => {
-        if (snapshot.exists()) {
-          const userData = snapshot.val();
-          const userKey = Object.keys(userData)[0];
-          localStorage.setItem("userData", JSON.stringify(userData[userKey]));
-          resolve(userData[userKey]);
-        } else {
-          reject(new Error('User not found'));
+      const emailQuery = query(
+        this.table,
+        orderByChild("email"),
+        equalTo(email)
+      );
+      const eventHandler = onValue(
+        emailQuery,
+        (snapshot) => {
+          if (snapshot.exists()) {
+            const userData = snapshot.val();
+            const userKey = Object.keys(userData)[0];
+            localStorage.setItem("userData", JSON.stringify(userData[userKey]));
+            resolve(userData[userKey]);
+          } else {
+            reject(new Error("User not found"));
+          }
+          off(emailQuery, "value", eventHandler); // Remove the event handler
+        },
+        (errorObject) => {
+          console.log("The read failed: " + errorObject.name);
+          off(emailQuery, "value", eventHandler); // Remove the event handler
+          reject(errorObject);
         }
-        off(emailQuery, "value", eventHandler); // Remove the event handler
-      }, (errorObject) => {
-        console.log('The read failed: ' + errorObject.name);
-        off(emailQuery, "value", eventHandler); // Remove the event handler
-        reject(errorObject);
-      });
+      );
     });
   }
 
   async addTeamToUsers(teamName, userEmails) {
     const promises = userEmails.map((email) => {
       return new Promise((resolve) => {
-        const emailQuery = query(this.table, orderByChild("email"), equalTo(email));
-        const eventHandler = onValue(emailQuery, (snapshot) => {
-          if (snapshot.exists()) {
-            const userKey = Object.keys(snapshot.val())[0];
-            const userRef = child(this.table, userKey);
-            update(userRef, { team: teamName }).then(() => resolve());
-          } else {
+        const emailQuery = query(
+          this.table,
+          orderByChild("email"),
+          equalTo(email)
+        );
+        const eventHandler = onValue(
+          emailQuery,
+          (snapshot) => {
+            if (snapshot.exists()) {
+              const userKey = Object.keys(snapshot.val())[0];
+              const userRef = child(this.table, userKey);
+              update(userRef, { team: teamName }).then(() => resolve());
+            } else {
+              resolve();
+            }
+            off(emailQuery, "value", eventHandler); // Remove the event handler
+          },
+          (errorObject) => {
+            console.log("The read failed: " + errorObject.name);
+            off(emailQuery, "value", eventHandler); // Remove the event handler
             resolve();
           }
-          off(emailQuery, "value", eventHandler); // Remove the event handler
-        }, (errorObject) => {
-          console.log('The read failed: ' + errorObject.name);
-          off(emailQuery, "value", eventHandler); // Remove the event handler
-          resolve();
-        });
+        );
       });
     });
 
     await Promise.all(promises);
   }
-
-
 
   async findEmails(teamData) {
     const foundEmails = [];
@@ -80,21 +111,29 @@ export class UserDatabase extends FirebaseDatabase {
     // Helper function to handle each email search
     const findEmail = (email) => {
       return new Promise((resolve) => {
-        const emailQuery = query(this.table, orderByChild("email"), equalTo(email));
-        const eventHandler = onValue(emailQuery, (snapshot) => {
-          if (snapshot.exists()) {
-            foundEmails.push(email);
-          } else {
+        const emailQuery = query(
+          this.table,
+          orderByChild("email"),
+          equalTo(email)
+        );
+        const eventHandler = onValue(
+          emailQuery,
+          (snapshot) => {
+            if (snapshot.exists()) {
+              foundEmails.push(email);
+            } else {
+              notFoundEmails.push(email);
+            }
+            off(emailQuery, "value", eventHandler); // Remove the event handler
+            resolve();
+          },
+          (errorObject) => {
+            console.log("The read failed: " + errorObject.name);
             notFoundEmails.push(email);
+            off(emailQuery, "value", eventHandler); // Remove the event handler
+            resolve();
           }
-          off(emailQuery, "value", eventHandler); // Remove the event handler
-          resolve();
-        }, (errorObject) => {
-          console.log('The read failed: ' + errorObject.name);
-          notFoundEmails.push(email);
-          off(emailQuery, "value", eventHandler); // Remove the event handler
-          resolve();
-        });
+        );
       });
     };
 
@@ -102,18 +141,15 @@ export class UserDatabase extends FirebaseDatabase {
     const emails = Object.values(teamData);
 
     // Execute findEmail for each email in the teamData object
-    await Promise.all(emails.map(email => findEmail(email)));
-
+    await Promise.all(emails.map((email) => findEmail(email)));
 
     // Return found and not found emails
     return {
       foundEmails,
-      notFoundEmails
+      notFoundEmails,
     };
   }
 }
-
-
 
 export class TeamsDatabase extends FirebaseDatabase {
   constructor(app) {
@@ -127,59 +163,78 @@ export class TeamsDatabase extends FirebaseDatabase {
 
   async read() {
     return new Promise((resolve, reject) => {
-      onValue(this.table, (snapshot) => {
-        console.log(snapshot.val())
-        resolve(snapshot.val())
-      }, (errorObject) => {
-        reject(errorObject)
-      });
-    })
+      onValue(
+        this.table,
+        (snapshot) => {
+          console.log(snapshot.val());
+          resolve(snapshot.val());
+        },
+        (errorObject) => {
+          reject(errorObject);
+        }
+      );
+    });
   }
 
   async addUsersToTeam(teamName, userEmails) {
     const teamRef = child(this.table, teamName);
-    const teamQuery = query(teamRef, orderByChild("team_name"), equalTo(teamName));
+    const teamQuery = query(
+      teamRef,
+      orderByChild("team_name"),
+      equalTo(teamName)
+    );
 
-    const eventHandler = onValue(teamQuery, async (snapshot) => {
-      let teamData;
+    const eventHandler = onValue(
+      teamQuery,
+      async (snapshot) => {
+        let teamData;
 
-      if (snapshot.exists()) {
-        teamData = snapshot.val()[teamName];
-        teamData.members = [...teamData.members || [], ...userEmails];
-      } else {
-        teamData = {
-          team_name: teamName,
-          members: userEmails
-        };
+        if (snapshot.exists()) {
+          teamData = snapshot.val()[teamName];
+          teamData.members = [...(teamData.members || []), ...userEmails];
+        } else {
+          teamData = {
+            team_name: teamName,
+            members: userEmails,
+          };
+        }
+
+        await set(teamRef, teamData);
+        off(teamQuery, "value", eventHandler); // Remove the event handler
+      },
+      (errorObject) => {
+        console.log("The read failed: " + errorObject.name);
+        off(teamQuery, "value", eventHandler); // Remove the event handler
       }
-
-      await set(teamRef, teamData);
-      off(teamQuery, "value", eventHandler); // Remove the event handler
-    }, (errorObject) => {
-      console.log('The read failed: ' + errorObject.name);
-      off(teamQuery, "value", eventHandler); // Remove the event handler
-    });
+    );
   }
 
   async findTeamByName(teamName) {
     return new Promise((resolve) => {
-      const teamQuery = query(this.table, orderByChild("team_name"), equalTo(teamName));
-      const eventHandler = onValue(teamQuery, (snapshot) => {
-        if (snapshot.exists()) {
-          const teamData = snapshot.val();
-          resolve(teamData);
-        } else {
+      const teamQuery = query(
+        this.table,
+        orderByChild("team_name"),
+        equalTo(teamName)
+      );
+      const eventHandler = onValue(
+        teamQuery,
+        (snapshot) => {
+          if (snapshot.exists()) {
+            const teamData = snapshot.val();
+            resolve(teamData);
+          } else {
+            resolve(null);
+          }
+          off(teamQuery, "value", eventHandler); // Remove the event handler
+        },
+        (errorObject) => {
+          console.log("The read failed: " + errorObject.name);
           resolve(null);
+          off(teamQuery, "value", eventHandler); // Remove the event handler
         }
-        off(teamQuery, "value", eventHandler); // Remove the event handler
-      }, (errorObject) => {
-        console.log('The read failed: ' + errorObject.name);
-        resolve(null);
-        off(teamQuery, "value", eventHandler); // Remove the event handler
-      });
+      );
     });
   }
-
 
   async getUserTeam(teamName) {
     return new Promise((resolve, reject) => {
@@ -188,29 +243,30 @@ export class TeamsDatabase extends FirebaseDatabase {
         return;
       }
 
-      const teamQuery = query(this.table, orderByChild("team_name"), equalTo(teamName));
-      const eventHandler = onValue(teamQuery, (snapshot) => {
-        if (snapshot.exists()) {
-          const teamData = snapshot.val();
-          const teamKey = Object.keys(teamData)[0];
-          localStorage.setItem("team", JSON.stringify(teamData[userKey]));
-          resolve(teamData[teamKey]);
-        } else {
-          reject(new Error('Team not found'));
+      const teamQuery = query(
+        this.table,
+        orderByChild("team_name"),
+        equalTo(teamName)
+      );
+      const eventHandler = onValue(
+        teamQuery,
+        (snapshot) => {
+          if (snapshot.exists()) {
+            const teamData = snapshot.val();
+            const teamKey = Object.keys(teamData)[0];
+            localStorage.setItem("team", JSON.stringify(teamData[userKey]));
+            resolve(teamData[teamKey]);
+          } else {
+            reject(new Error("Team not found"));
+          }
+          off(teamQuery, "value", eventHandler); // Remove the event handler
+        },
+        (errorObject) => {
+          console.log("The read failed: " + errorObject.name);
+          off(teamQuery, "value", eventHandler); // Remove the event handler
+          reject(errorObject);
         }
-        off(teamQuery, "value", eventHandler); // Remove the event handler
-      }, (errorObject) => {
-        console.log('The read failed: ' + errorObject.name);
-        off(teamQuery, "value", eventHandler); // Remove the event handler
-        reject(errorObject);
-      });
+      );
     });
   }
-
-
-
-
-
 }
-
-
