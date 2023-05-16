@@ -163,17 +163,12 @@ export class TeamsDatabase extends FirebaseDatabase {
 
   async read() {
     return new Promise((resolve, reject) => {
-      onValue(
-        this.table,
-        (snapshot) => {
-          console.log(snapshot.val());
-          resolve(snapshot.val());
-        },
-        (errorObject) => {
-          reject(errorObject);
-        }
-      );
-    });
+      onValue(this.table, (snapshot) => {
+        resolve(snapshot.val())
+      }, (errorObject) => {
+        reject(errorObject)
+      });
+    })
   }
 
   async addUsersToTeam(teamName, userEmails) {

@@ -10,10 +10,8 @@ import {
   Grid,
 } from "@mui/material";
 import { teamsDatabase } from "../../../services/firebase";
-import { Status } from "./index";
 const FindTeam = (props) => {
   const {
-    status,
     team,
     setTeam,
     teamsList,
@@ -40,28 +38,28 @@ const FindTeam = (props) => {
       }}
     >
       <Grid container flexDirection="column">
-        <Typography variant="h3" sx={{ fontWeight: 500 }}>
-          Encuentra tu equipo
-        </Typography>
-        <TextField
-          id="outlined-basic"
-          label="Escribe el nombre del equipo a buscar"
-          variant="outlined"
-          onChange={(e) => setTeam(e.target.value)}
-        />
-        <Button
-          variant="text"
-          onClick={handleTeams}
-          sx={{ marginBottom: "20px" }}
-        >
-          Buscar equipo
-        </Button>
-        <Button variant="text" onClick={handleChange}>
-          Crea un nuevo equipo
-        </Button>
-
         {teamSearch ? (
           <>
+            <Typography variant="h3" sx={{ fontWeight: 500 }}>
+              Encuentra tu equipo
+            </Typography>
+            <TextField
+              id="outlined-basic"
+              label="Escribe el nombre del equipo a buscar"
+              variant="outlined"
+              onChange={(e) => setTeam(e.target.value)}
+            />
+            <Button
+              variant="text"
+              onClick={handleTeams}
+              sx={{ marginBottom: "20px" }}
+            >
+              Buscar equipo
+            </Button>
+            <Button variant="text" onClick={handleChange}>
+              Crea un nuevo equipo
+            </Button>
+
             {teamsList
               ? Object.entries(teamsList).map((team, index) => {
                   return (
@@ -74,11 +72,9 @@ const FindTeam = (props) => {
                           {team[1].members ? (
                             team[1].members.map((member) => {
                               return (
-                                <>
-                                  <Typography variant="subtitle1">
-                                    {member}
-                                  </Typography>
-                                </>
+                                <Typography key={member} variant="subtitle1">
+                                  {member}
+                                </Typography>
                               );
                             })
                           ) : (
@@ -93,12 +89,32 @@ const FindTeam = (props) => {
                 })
               : null}
           </>
-        ) : null}
+        ) : (
+          <>
+            <Typography variant="h3" sx={{ fontWeight: 500 }}>
+              Encuentra tu equipo
+            </Typography>
+            <TextField
+              id="outlined-basic"
+              label="Escribe el nombre del equipo a buscar"
+              variant="outlined"
+              onChange={(e) => setTeam(e.target.value)}
+            />
+            <Button
+              variant="text"
+              onClick={handleTeams}
+              sx={{ marginBottom: "20px" }}
+            >
+              Buscar equipo
+            </Button>
+            <Button variant="text" onClick={handleChange}>
+              Crea un nuevo equipo
+            </Button>
+          </>
+        )}
       </Grid>
     </Box>
   );
 };
-
-const TeamContent = (props) => {};
 
 export default FindTeam;
