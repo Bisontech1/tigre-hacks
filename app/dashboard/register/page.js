@@ -247,7 +247,7 @@ const PersonalDataForm = () => {
     let uploadedFile;
 
     try {
-      uploadedFile = await cvStorage.addFile(file);
+      uploadedFile = await cvStorage.addFile(file, user.id + ".pdf");
       user.cvUrl = await cvStorage.getDownloadURL(uploadedFile);
     } catch (error) {
       await authService.deleteUser(registeredUser);
