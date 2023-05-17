@@ -56,26 +56,119 @@ const MyProfile = () => {
     const json = await response.json();
     setUniversities(json.universidades);
 
-    setAge(user.age);
-    setPhoneNumber(user.phoneNumber);
-    setPronoun(user.pronouns);
-    setName(user.name);
-    setLastname(user.lastname);
-    setEmail(user.email);
-    setGender(user.gender);
-    setGenderSpecification(user.genderSpecification);
-    setUniversity(user.university);
-    setUniversitySpecification(user.universitySpecification);
-
-    setDiet(user.dietRestricions);
-    setDietSpecifications(user.dietSpecifications);
-    setShirtSize(user.shirtSize);
-    setIdentifyAsGroup(user.identifyAsGroup);
-    setRace(user.race);
-    setRaceSpecification(user.raceSpecification);
-    setMaxStudies(user.maxStudies);
-    setMainStudyArea(user.mainStudyArea);
-    setMainStudyAreaSpecification(user.mainStudyAreaSpecification);
+    if (user.hasOwnProperty('age')) {
+      setAge(user.age);
+    } else {
+      setAge('');
+    }
+    
+    if (user.hasOwnProperty('phoneNumber')) {
+      setPhoneNumber(user.phoneNumber);
+    } else {
+      setPhoneNumber('');
+    }
+    
+    if (user.hasOwnProperty('pronouns')) {
+      setPronoun(user.pronouns);
+    } else {
+      setPronoun('');
+    }
+    
+    if (user.hasOwnProperty('name')) {
+      setName(user.name);
+    } else {
+      setName('');
+    }
+    
+    if (user.hasOwnProperty('lastname')) {
+      setLastname(user.lastname);
+    } else {
+      setLastname('');
+    }
+    
+    if (user.hasOwnProperty('email')) {
+      setEmail(user.email);
+    } else {
+      setEmail('');
+    }
+    
+    if (user.hasOwnProperty('gender')) {
+      setGender(user.gender);
+    } else {
+      setGender('');
+    }
+    
+    if (user.hasOwnProperty('genderSpecification')) {
+      setGenderSpecification(user.genderSpecification);
+    } else {
+      setGenderSpecification('');
+    }
+    
+    if (user.hasOwnProperty('university')) {
+      setUniversity(user.university);
+    } else {
+      setUniversity('');
+    }
+    
+    if (user.hasOwnProperty('universitySpecification')) {
+      setUniversitySpecification(user.universitySpecification);
+    } else {
+      setUniversitySpecification('');
+    }
+    
+    if (user.hasOwnProperty('dietRestricions')) {
+      setDiet(user.dietRestricions);
+    } else {
+      setDiet('');
+    }
+    
+    if (user.hasOwnProperty('dietSpecifications')) {
+      setDietSpecifications(user.dietSpecifications);
+    } else {
+      setDietSpecifications('');
+    }
+    
+    if (user.hasOwnProperty('shirtSize')) {
+      setShirtSize(user.shirtSize);
+    } else {
+      setShirtSize('');
+    }
+    
+    if (user.hasOwnProperty('identifyAsGroup')) {
+      setIdentifyAsGroup(user.identifyAsGroup);
+    } else {
+      setIdentifyAsGroup('');
+    }
+    
+    if (user.hasOwnProperty('race')) {
+      setRace(user.race);
+    } else {
+      setRace('');
+    }
+    
+    if (user.hasOwnProperty('raceSpecification')) {
+      setRaceSpecification(user.raceSpecification);
+    } else {
+      setRaceSpecification('');
+    }
+    
+    if (user.hasOwnProperty('maxStudies')) {
+      setMaxStudies(user.maxStudies);
+    } else {
+      setMaxStudies('');
+    }
+    
+    if (user.hasOwnProperty('mainStudyArea')) {
+      setMainStudyArea(user.mainStudyArea);
+    } else {
+      setMainStudyArea('');
+    }
+    
+    if (user.hasOwnProperty('mainStudyAreaSpecification')) {
+      setMainStudyAreaSpecification(user.mainStudyAreaSpecification);
+    } else {
+      setMainStudyAreaSpecification('');
+    }
   }, []);
 
   useEffect(() => {
