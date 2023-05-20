@@ -26,4 +26,5 @@ export class User {
   agreesToShareSponsor = null;
   password = null;
   team = null;
+  assistanceConfirmed = false;
 }

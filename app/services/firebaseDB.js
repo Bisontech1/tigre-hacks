@@ -10,6 +10,7 @@ import {
   equalTo,
   off,
   update,
+  get,
 } from "firebase/database";
 
 class FirebaseDatabase {
@@ -40,7 +41,12 @@ export class UserDatabase extends FirebaseDatabase {
   async update(data) {
     data.password = null;
     await set(child(this.table, data.id), data);
-    return data
+    return data;
+  }
+
+  async getUserById(id) {
+    const result = await get(child(this.table, id));
+    return result.val();
   }
 
   async getUserData(email) {
@@ -50,7 +56,8 @@ export class UserDatabase extends FirebaseDatabase {
         orderByChild("email"),
         equalTo(email)
       );
-      const eventHandler = onValue(
+      let eventHandler;
+      eventHandler = onValue(
         emailQuery,
         (snapshot) => {
           if (snapshot.exists()) {
@@ -80,7 +87,8 @@ export class UserDatabase extends FirebaseDatabase {
           orderByChild("email"),
           equalTo(email)
         );
-        const eventHandler = onValue(
+        let eventHandler;
+        eventHandler = onValue(
           emailQuery,
           (snapshot) => {
             if (snapshot.exists()) {
@@ -104,6 +112,12 @@ export class UserDatabase extends FirebaseDatabase {
     await Promise.all(promises);
   }
 
+  async findUserByEmail(email) {
+    const emailQuery = query(this.table, orderByChild("email"), equalTo(email));
+    var result = await get(emailQuery);
+    return Object.values(result.val()).pop();
+  }
+
   async findEmails(teamData) {
     const foundEmails = [];
     const notFoundEmails = [];
@@ -116,7 +130,8 @@ export class UserDatabase extends FirebaseDatabase {
           orderByChild("email"),
           equalTo(email)
         );
-        const eventHandler = onValue(
+        let eventHandler;
+        eventHandler = onValue(
           emailQuery,
           (snapshot) => {
             if (snapshot.exists()) {
@@ -161,14 +176,23 @@ export class TeamsDatabase extends FirebaseDatabase {
     await set(child(this.table, data), { team_name: data });
   }
 
+  async update(data) {
+    await set(child(this.table, data.team_name), data);
+    return data;
+  }
+
   async read() {
     return new Promise((resolve, reject) => {
-      onValue(this.table, (snapshot) => {
-        resolve(snapshot.val())
-      }, (errorObject) => {
-        reject(errorObject)
-      });
-    })
+      onValue(
+        this.table,
+        (snapshot) => {
+          resolve(snapshot.val());
+        },
+        (errorObject) => {
+          reject(errorObject);
+        }
+      );
+    });
   }
 
   async addUsersToTeam(teamName, userEmails) {
@@ -179,7 +203,8 @@ export class TeamsDatabase extends FirebaseDatabase {
       equalTo(teamName)
     );
 
-    const eventHandler = onValue(
+    let eventHandler;
+    eventHandler = onValue(
       teamQuery,
       async (snapshot) => {
         let teamData;
@@ -211,7 +236,8 @@ export class TeamsDatabase extends FirebaseDatabase {
         orderByChild("team_name"),
         equalTo(teamName)
       );
-      const eventHandler = onValue(
+      let eventHandler;
+      eventHandler = onValue(
         teamQuery,
         (snapshot) => {
           if (snapshot.exists()) {
@@ -243,7 +269,8 @@ export class TeamsDatabase extends FirebaseDatabase {
         orderByChild("team_name"),
         equalTo(teamName)
       );
-      const eventHandler = onValue(
+      let eventHandler;
+      eventHandler = onValue(
         teamQuery,
         (snapshot) => {
           if (snapshot.exists()) {

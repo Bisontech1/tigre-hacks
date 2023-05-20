@@ -1,50 +1,171 @@
 "use client";
-import { useState } from 'react'
-import { Box, Typography } from '@mui/material'
-import PersonalData from '../../../components/register/PersonalData';
-import AdditionalInfo from '../../../components/register/AdditionalInfo';
+import { useEffect, useState } from "react";
+import { Box, Button, CircularProgress, Typography } from "@mui/material";
+import { authService, teamsDatabase, usersDatabase } from "services/firebase";
+import ErrorDialog from "components/register/ErrorDialog";
+import ConfirmDialog from "components/my-dashboard/MyState/confirmDialog";
 const MyProfile = () => {
-    const [gender, setGender] = useState('');
-    const [pronoun, setPronoun] = useState('');
-    const [universities, setUniversities] = useState([]);
-    const [grade, setGrade] = useState('');
-    const [country, setCountry] = useState('');
-    const [schools, setSchools] = useState([]);
-    const [otherGender, setOtherGender] = useState('');
-    const [selectedUniversity, setSelectedUniversity] = useState('');
-    const [otherUniversity, setOtherUniversity] = useState('');
-    const [activeStep, setActiveStep] = useState(0);
+  const [loading, setLoading] = useState(true);
+  const [teamReady, setTeamReady] = useState(false);
+  const [userReady, setUserReady] = useState(false);
+  const [user, setUser] = useState(null);
+  const [team, setTeam] = useState(null);
 
-    const handleUniversityChange = event => {
-        const value = event.target.value;
-        setSelectedUniversity(value);
+  const [confirmDialogOpen, setConfirmDialogOpen] = useState(false);
 
-        if (value === 'other') {
-            setOtherUniversity('');
-        }
-    };
-    return (
-        <div>
-            <div style={{
-                display: 'flex',
-                justifyContent: 'center',
-                alignItems: 'center',
-            }}>
-                <Box sx={{ '& .MuiTypography-root': { margin: '20px 0px', color:'#868686' } }}>
-                    <Typography variant='h4' sx={{ fontWeight: '600'}}>
-                        Actualmente estas:
-                    </Typography>
-                    <Typography variant='h5' >
-                        En espera
-                    </Typography>
-                    <Typography variant='subtitle1' >
-                        No te preocupes, te enviaremos un correo cuando tu estado sea actualizado
-                    </Typography>
-                </Box>
+  const [errorDialogOpen, setErrorDialogOpen] = useState(false);
+  const [errorTitle, setErrorTitle] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
+
+  useEffect(() => {
+    setTimeout(() => {
+      init();
+    }, 500);
+  }, []);
+
+  const init = async () => {
+    try {
+      setLoading(true);
+
+      const userData = JSON.parse(localStorage.getItem("userData"));
+      setUser(userData);
+
+      if (userData.assistanceConfirmed) setUserReady(true);
+
+      if (await checkTeam(userData.team)) setTeamReady(true);
+
+      setLoading(false);
+    } catch (error) {
+      console.error(error);
+      setErrorDialogOpen(true);
+      setErrorTitle("Ocurrió un error");
+      setErrorMessage("Ocurrió un error al obtener tu información");
+    }
+  };
+
+  const checkTeam = async (teamName) => {
+    const foundTeam = await teamsDatabase.findTeamByName(teamName);
+
+    if (foundTeam == null) return false;
+
+    const teamData = Object.values(foundTeam).pop();
+
+    if (teamData == null) return false;
+
+    setTeam(teamData);
+
+    let confirmedCount = 0;
+
+    for (let member of teamData.members) {
+      const memberData = await usersDatabase.findUserByEmail(member);
+      if (!memberData.assistanceConfirmed) return false;
+      confirmedCount++;
+    }
+
+    if (confirmedCount < 4) return false;
+
+    return true;
+  };
+
+  const confirmAssistence = async () => {
+    try {
+      if (user.assistanceConfirmed) return;
+
+      user.assistanceConfirmed = true;
+
+      await usersDatabase.update(user);
+
+      setUserReady(true);
+      localStorage.setItem("userData", JSON.stringify(user));
+
+      const teamReady = await checkTeam(user.team);
+
+      if (!teamReady) return;
+
+      teamData.teamReady = true;
+
+      await teamsDatabase.update(teamData);
+      setTeamReady(true);
+    } catch (error) {
+      console.error(error);
+      setErrorDialogOpen(true);
+      setErrorTitle("Ocurrió un error");
+      setErrorMessage("Ocurrió un error al obtener tu información");
+    }
+  };
+
+  const getText = () => {
+    if (teamReady) return "Equipo listo";
+
+    if (userReady) return "Asistencia confirmada";
+
+    return "En espera de confirmación";
+  };
+
+  return (
+    <div>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        <ConfirmDialog
+          open={confirmDialogOpen}
+          setOpen={(value) => {
+            setConfirmDialogOpen(value);
+          }}
+          onConfirm={() => {
+            confirmAssistence();
+          }}
+        ></ConfirmDialog>
+        <ErrorDialog
+          title={errorTitle}
+          message={errorMessage}
+          open={errorDialogOpen}
+          setOpen={(value) => {
+            setErrorDialogOpen(value);
+          }}
+        ></ErrorDialog>
+        <Box
+          sx={{
+            "& .MuiTypography-root": { margin: "20px 0px", color: "#868686" },
+          }}
+        >
+          {loading ? (
+            <div
+              style={{
+                height: "300px",
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+              }}
+            >
+              <CircularProgress />
             </div>
-
-        </div>
-    )
-}
+          ) : (
+            <>
+              {" "}
+              <Typography variant="h4" sx={{ fontWeight: "600" }}>
+                Estado Actual:
+              </Typography>
+              <Typography variant="h5">{getText()}</Typography>
+              <Button
+                onClick={() => {
+                  setConfirmDialogOpen(true);
+                }}
+                disabled={userReady}
+                variant="contained"
+              >
+                Confirmar Asistencia
+              </Button>
+            </>
+          )}
+        </Box>
+      </div>
+    </div>
+  );
+};
 
 export default MyProfile;
