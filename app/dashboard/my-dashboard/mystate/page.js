@@ -27,7 +27,12 @@ const MyProfile = () => {
     try {
       setLoading(true);
 
-      const userData = JSON.parse(localStorage.getItem("userData"));
+      const savedUserData = JSON.parse(localStorage.getItem("userData"));
+
+      const userData = await usersDatabase.findUserByEmail(savedUserData.email);
+
+      localStorage.setItem("userData", JSON.stringify(userData));
+
       setUser(userData);
 
       if (userData.assistanceConfirmed) setUserReady(true);
