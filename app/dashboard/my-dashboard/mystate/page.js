@@ -81,10 +81,11 @@ const MyProfile = () => {
       const teamReady = await checkTeam(user.team);
 
       if (!teamReady) return;
+      if (!team) return;
 
-      teamData.teamReady = true;
+      team.teamReady = true;
 
-      await teamsDatabase.update(teamData);
+      await teamsDatabase.update(team);
       setTeamReady(true);
     } catch (error) {
       console.error(error);
