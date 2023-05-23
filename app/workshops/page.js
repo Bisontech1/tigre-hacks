@@ -60,7 +60,14 @@ const App = () => {
       >
         {data.map((item) => {
           return (
-            <Grid key={item.name} item>
+            <Grid
+              container
+              justifyContent="center"
+              alignItems="center"
+              direction="row"
+              key={item.name}
+              item
+            >
               <Video
                 thumbnail={item.src}
                 title={item.name}
