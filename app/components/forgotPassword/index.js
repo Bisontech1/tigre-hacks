@@ -11,9 +11,9 @@ import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
-import { authService, teamsDatabase } from '../../../services/firebase'
-import { useRouter } from "next/navigation";
-import { usersDatabase } from "../../../services/firebase";
+import { authService } from "services/firebase";
+import EmailSuccessDialog from "./successDialog";
+import EmailErrorDialog from "./errorDialog";
 
 function Copyright(props) {
   return (
@@ -52,32 +52,61 @@ const theme = createTheme({
   },
 });
 
-export default function SignIn(props) {
-  const router = useRouter();
+export default function ForgotPasswordForm(props) {
+  const [successDialogOpen, setSuccessDialogOpen] = React.useState(false);
+  const [successTitle, setSuccessTitle] = React.useState("");
+  const [successMessage, setSuccessMessage] = React.useState("");
 
-  const { onSignInClicked } = props;
+  const [errorDialogOpen, setErrorDialogOpen] = React.useState(false);
+  const [errorTitle, setErrorTitle] = React.useState("");
+  const [errorMessage, setErrorMessage] = React.useState("");
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
-    onSignInClicked({
-      email: data.get("email"),
-      password: data.get("password"),
-    });
-    
+    const email = data.get("email");
 
-    authService.signIn(data.get("email"),data.get("password"))
-    .then(res => router.push("dashboard/my-dashboard"))
-    .catch(res=> console.log(res))
+    console.log(email);
 
-    usersDatabase.getUserData(data.get("email")).then(res=>console.log(res))
-    
+    try {
+      await authService.sendResetPasswordMail(email);
+      setSuccessDialogOpen(true);
+      setSuccessTitle("Correo enviado");
+      setSuccessMessage(
+        "Se ha enviado correctamente el correo, asegurate de revisar la carpeta de Spam"
+      );
+    } catch (error) {
+      console.error(error);
+      setErrorDialogOpen(true);
+      setErrorTitle("Correo no encontrado");
+      setErrorMessage(
+        "El correo no fue encontrado en las cuentas registradas, asegurate de haber escrito correctamente el correo"
+      );
+    }
   };
 
   return (
     <ThemeProvider theme={theme}>
       <Container component="main" maxWidth="xs">
         <CssBaseline />
+        <EmailSuccessDialog
+          title={successTitle}
+          message={successMessage}
+          open={successDialogOpen}
+          setOpen={(value) => {
+            setSuccessDialogOpen(value);
+          }}
+        ></EmailSuccessDialog>
+
+        <EmailErrorDialog
+          title={errorTitle}
+          message={errorMessage}
+          open={errorDialogOpen}
+          setOpen={(value) => {
+            setErrorDialogOpen(value);
+          }}
+        ></EmailErrorDialog>
+
         <Box
           sx={{
             marginTop: 8,
@@ -88,17 +117,21 @@ export default function SignIn(props) {
         >
           <Avatar sx={{ m: 1, bgcolor: "#fff" }} src="/tiger.png" />
           <Typography component="h1" variant="h5">
-            Sign in
+            Olvide mi contraseña
           </Typography>
           <Box
             component="form"
             onSubmit={handleSubmit}
             noValidate
-            sx={{ 
+            sx={{
               mt: 1,
-              '& .MuiLink-root':{color:'orange'},
-              '& .MuiButton-root':{backgroundColor:'orange', color:'#fff'},
-              '& .MuiButton-root: hover':{backgroundColor:'#fff', color:'#000', border:'solid black 1px'}
+              "& .MuiLink-root": { color: "orange" },
+              "& .MuiButton-root": { backgroundColor: "orange", color: "#fff" },
+              "& .MuiButton-root: hover": {
+                backgroundColor: "#fff",
+                color: "#000",
+                border: "solid black 1px",
+              },
             }}
           >
             <TextField
@@ -111,38 +144,14 @@ export default function SignIn(props) {
               autoComplete="email"
               autoFocus
             />
-            <TextField
-              margin="normal"
-              required
-              fullWidth
-              name="password"
-              label="Contraseña"
-              type="password"
-              id="password"
-              autoComplete="current-password"
-            />
-            <FormControlLabel
-              control={<Checkbox value="remember" color="primary" />}
-              label="Recuerdame"
-            />
-            <Button
-              type="submit"
-              fullWidth
-              variant="contained"
-            >
-              Ingresar
+
+            <Button type="submit" fullWidth variant="contained">
+              Enviar correo
             </Button>
             <Grid container>
               <Grid item xs>
-                <Link href="/dashboard/forgotPassword" variant="body2">
-                  Olvide mi contraseña
-                </Link>
-              </Grid>
-            </Grid>
-            <Grid container>
-              <Grid item>
-                <Link href="/dashboard/register" variant="body2">
-                  {"¿No tienes una cuenta aún? Registrate aquí"}
+                <Link href="/dashboard" variant="body2">
+                  Iniciar sesión
                 </Link>
               </Grid>
             </Grid>

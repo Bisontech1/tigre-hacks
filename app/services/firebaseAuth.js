@@ -2,6 +2,7 @@ import {
   createUserWithEmailAndPassword,
   deleteUser,
   getAuth,
+  sendPasswordResetEmail,
   signInWithEmailAndPassword,
   updateEmail,
   updatePassword,
@@ -41,5 +42,9 @@ export class FirebaseAuth {
 
   async signIn(email, password) {
     return signInWithEmailAndPassword(this.auth, email, password);
+  }
+
+  async sendResetPasswordMail(email) {
+    return sendPasswordResetEmail(this.auth, email);
   }
 }
