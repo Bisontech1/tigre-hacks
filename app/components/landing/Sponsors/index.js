@@ -85,7 +85,7 @@ const Sponsors = () => {
               loading="lazy"
             />
           </a>
-          <a href="https://aws.com" target="_blank" className="image-container">
+          <a href="https://www.meetup.com/awsugmty/" target="_blank" className="image-container">
             <img src="sponsors/aws.png" alt="AWS logo" loading="lazy" />
           </a>
         </div>

@@ -25,20 +25,20 @@ const Nav = (props) => {
           </label>
         </div>
         <div className="nav-links">
-          <a href="#" className="text-link">
+          <a href="/" className="text-link">
             {language?.getString("navbar.whatIs") ?? "¿Qué es Tigre Hacks?"}
           </a>
-          <a href="#" className="text-link">
+          <a href="/" className="text-link">
             {language?.getString("navbar.whyParticipate") ??
               "¿Por qué participar?"}
           </a>
-          <a href="#" className="text-link">
+          <a href="/" className="text-link">
             {language?.getString("navbar.sponsors") ?? "Sponsors"}
           </a>
-          <a href="#" className="text-link">
+          <a href="/" className="text-link">
             {language?.getString("navbar.faq") ?? "FAQ"}
           </a>
-          <a href="#" className="text-link">
+          <a href="/" className="text-link">
             {language?.getString("navbar.contact") ?? "Contacto"}
           </a>
 
